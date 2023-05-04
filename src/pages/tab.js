@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import ReactFullpage from "@fullpage/react-fullpage";
-import "../../stylee.css"
-import "../../responsive.css"
-import Layout from "../layout/layout"
+import "../stylee.css"
+import "../responsive.css"
+import Layout from "../components/layout/layout"
 
 import { Link, StaticQuery, graphql } from 'gatsby';
 

@@ -76,6 +76,7 @@ const Solution = () => {
 															<div class="our_main_heading text-center">
 																<div class="bread_cumg">
 																	<h1 class="text-center"><strong>Solution</strong></h1>
+																	
 																	<p>Our vision and values drive us to achieve greater heights</p>                              </div>
 															</div>
 															<div class="img_arrow">
@@ -164,7 +165,10 @@ const Solution = () => {
 													<div class="our_main_heading text-center">
 														<div class="bread_cumg">
 															<h1 class="text-center"><strong>Solution</strong></h1>
-															<p>Our vision and values drive us to achieve greater heights</p>                              </div>
+															<p>Our vision and values drive us to achieve greater heights</p>
+
+
+														</div>
 													</div>
 													<div class="img_arrow">
 														<div class="roww_wrap">
@@ -232,6 +236,7 @@ const Solution = () => {
 													</div>
 												</div>
 											</section>
+
 										</>
 									)
 								})}

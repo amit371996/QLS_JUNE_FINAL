@@ -3080,3 +3080,6 @@ overflow: hidden !important;}
 
 .mar_yes .teambx{margin-bottom: 100px;}
 .mar_none .teambx{margin-bottom: 100px;}
+.imge_for_mobile {
+    display: none;
+}

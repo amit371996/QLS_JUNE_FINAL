@@ -7,7 +7,7 @@ import "../stylee.css"
 import "../responsive.css"
 export default ({ data }) => {
 
-  const news = data.allWpNews.edges[0].node
+  const news = data.allWpPartners.edges[0].node
 
 
 
@@ -23,8 +23,8 @@ export default ({ data }) => {
                 <div class="col-md-12">
                   <div class="our_main_heading text-center">
                     <div class="bread_cumg">
-                      <h1 class="text-center"><strong>News </strong> details</h1>
-                      <p>Get the latest updates and helpful information</p>
+                      <h1 class="text-center"><strong>Event </strong> details</h1>
+                      <p>The future of mining really will come from the sky!</p>
                     </div>
                   </div>
                   <div class="img_arrow">
@@ -81,7 +81,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    allWpNews (filter: { slug: { eq: $slug } }) {
+    allWpPartners (filter: { slug: { eq: $slug } }) {
         edges {
           node {
             id

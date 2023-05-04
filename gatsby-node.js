@@ -20,6 +20,20 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWpEvents {
+        edges {
+          node {           
+            slug
+          }
+        }
+      }
+      allWpPartners {
+        edges {
+          node {           
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -39,6 +53,36 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/news/${node.slug}`, // Specify the path for the new page
       component: path.resolve("./src/templates/news.js"), // Specify the template for the new page
+      context: {
+        // Pass the slug as context to the template
+        slug: node.slug,
+      },
+    })
+  })
+  result.data.allWpNews.edges.forEach(({ node }) => {
+    createPage({
+      path: `/event/${node.slug}`, // Specify the path for the new page
+      component: path.resolve("./src/templates/event_detail.js"), // Specify the template for the new page
+      context: {
+        // Pass the slug as context to the template
+        slug: node.slug,
+      },
+    })
+  })
+  result.data.allWpPartners.edges.forEach(({ node }) => {
+    createPage({
+      path: `/partner/${node.slug}`, // Specify the path for the new page
+      component: path.resolve("./src/templates/partner_detail.js"), // Specify the template for the new page
+      context: {
+        // Pass the slug as context to the template
+        slug: node.slug,
+      },
+    })
+  })
+  result.data.allWpPost.edges.forEach(({ node }) => {
+    createPage({
+      path: `/blog/${node.slug}`, // Specify the path for the new page
+      component: path.resolve("./src/templates/blog_detail.js"), // Specify the template for the new page
       context: {
         // Pass the slug as context to the template
         slug: node.slug,

@@ -588,7 +588,7 @@ left: 10px;
 
     .secation01::after {
         background-size: 90%;
-        background-image: url('http://steamlinedesign.com/suchi/qls/wp-content/uploads/2023/03/sortearth.png');
+        background-image: url(http://steamlinedesign.com/suchi/qls/wp-content/uploads/2023/03/sortearth.png);
         background-position: center center;
         opacity: 0.5;
     }
@@ -1251,7 +1251,6 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 }
 .img_arrow {
     position: relative;
-      margin-bottom: 20px;
 }
 .roww_wrap {
     position: relative;
@@ -1397,7 +1396,6 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 }
 .img_arrow {
     position: relative;
-      margin-bottom: 20px;
 }
 .roww_wrap {
     position: relative;
@@ -1543,23 +1541,4 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
     width: 100%;
     z-index: -1;
 }
-.imged{
-    width: 300px;    
 }
-
-.ghbd{
-      width: 30px !important;  
-}
-.ghbd3 img {
-    width: 30px !important;  
-}
-.ghbd2 img {
-    width: 30px !important;  
-}
-.ghbd2{
-    width: 30px !important;  
-    left: 40px !important;  
-    top: 0px !important;  
-}
-
-}   
