@@ -113,35 +113,36 @@ export default function Footer() {
 														return (
 															<>
 																{
-																	<>
-																		{prop.label == "Home" ? (
-																			<li class="btn_list">
-																				<Link
-																					to={"/"}
-
-																					activeClassName="active"
-																				>
-																					{prop.label}
-																				</Link>
-																			</li>
-																		) : (
-																			<li class="btn_list">
-																				<Link
-																					to={
-																						"/" +
-																						prop.label
-																							.replace(/\s+/g, "_")
-																							.replace("'", "")
-																							.toLowerCase()
-																					}
-
-																					activeClassName="active"
-																				>
-																					{prop.label}
-																				</Link>
-																			</li>
-																		)}
-																	</>
+																	 <>
+																	 {prop.label == "Home" ? (
+																	   <li class="nav-item">
+																		 <Link
+																		   to={"/"}
+																		   className="nav-link"
+																		   activeClassName="active"
+																		 >
+																		   {prop.label}
+																		 </Link>
+																	   </li>
+																	 ) : (
+																	   <li class="nav-item">
+																		 <Link
+																		   to={
+																			 "/" +
+																			 prop.label
+																			   .replace(/\s+/g, "_")
+																			   .replace("'", "")
+																			   .toLowerCase()
+																		   }
+																		   className="nav-link"
+																		   activeClassName="active"
+																		 >
+																		   {prop.label}
+																		 </Link>
+																	   </li>
+								   
+																	 )}
+																   </>
 																}
 															</>
 														);

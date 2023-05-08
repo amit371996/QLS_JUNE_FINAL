@@ -3083,3 +3083,18 @@ overflow: hidden !important;}
 .imge_for_mobile {
     display: none;
 }
+.top_arrow_wrap {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #00D4FF;
+    color: #fff;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    border: solid 2px #00D4FF;
+    line-height: 15px;
+}

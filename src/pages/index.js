@@ -16,6 +16,7 @@ import homepgb3 from '../image/events.png';
 import homepgb4 from '../image/25_546.jpg';
 import homepgb5 from '../image/imgpsh_fullsize_anim-1.png';
 import { Link, StaticQuery, graphql } from 'gatsby';
+import Scroll_Top from '../components/scroll_top/scroll_top';
 
 const Home = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
@@ -275,7 +276,7 @@ const Home = () => {
 
 																</div>
 																<div class="btn_g">
-																	<a href="#">Meet Us</a>
+																	<Link to="/partner">Meet Us</Link>
 																</div>
 															</div>
 
@@ -410,9 +411,8 @@ const Home = () => {
 												</div>
 											</div>
 										</section>
-
-
 									</ReactFullpage.Wrapper>
+									
 								</Layout>
 
 							)}
@@ -715,6 +715,7 @@ const Home = () => {
 																		QL Space is thrilled to have participated…</p>
 																	<div class="our_tascrt">
 																		<Link to="/videos">View All Videos</Link>
+																		
 
 																	</div>
 																</div>
@@ -727,8 +728,9 @@ const Home = () => {
 										</div>
 									</div>
 								</section>
-
-
+								<section className='section scrll_section'>
+									
+								</section>
 							</div>
 						</Layout>
 					)}

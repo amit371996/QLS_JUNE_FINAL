@@ -3,15 +3,7 @@ import React from 'react';
 import "../../stylee.css";
 import { useState } from 'react';
 import { Link, StaticQuery, navigate,graphql } from "gatsby"
-import frame1 from '../../image/Frame1.png';
-import frame2 from '../../image/Frame2.png';
-import frame3 from '../../image/Frame3.png';
-import frame4 from '../../image/Frame4.png';
-import frame5 from '../../image/Frame5.png';
-import footerlogo from '../../image/footerlogo.png';
-import userff from '../../image/userff.png';
-import icon from '../../image/Icon.png';
-import Layout from '../layout/layout';
+
 export default function Partner() {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;

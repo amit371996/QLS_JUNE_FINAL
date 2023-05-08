@@ -9,7 +9,7 @@ import anmimg4 from "../image/eardff.svg";
 import anmimg5 from "../image/wav.svg";
 import anmimg6 from "../image/wav.svg";
 import Layout from "../components/layout/layout";
-import {  graphql, StaticQuery, Link } from "gatsby";
+import { graphql, StaticQuery, Link } from "gatsby";
 import ReactFullpage from "@fullpage/react-fullpage";
 
 const About = () => {
@@ -260,7 +260,10 @@ const About = () => {
 																									</div>
 																									<div class="back face center">
 
-																										{/* <img src={prop.colourImage.sourceUrl} />  */}
+																										
+																											 
+																										
+
 																									</div>
 																								</div>
 																							</div>
