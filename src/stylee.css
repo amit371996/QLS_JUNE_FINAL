@@ -3064,7 +3064,7 @@ overflow: hidden !important;}
     .ReactModal__Overlay{z-index: 9999;background: rgba(0, 0, 0, 0.5) !important;}
 
     /*   Header mobile width csss */
-    button.navbar-toggler{background: #00D4FF;padding: 7px;}
+    button.navbar-toggler{background:none;padding: 7px;}
     .navbar-toggler-icon {
         color: #fff;
         font-size: 1.5em;

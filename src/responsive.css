@@ -332,6 +332,7 @@ left: 10px;
 } 
 }
 @media(max-width: 767px) {
+    
     header#header{
         z-index: 1111;
     }
@@ -585,7 +586,7 @@ left: 10px;
         z-index: 999;
         text-align: center;
     }
-
+    .secation01{padding: 120px 0;}
     .secation01::after {
         background-size: 90%;
         background-image: url(http://steamlinedesign.com/suchi/qls/wp-content/uploads/2023/03/sortearth.png);

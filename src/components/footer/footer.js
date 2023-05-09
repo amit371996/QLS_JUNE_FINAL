@@ -80,7 +80,7 @@ export default function Footer() {
 						<div class="our_main_footer">
 							<div class="container">
 								<div class="row">
-									<div class="col-md-3">
+									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="images_logo">
 											<div class="logo_footer">
 												<a href="#">
@@ -102,7 +102,7 @@ export default function Footer() {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-lg-3 col-md-6 col-sm-12">
 
 										<div id="myDIV" class="ythfr">
 											<ul>
@@ -153,7 +153,7 @@ export default function Footer() {
 										</div>
 
 									</div>
-									<div class="col-md-3">
+									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="kn_list">
 											<div class="kn_left_list">
 												<div class="lefti_text">
@@ -196,7 +196,7 @@ export default function Footer() {
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="kn_list">
 											<div class="kn_left_list">
 												<div class="lefti_text">

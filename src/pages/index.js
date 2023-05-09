@@ -33,6 +33,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 
 const Home = () => {
   const [isFullpage, setIsFullpage] = useState(true);
+
   // const imageUrls = [
 
   //   "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26692.png",
@@ -62,6 +63,7 @@ const Home = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
 
   return (
 
@@ -536,36 +538,38 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-                <section class="section">
-                  <div class="secation02 bhg">
-                    <div class="jhg_tfrd">
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-md-5 colmd5" /*style="position: relative;"*/>
-                            <div class="kj_bgvcdfs">
-                              <div class="image_hfgfss">
-                                <source src="assets/image/vg.mp4" />
-                              </div>
-                              <div class="image_gnbdd">
-                                <div class="image_hfgfss">
-                                  <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" class="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
-                                    <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
-                                  </video>
+                 <section class="section">
+                      <div class="secation02 bhg">
+                        <div class="jhg_tfrd">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-md-5 colmd5" /*style="position: relative;"*/>
+                                <div class="kj_bgvcdfs">
+                                  <div class="image_hfgfss">
+                                    <source src="assets/image/vg.mp4" />
+                                  </div>
+                                  <div class="image_gnbdd">
+                                    <div class="image_hfgfss">
+                                      <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" class="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
+                                        <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4?autoplay=1" />
+                                      </video>
+                                    </div>
+                                  </div>
+
                                 </div>
                               </div>
-
+                              <div class="col-md-7">
+                                <div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
+                                </div>
+                                <div class="btn_g">
+                                  <Link to="/about">View More</Link>
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                          <div class="col-md-7">
-                            <div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
-                            </div>
-
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </section>
+                    </section>
                 <section class="section id_hide" id="stopr_de">
                   <div class="secation03 back_ghbd bhg sliderimg">
                     <div class="container">
@@ -636,18 +640,33 @@ const Home = () => {
                         <div class="col-md-6">
                           <div class="ourr_tsgdf">
                             <ul>
-                              {data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.map((homePartnerSection, i) => {
-                                const partnr = homePartnerSection.partner;
-                                return (
-                                  <li>
-                                    <ul>
-                                      <li key={partnr.id}><a href="#"><img src={partnr.partnerImage.sourceUrl} alt='' /> </a> </li>
-
-                                    </ul>
-                                  </li>
-                                )
-                              })}
-
+                              <li>
+                                <ul>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26692.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26691.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26697.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26700.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26702.png" alt='' /> </a> </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <ul>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26693.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26695.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26698.png" alt='' /></a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26701.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26703.png" alt='' /> </a> </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <ul>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26694.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26696.png" alt='' /> </a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26699.png" alt='' /></a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26704.png" alt='' /></a> </li>
+                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26705.png" alt='' /> </a> </li>
+                                </ul>
+                              </li>
                               <div class="clr"></div>
                             </ul>
                           </div>
@@ -690,102 +709,134 @@ const Home = () => {
                           <div class="grif_wrap grif_wrap1">
                             <div class="itemg_hbg ngpv1">
                               <div class="itemsnq itemsnq1">
-                                <div class="our_tsadr">
-                                  <img src={homepgbg} alt='' className='img-fluid' />
-                                  {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/homepage.jpg"> */}
-                                  <div class="our_tfdsd">
-                                    <div class="gtfrd">
-                                      <h3>
-                                        <a href="https://www.qlspace.com.au/the-role-of-data-analytics-in-agriculture-monitoring-with-ai-and-satellite-technology/">
-                                          The Role of Data Analytics in ...    </a></h3>
+                                {data && data.allWpPost && data.allWpPost.edges && data.allWpPost.edges.map((edge, i) => {
+                                  const allddt = edge.node;
+                                  return (
+                                    <div class="our_tsadr">
 
-                                      <p> The combination of data analytics, artificial intelligence… </p>
-                                      <div class="our_tascrt">
-                                        <Link to="/blog">View All Posts</Link>
+                                      <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
 
+                                      <div class="our_tfdsd">
+                                        <div class="gtfrd">
+                                          <h3>
+                                            <Link to={"/blog/" + allddt.slug}>
+                                              {allddt.title.slice(0, 50)}...
+                                            </Link></h3>
+
+                                          <p>  {allddt.excerpt.slice(0, 50)}... </p>
+                                          <div class="our_tascrt">
+                                            <Link to="/blog">View All Posts</Link>
+
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
-                                </div>
+                                  )
+                                })}
+
                               </div>
                               <div class="itemsnq itemsnq2">
-                                <div class="our_tsadr">
-                                  <img src={homepgb2} alt='' className='img-fluid' />
-                                  {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/04/News-image-3rd-April-409x214-1.jpg"> */}
-                                  <div class="our_tfdsd">
-                                    <div class="gtfrd">
-                                      <h3>
-                                        <a href="https://www.qlspace.com.au/news/spacex-successfully-launches-10-space-force-tranche-0-satellites-after-abort-delay-lands-rocket/">
-                                          SpaceX successfully launches 1...    </a></h3>
-                                      <p> The Tranche 0 satellites are part of… </p>
-                                      <div class="our_tascrt">
-                                        <Link to="/whats_new">View All News</Link>
+                                {data && data.allWpNews && data.allWpNews.edges && data.allWpNews.edges.map((edge, i) => {
+                                  const allddt = edge.node;
+                                  return (
+                                    <div class="our_tsadr">
+                                      <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+                                      <div class="our_tfdsd">
+                                        <div class="gtfrd">
+                                          <h3>
+                                            <Link to={"/news/" + allddt.slug}>
+                                              {allddt.title.slice(0, 50)}...
+                                            </Link></h3>
+                                          <p>  {allddt.excerpt.slice(0, 50)}... </p>
+                                          <div class="our_tascrt">
+                                            <Link to="/whats_new">View All News</Link>
 
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
-                                </div>
+                                  )
+                                })}
+
                               </div>
                             </div>
                             <div class="itemg_hbg ngpv2">
-                              <div class="itemsnq itemsnq3">
-                                <img src={homepgb3} alt='' className='img-fluid' />
-                                {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/events.png"> */}
-                                <div class="our_tfdsd">
-                                  <div class="gtfrd">
-                                    <h3>
-                                      <a href="https://www.qlspace.com.au/events/asias-most-prominent-tech-summit-umagine/">
-                                        Asia’s most prominent te...    </a></h3>
-                                    <p> Asia's most prominent tech summit - Umagine </p>
-                                    <div class="our_tascrt">
-                                      <Link to="/event">View All Events</Link>
+                              {data && data.allWpEvents && data.allWpEvents.edges && data.allWpEvents.edges.map((edge, i) => {
+                                const allddt = edge.node;
+                                return (
+                                  <div class="itemsnq itemsnq3">
+                                    <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
 
+                                    <div class="our_tfdsd">
+                                      <div class="gtfrd">
+                                        <h3>
+                                          <Link to={"/event/" + allddt.slug}>
+                                            {allddt.title.slice(0, 50)}...
+                                          </Link></h3>
+                                        <p>{allddt.excerpt.slice(0, 50)}...</p>
+                                        <div class="our_tascrt">
+                                          <Link to="/event">View All Events</Link>
+
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
+                                )
+                              })}
+
                             </div>
                           </div>
                           <div class="grif_wrap grif_wrap2">
-                            <div class="itemsnq itemsnq4">
-                              <img src={homepgb4} alt='' className='img-fluid' />
-                              {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/25_546.jpg"> */}
-                              <div class="our_tfdsd">
-                                <div class="gtfrd">
-                                  <h3>
-                                    <a href="https://www.qlspace.com.au/partners/ql-space-sign-mous/">
-                                      QL Space Sign MOUs    </a>
-                                  </h3>
-                                  <p>
-                                    Today was a big day for QL…</p>
-                                  <div class="our_tascrt">
-                                    <Link to="/partner">View All Partners</Link>
+                            {data && data.allWpPartners && data.allWpPartners.edges && data.allWpPartners.edges.map((edge, i) => {
+                              const allddt = edge.node;
+                              return (
+                                <div class="itemsnq itemsnq4">
+                                  <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+
+                                  <div class="our_tfdsd">
+                                    <div class="gtfrd">
+                                      <h3>
+                                        <Link to={"/partner/" + allddt.slug}>
+                                          {allddt.title.slice(0, 50)}...
+                                        </Link>
+                                      </h3>
+                                      <p>
+                                        {allddt.excerpt.slice(0, 50)}...</p>
+                                      <div class="our_tascrt">
+                                        <Link to="/partner">View All Partners</Link>
+                                      </div>
+                                    </div>
                                   </div>
+
                                 </div>
-                              </div>
+                              )
+                            })}
 
-                            </div>
+                            {data && data.allWpVideos && data.allWpVideos.edges && data.allWpVideos.edges.map((edge, i) => {
+                              const allddt = edge.node;
+                              return (
+                                <div class="itemsnq itemsnq5">
+                                  <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+                                  <div class="our_tfdsd">
+                                    <div class="gtfrd">
+                                      <h3>
+                                        <Link to={"/video/" + allddt.slug}>
+                                          {allddt.title.slice(0, 50)}...
+                                        </Link>
+                                      </h3>
+                                      <p>
+                                        {allddt.excerpt.slice(0, 50)}...</p>
+                                      <div class="our_tascrt">
+                                        <Link to="/videos">View All Videos</Link>
 
-                            <div class="itemsnq itemsnq5">
-                              <img src={homepgb5} alt='' className='img-fluid' />
-                              {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/imgpsh_fullsize_anim-1.png"> */}
-                              <div class="our_tfdsd">
-                                <div class="gtfrd">
-                                  <h3>
-                                    <a href="https://www.qlspace.com.au/videos/avalon-2023-australian-international-airshow/">
-                                      AVALON 2023 – Australian...    </a>
-                                  </h3>
-                                  <p>
-                                    QL Space is thrilled to have participated…</p>
-                                  <div class="our_tascrt">
-                                    <Link to="/videos">View All Videos</Link>
-
-
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                              </div>
 
-                            </div>
+                                </div>
+                              )
+                            })}
+
                           </div>
                         </div>
                       </div>
