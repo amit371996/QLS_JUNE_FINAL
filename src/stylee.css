@@ -1107,7 +1107,7 @@ footer.footer_wrap button.btn.btn-primary:hover {
       background: #000 !important;
   }
   header li.nav-item a {
-      font-family: 'Roboto';
+      font-family: 'Nova Square';
       font-style: normal;
       font-weight: 500;
       font-size: 18px;
@@ -2299,7 +2299,7 @@ background: #00D4FF;
       border-radius: 100%;
       padding: 0;
       margin: 0;
-      line-height: 79.02px;
+      line-height: 88.02px;
       cursor: pointer;
   }
   .our_lkhb:hover  .video_incon_wrap .icon_fgb{
@@ -3098,3 +3098,4 @@ overflow: hidden !important;}
     border: solid 2px #00D4FF;
     line-height: 15px;
 }
+.nav-link:focus, .nav-link:hover{color:#fff;}

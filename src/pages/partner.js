@@ -22,6 +22,11 @@ export default function Partner() {
                     link
                     slug
                     title
+                    news {
+                        archiveImage {
+                          sourceUrl
+                        }
+                      }
                     featuredImage {
                       node {
                         date(formatString: "DD MMMM yyyy")
@@ -113,7 +118,7 @@ export default function Partner() {
                                                             <div class="inner_ghv">
                                                                 <a href="https://www.qlspace.com.au/partners/ql-space-sign-mous/">
 
-                                                                    <img src={partner.featuredImage.node.sourceUrl} className='img-fluid' />
+                                                                    <img src={partner.news.archiveImage.sourceUrl} className='img-fluid' />
                                                                 </a>
                                                             </div>
                                                             <div class="date_wrad_news">

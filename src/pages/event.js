@@ -23,6 +23,11 @@ export default function Event() {
                 slug
                 link
                 id
+                news {
+                    archiveImage {
+                      sourceUrl
+                    }
+                  }
                 featuredImage {
                   node {
                     caption
@@ -120,7 +125,7 @@ export default function Event() {
                                                                     <div class="inner_ghv">
                                                                         <a href="https://www.qlspace.com.au/events/asias-most-prominent-tech-summit-umagine/">
 
-                                                                            <img src={event.featuredImage.node.sourceUrl} />
+                                                                            <img src={event.news.archiveImage.sourceUrl} />
                                                                         </a>
                                                                     </div>
                                                                     <div class="date_wrad_news">
@@ -134,14 +139,14 @@ export default function Event() {
                                                                     </div>
                                                                     <div class="heading_nmb">
                                                                         <h4>
-                                                                            <Link to={"/event/"+event.slug}>
+                                                                            <Link to={"/event/" + event.slug}>
                                                                                 {event.title}   </Link>
                                                                         </h4>
                                                                         <div class="next_page">
-                                                                        <Link to={"/event/"+event.slug}className="read-more"> Read more
-                                                                        <span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/arrowright.png" /></span>
-                                                                        </Link>
-                                                                            
+                                                                            <Link to={"/event/" + event.slug} className="read-more"> Read more
+                                                                                <span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/arrowright.png" /></span>
+                                                                            </Link>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -156,7 +161,7 @@ export default function Event() {
 
                                             <ul className="pagination">{renderPageNumbers()}</ul>
 
-                                            
+
 
                                         </div>
                                     </div>

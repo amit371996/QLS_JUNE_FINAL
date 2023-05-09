@@ -21,6 +21,11 @@ export default function Whatsnew() {
 						id
 						slug
 						title
+						news {
+							archiveImage {
+							  sourceUrl
+							}
+						  }
 						featuredImage {
 						  node {
 							link
@@ -97,7 +102,7 @@ export default function Whatsnew() {
 													<li><Link to='/blog'>Blogs</Link></li>
 													<li><Link to='/partner'>Partner News</Link></li>
 													<li><Link to='/videos'>Videos</Link></li>
-													<li><Link to='/tab'>Videos</Link></li>
+													
 													
 												</ul>
 											</div>
@@ -116,7 +121,7 @@ export default function Whatsnew() {
 														<div class="imh_bc">
 															<div class="inner_ghv">
 																<a href="https://www.qlspace.com.au/news/spacex-successfully-launches-10-space-force-tranche-0-satellites-after-abort-delay-lands-rocket/">
-																	<img src={news.featuredImage.node.sourceUrl} className='img-fluid'/>
+																	<img src={news.news.archiveImage.sourceUrl} className='img-fluid'/>
 																</a>
 															</div>
 															<div class="date_wrad_news">

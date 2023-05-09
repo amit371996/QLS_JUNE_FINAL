@@ -19,6 +19,11 @@ export default function Blog() {
 						id
 						slug
 						title
+                        news {
+                            archiveImage {
+                              sourceUrl
+                            }
+                          }
 						featuredImage {
 						  node {
 							link
@@ -114,7 +119,7 @@ export default function Blog() {
                                                             <div class="inner_ghv">
                                                                 <a href="https://www.qlspace.com.au/from-space-to-the-ground-how-satellite-monitoring-helps-predict-and-respond-to-natural-disasters/">
 
-                                                                    <img src={blog.featuredImage.node.sourceUrl} />
+                                                                    <img src={blog.news.archiveImage.sourceUrl} />
                                                                 </a>
                                                             </div>
                                                             <div class="date_wrad_news">

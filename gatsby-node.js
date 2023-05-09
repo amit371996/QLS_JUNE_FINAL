@@ -34,6 +34,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWpVideos {
+        edges {
+          node {           
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -59,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-  result.data.allWpNews.edges.forEach(({ node }) => {
+  result.data.allWpEvents.edges.forEach(({ node }) => {
     createPage({
       path: `/event/${node.slug}`, // Specify the path for the new page
       component: path.resolve("./src/templates/event_detail.js"), // Specify the template for the new page
@@ -83,6 +90,16 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/blog/${node.slug}`, // Specify the path for the new page
       component: path.resolve("./src/templates/blog_detail.js"), // Specify the template for the new page
+      context: {
+        // Pass the slug as context to the template
+        slug: node.slug,
+      },
+    })
+  })
+  result.data.allWpVideos.edges.forEach(({ node }) => {
+    createPage({
+      path: `/video/${node.slug}`, // Specify the path for the new page
+      component: path.resolve("./src/templates/videos_detail.js"), // Specify the template for the new page
       context: {
         // Pass the slug as context to the template
         slug: node.slug,
