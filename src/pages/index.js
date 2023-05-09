@@ -381,17 +381,17 @@ const Home = () => {
                                       const allddt = edge.node;
                                       return (
                                         <div class="our_tsadr">
-                                         
-                                          <img src= {allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
-                                          {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/homepage.jpg"> */}
+
+                                          <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+
                                           <div class="our_tfdsd">
                                             <div class="gtfrd">
                                               <h3>
-                                                <a href="https://www.qlspace.com.au/the-role-of-data-analytics-in-agriculture-monitoring-with-ai-and-satellite-technology/">
-                                                {allddt.title}
-                                                    </a></h3>
+                                                <Link to={"/blog/" + allddt.slug}>
+                                                  {allddt.title.slice(0, 50)}...
+                                                </Link></h3>
 
-                                              <p> The combination of data analytics, artificial intelligence… </p>
+                                              <p>  {allddt.excerpt.slice(0, 50)}... </p>
                                               <div class="our_tascrt">
                                                 <Link to="/blog">View All Posts</Link>
 
@@ -404,82 +404,107 @@ const Home = () => {
 
                                   </div>
                                   <div class="itemsnq itemsnq2">
-                                    <div class="our_tsadr">
-                                      <img src={homepgb2} alt='' className='img-fluid' />
-                                      {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/04/News-image-3rd-April-409x214-1.jpg"> */}
+                                    {data && data.allWpNews && data.allWpNews.edges && data.allWpNews.edges.map((edge, i) => {
+                                      const allddt = edge.node;
+                                      return (
+                                        <div class="our_tsadr">
+                                          <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+                                          <div class="our_tfdsd">
+                                            <div class="gtfrd">
+                                              <h3>
+                                                <Link to={"/news/" + allddt.slug}>
+                                                  {allddt.title.slice(0, 50)}...
+                                                </Link></h3>
+                                              <p>  {allddt.excerpt.slice(0, 50)}... </p>
+                                              <div class="our_tascrt">
+                                                <Link to="/whats_new">View All News</Link>
+
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      )
+                                    })}
+
+                                  </div>
+                                </div>
+                                <div class="itemg_hbg ngpv2">
+                                  {data && data.allWpEvents && data.allWpEvents.edges && data.allWpEvents.edges.map((edge, i) => {
+                                    const allddt = edge.node;
+                                    return (
+                                      <div class="itemsnq itemsnq3">
+                                        <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+
+                                        <div class="our_tfdsd">
+                                          <div class="gtfrd">
+                                            <h3>
+                                              <Link to={"/event/" + allddt.slug}>
+                                                {allddt.title.slice(0, 50)}...
+                                              </Link></h3>
+                                            <p>{allddt.excerpt.slice(0, 50)}...</p>
+                                            <div class="our_tascrt">
+                                              <Link to="/event">View All Events</Link>
+
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )
+                                  })}
+
+                                </div>
+                              </div>
+                              <div class="grif_wrap grif_wrap2">
+                                {data && data.allWpPartners && data.allWpPartners.edges && data.allWpPartners.edges.map((edge, i) => {
+                                  const allddt = edge.node;
+                                  return (
+                                    <div class="itemsnq itemsnq4">
+                                      <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+
                                       <div class="our_tfdsd">
                                         <div class="gtfrd">
                                           <h3>
-                                            <a href="https://www.qlspace.com.au/news/spacex-successfully-launches-10-space-force-tranche-0-satellites-after-abort-delay-lands-rocket/">
-                                              SpaceX successfully launches 1...    </a></h3>
-                                          <p> The Tranche 0 satellites are part of… </p>
+                                            <Link to={"/partner/" + allddt.slug}>
+                                              {allddt.title.slice(0, 50)}...
+                                            </Link>
+                                          </h3>
+                                          <p>
+                                            {allddt.excerpt.slice(0, 50)}...</p>
                                           <div class="our_tascrt">
-                                            <Link to="/whats_new">View All News</Link>
+                                            <Link to="/partner">View All Partners</Link>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  )
+                                })}
+
+                                {data && data.allWpVideos && data.allWpVideos.edges && data.allWpVideos.edges.map((edge, i) => {
+                                  const allddt = edge.node;
+                                  return (
+                                    <div class="itemsnq itemsnq5">
+                                      <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+                                      <div class="our_tfdsd">
+                                        <div class="gtfrd">
+                                          <h3>
+                                            <Link to={"/video/" + allddt.slug}>
+                                              {allddt.title.slice(0, 50)}...
+                                            </Link>
+                                          </h3>
+                                          <p>
+                                            {allddt.excerpt.slice(0, 50)}...</p>
+                                          <div class="our_tascrt">
+                                            <Link to="/videos">View All Videos</Link>
 
                                           </div>
                                         </div>
                                       </div>
+
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="itemg_hbg ngpv2">
-                                  <div class="itemsnq itemsnq3">
-                                    <img src={homepgb3} alt='' className='img-fluid' />
-                                    {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/events.png"> */}
-                                    <div class="our_tfdsd">
-                                      <div class="gtfrd">
-                                        <h3>
-                                          <a href="https://www.qlspace.com.au/events/asias-most-prominent-tech-summit-umagine/">
-                                            Asia’s most prominent te...    </a></h3>
-                                        <p> Asia's most prominent tech summit - Umagine </p>
-                                        <div class="our_tascrt">
-                                          <Link to="/event">View All Events</Link>
+                                  )
+                                })}
 
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="grif_wrap grif_wrap2">
-                                <div class="itemsnq itemsnq4">
-                                  <img src={homepgb4} alt='' className='img-fluid' />
-                                  {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/25_546.jpg"> */}
-                                  <div class="our_tfdsd">
-                                    <div class="gtfrd">
-                                      <h3>
-                                        <a href="https://www.qlspace.com.au/partners/ql-space-sign-mous/">
-                                          QL Space Sign MOUs    </a>
-                                      </h3>
-                                      <p>
-                                        Today was a big day for QL…</p>
-                                      <div class="our_tascrt">
-                                        <Link to="/partner">View All Partners</Link>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                </div>
-
-                                <div class="itemsnq itemsnq5">
-                                  <img src={homepgb5} alt='' className='img-fluid' />
-                                  {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/imgpsh_fullsize_anim-1.png"> */}
-                                  <div class="our_tfdsd">
-                                    <div class="gtfrd">
-                                      <h3>
-                                        <a href="https://www.qlspace.com.au/videos/avalon-2023-australian-international-airshow/">
-                                          AVALON 2023 – Australian...    </a>
-                                      </h3>
-                                      <p>
-                                        QL Space is thrilled to have participated…</p>
-                                      <div class="our_tascrt">
-                                        <Link to="/videos">View All Videos</Link>
-
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                </div>
                               </div>
                             </div>
                           </div>
