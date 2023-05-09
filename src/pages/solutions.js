@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import ReactFullpage from "@fullpage/react-fullpage";
-// import catering from '../../images/catering.png';
 import "../stylee.css"
 import "./solution.css"
 import "../responsive.css"

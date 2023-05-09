@@ -2,12 +2,6 @@ import React from "react";
 import "../stylee.css";
 import "../responsive.css"
 import { useState, useEffect } from "react";
-import anmimg1 from "../image/round.svg";
-import anmimg2 from "../image/star.svg";
-import anmimg3 from "../image/bloone.svg";
-import anmimg4 from "../image/eardff.svg";
-import anmimg5 from "../image/wav.svg";
-import anmimg6 from "../image/wav.svg";
 import Layout from "../components/layout/layout";
 import { graphql, StaticQuery, Link } from "gatsby";
 import ReactFullpage from "@fullpage/react-fullpage";
@@ -341,31 +335,7 @@ const About = () => {
 															</div>
 
 															<div class="image_gnbdd">
-																<div class="roghrtf">
-																	<div class="ljkf">
-																		<img src={anmimg1} />
-																	</div>
-																	<div class="ghbd">
-																		<img src={anmimg2} />
-																		{/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/star.svg"> */}
-																	</div>
-																	<div class="ghbd1">
-																		<img src={anmimg3} />
-																		{/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/bloone.svg"> */}
-																	</div>
-																	<div class="ghbd2">
-																		<img src={anmimg4} />
-																		{/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/eardff.svg"> */}
-																	</div>
-																	<div class="ghbd3">
-																		<img src={anmimg5} />
-																		{/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/wav.svg"> */}
-																	</div>
-																	<div class="ghbd4">
-																		<img src={anmimg6} />
-																		{/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/moon.svg"> */}
-																	</div>
-																</div>
+																
 																<div class="image_hfgfss">
 																	<video
 																		autoplay="true"

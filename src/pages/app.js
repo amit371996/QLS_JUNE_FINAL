@@ -8,7 +8,7 @@ import Solution from "../pages/solutions"
 import Whatsnew from "../pages/whats_new"
 import Partner from "../pages/partner"
 import Blog from "../pages/blog"
-import Tab from "../components/tab/tab"
+
 import Event from "../pages/event"
 import Videos from "../pages/videos"
 import VideoPopup from "../components/Allvideospopup/Evlonpopup/evlonpopup"
@@ -24,7 +24,6 @@ const App = () => (
       <PrivateRoute path="/blog" component={Blog} />
       <PrivateRoute path="/blog/:slug" component={Blog} />
       <PrivateRoute path="/event" component={Event} />
-      <PrivateRoute path="/tab" component={Tab} />
       <PrivateRoute path="/videos" component={Videos} />
       <PrivateRoute path="/videospopup" component={VideoPopup} />
     </Router>

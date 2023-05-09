@@ -4,19 +4,13 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import "../stylee.css"
 import "../responsive.css"
 import Layout from "../components/layout/layout"
-import anmimg1 from '../image/round.svg';
-import anmimg2 from '../image/star.svg';
-import anmimg3 from '../image/bloone.svg';
-import anmimg4 from '../image/eardff.svg';
-import anmimg5 from '../image/wav.svg';
-import anmimg6 from '../image/wav.svg';
 import homepgbg from '../image/Blog-image-7th-April-409x214-1.jpg';
 import homepgb2 from '../image/homebg.png';
 import homepgb3 from '../image/events.png';
 import homepgb4 from '../image/25_546.jpg';
 import homepgb5 from '../image/imgpsh_fullsize_anim-1.png';
 import { Link, StaticQuery, graphql } from 'gatsby';
-import Scroll_Top from '../components/scroll_top/scroll_top';
+
 
 // const DisplayVideo = (imageUrls) => {
 //     let result = '';
@@ -39,18 +33,18 @@ import Scroll_Top from '../components/scroll_top/scroll_top';
 
 const Home = () => {
   const [isFullpage, setIsFullpage] = useState(true);
-  const imageUrls = [
+  // const imageUrls = [
 
-    "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26692.png",
-    "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26691.png",
-    "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26697.png",
-    "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26700.png",
-    "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26702.png"
+  //   "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26692.png",
+  //   "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26691.png",
+  //   "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26697.png",
+  //   "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26700.png",
+  //   "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26702.png"
 
-  ]
-  const firstSection = imageUrls.slice(0, 5);
-  const secondSection = imageUrls.slice(5, 10);
-  const thirdSection = imageUrls.slice()
+  // ]
+  // const firstSection = imageUrls.slice(0, 5);
+  // const secondSection = imageUrls.slice(5, 10);
+  // const thirdSection = imageUrls.slice()
 
 
 
@@ -106,6 +100,81 @@ const Home = () => {
 					  }
 					}
 				  }
+          allWpEvents(limit: 1, sort: {date: DESC}) {
+            edges {
+              node {
+                id
+                title
+                slug
+                news {
+                  homePageImage {
+                    sourceUrl
+                  }
+                }
+                excerpt
+              }
+            }
+          }
+          allWpPost(limit: 1, sort: {date: DESC}) {
+            edges {
+              node {
+                id
+                title
+                slug
+                news {
+                  homePageImage {
+                    sourceUrl
+                  }
+                }
+                excerpt
+              }
+            }
+          }
+          allWpPartners(limit: 1, sort: {date: DESC}) {
+            edges {
+              node {
+                id
+                title
+                slug
+                news {
+                  homePageImage {
+                    sourceUrl
+                  }
+                }
+                excerpt
+              }
+            }
+          }
+          allWpVideos(limit: 1, sort: {date: DESC}) {
+            edges {
+              node {
+                id
+                title
+                slug
+                news {
+                  homePageImage {
+                    sourceUrl
+                  }
+                }
+                excerpt
+              }
+            }
+          }
+          allWpNews(limit: 1, sort: {date: DESC}) {
+            edges {
+              node {
+                id
+                title
+                slug
+                news {
+                  homePageImage {
+                    sourceUrl
+                  }
+                }
+                excerpt
+              }
+            }
+          }
                 
 			}
 		`}
@@ -146,45 +215,12 @@ const Home = () => {
                               <div class="col-md-5 colmd5" /*style="position: relative;"*/>
                                 <div class="kj_bgvcdfs">
                                   <div class="image_hfgfss">
-
-
                                     <source src="assets/image/vg.mp4" />
-
-
-
                                   </div>
-
-
-
                                   <div class="image_gnbdd">
-                                    <div class="roghrtf">
-                                      <div class="ljkf">
-                                        <img src={anmimg1} />
-                                      </div>
-                                      <div class="ghbd">
-                                        <img src={anmimg2} />
-                                        {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/star.svg"> */}
-                                      </div>
-                                      <div class="ghbd1">
-                                        <img src={anmimg3} />
-                                        {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/bloone.svg"> */}
-                                      </div>
-                                      <div class="ghbd2">
-                                        <img src={anmimg4} />
-                                        {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/eardff.svg"> */}
-                                      </div>
-                                      <div class="ghbd3">
-                                        <img src={anmimg5} />
-                                        {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/wav.svg"> */}
-                                      </div>
-                                      <div class="ghbd4">
-                                        <img src={anmimg6} />
-                                        {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/moon.svg"> */}
-                                      </div>
-                                    </div>
                                     <div class="image_hfgfss">
                                       <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" class="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
-                                        <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+                                        <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4?autoplay=1" />
                                       </video>
                                     </div>
                                   </div>
@@ -193,11 +229,10 @@ const Home = () => {
                               </div>
                               <div class="col-md-7">
                                 <div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
-
-
-
                                 </div>
-
+                                <div class="btn_g">
+                                  <Link to="/about">View More</Link>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -234,8 +269,6 @@ const Home = () => {
                               </div>
                             </div>
                             <div class="col-md-11">
-
-
                               <div class="list_manage">
                                 <div class="row">
                                   <div class="col-md-6">
@@ -268,9 +301,8 @@ const Home = () => {
                     </section>
                     <section class="section">
                       <div class="section04 bhg">
-
                         <div class="container">
-                          <div class="row">
+                          <div class="row align-items-center">
                             <div class="col-md-6">
                               <div class="ourr_tsgdf">
                                 <ul>
@@ -345,23 +377,31 @@ const Home = () => {
                               <div class="grif_wrap grif_wrap1">
                                 <div class="itemg_hbg ngpv1">
                                   <div class="itemsnq itemsnq1">
-                                    <div class="our_tsadr">
-                                      <img src={homepgbg} alt='' className='img-fluid' />
-                                      {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/homepage.jpg"> */}
-                                      <div class="our_tfdsd">
-                                        <div class="gtfrd">
-                                          <h3>
-                                            <a href="https://www.qlspace.com.au/the-role-of-data-analytics-in-agriculture-monitoring-with-ai-and-satellite-technology/">
-                                              The Role of Data Analytics in ...    </a></h3>
+                                    {data && data.allWpPost && data.allWpPost.edges && data.allWpPost.edges.map((edge, i) => {
+                                      const allddt = edge.node;
+                                      return (
+                                        <div class="our_tsadr">
+                                         
+                                          <img src= {allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
+                                          {/* <img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/homepage.jpg"> */}
+                                          <div class="our_tfdsd">
+                                            <div class="gtfrd">
+                                              <h3>
+                                                <a href="https://www.qlspace.com.au/the-role-of-data-analytics-in-agriculture-monitoring-with-ai-and-satellite-technology/">
+                                                {allddt.title}
+                                                    </a></h3>
 
-                                          <p> The combination of data analytics, artificial intelligence… </p>
-                                          <div class="our_tascrt">
-                                            <Link to="/blog">View All Posts</Link>
+                                              <p> The combination of data analytics, artificial intelligence… </p>
+                                              <div class="our_tascrt">
+                                                <Link to="/blog">View All Posts</Link>
 
+                                              </div>
+                                            </div>
                                           </div>
                                         </div>
-                                      </div>
-                                    </div>
+                                      )
+                                    })}
+
                                   </div>
                                   <div class="itemsnq itemsnq2">
                                     <div class="our_tsadr">
@@ -479,42 +519,9 @@ const Home = () => {
                           <div class="col-md-5 colmd5" /*style="position: relative;"*/>
                             <div class="kj_bgvcdfs">
                               <div class="image_hfgfss">
-
-
                                 <source src="assets/image/vg.mp4" />
-
-
-
                               </div>
-
-
-
                               <div class="image_gnbdd">
-                                <div class="roghrtf">
-                                  <div class="ljkf">
-                                    <img src={anmimg1} />
-                                  </div>
-                                  <div class="ghbd">
-                                    <img src={anmimg2} />
-                                    {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/star.svg"> */}
-                                  </div>
-                                  <div class="ghbd1">
-                                    <img src={anmimg3} />
-                                    {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/bloone.svg"> */}
-                                  </div>
-                                  <div class="ghbd2">
-                                    <img src={anmimg4} />
-                                    {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/eardff.svg"> */}
-                                  </div>
-                                  <div class="ghbd3">
-                                    <img src={anmimg5} />
-                                    {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/wav.svg"> */}
-                                  </div>
-                                  <div class="ghbd4">
-                                    <img src={anmimg6} />
-                                    {/* <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/moon.svg"> */}
-                                  </div>
-                                </div>
                                 <div class="image_hfgfss">
                                   <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" class="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
                                     <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
@@ -526,9 +533,6 @@ const Home = () => {
                           </div>
                           <div class="col-md-7">
                             <div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
-
-
-
                             </div>
 
                           </div>

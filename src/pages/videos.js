@@ -136,7 +136,7 @@ export default function Videos() {
                                                             <div class="imh_bc">
                                                                 <div class="inner_ghv">
                                                                     <img src={vido.news.archiveImage.sourceUrl} />
-                                                                    <div class="video_incon_wrap" id="343" data-videourl="https://www.qlspace.com.au/wp-content/uploads/2023/03/1678093494570.mp4">
+                                                                    <div class="video_incon_wrap" id="343" data-videourl={vido.video.videoUrl}>
 
                                                                         <div class="icon_fgb" onClick={() => handleOpenModal(videourl)} >
                                                                             <FontAwesomeIcon icon={faPlay} />
