@@ -4,11 +4,6 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import "../stylee.css"
 import "../responsive.css"
 import Layout from "../components/layout/layout"
-import homepgbg from '../image/Blog-image-7th-April-409x214-1.jpg';
-import homepgb2 from '../image/homebg.png';
-import homepgb3 from '../image/events.png';
-import homepgb4 from '../image/25_546.jpg';
-import homepgb5 from '../image/imgpsh_fullsize_anim-1.png';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 
@@ -31,6 +26,15 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 //     return result;
 // }
 
+
+const getSection = (data, start, end) => {
+  const imageUrls = data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.partner;
+
+  console.log(imageUrls);
+  return imageUrls.slice(start, end) || [];
+
+}
+
 const Home = () => {
   const [isFullpage, setIsFullpage] = useState(true);
 
@@ -43,9 +47,12 @@ const Home = () => {
   //   "https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26702.png"
 
   // ]
+  // let imageUrls = [];  
   // const firstSection = imageUrls.slice(0, 5);
   // const secondSection = imageUrls.slice(5, 10);
-  // const thirdSection = imageUrls.slice()
+  // const thirdSection = imageUrls.slice(10,15)
+
+
 
 
 
@@ -310,31 +317,35 @@ const Home = () => {
                                 <ul>
                                   <li>
                                     <ul>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26692.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26691.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26697.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26700.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26702.png" alt='' /> </a> </li>
+
+                                      {
+                                        getSection(data, 0, 5).map(url => (
+                                          <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                        ))
+                                      }
                                     </ul>
                                   </li>
                                   <li>
                                     <ul>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26693.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26695.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26698.png" alt='' /></a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26701.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26703.png" alt='' /> </a> </li>
+
+                                      {
+                                        getSection(data, 5, 10).map(url => (
+                                          <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                        ))
+                                      }
                                     </ul>
                                   </li>
                                   <li>
                                     <ul>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26694.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26696.png" alt='' /> </a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26699.png" alt='' /></a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26704.png" alt='' /></a> </li>
-                                      <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26705.png" alt='' /> </a> </li>
+
+                                      {
+                                        getSection(data, 10, 15).map(url => (
+                                          <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                        ))
+                                      }
                                     </ul>
                                   </li>
+
                                   <div class="clr"></div>
                                 </ul>
                               </div>
@@ -538,38 +549,38 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-                 <section class="section">
-                      <div class="secation02 bhg">
-                        <div class="jhg_tfrd">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-md-5 colmd5" /*style="position: relative;"*/>
-                                <div class="kj_bgvcdfs">
-                                  <div class="image_hfgfss">
-                                    <source src="assets/image/vg.mp4" />
-                                  </div>
-                                  <div class="image_gnbdd">
-                                    <div class="image_hfgfss">
-                                      <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" class="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
-                                        <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4?autoplay=1" />
-                                      </video>
-                                    </div>
-                                  </div>
+                <section class="section">
+                  <div class="secation02 bhg">
+                    <div class="jhg_tfrd">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-5 colmd5" /*style="position: relative;"*/>
+                            <div class="kj_bgvcdfs">
+                              <div class="image_hfgfss">
+                                <source src="assets/image/vg.mp4" />
+                              </div>
+                              <div class="image_gnbdd">
+                                <div class="image_hfgfss">
+                                  <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" class="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
+                                    <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4?autoplay=1" />
+                                  </video>
+                                </div>
+                              </div>
 
-                                </div>
-                              </div>
-                              <div class="col-md-7">
-                                <div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
-                                </div>
-                                <div class="btn_g">
-                                  <Link to="/about">View More</Link>
-                                </div>
-                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-7">
+                            <div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
+                            </div>
+                            <div class="btn_g">
+                              <Link to="/about">View More</Link>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </section>
+                    </div>
+                  </div>
+                </section>
                 <section class="section id_hide" id="stopr_de">
                   <div class="secation03 back_ghbd bhg sliderimg">
                     <div class="container">
@@ -634,39 +645,42 @@ const Home = () => {
                 </section>
                 <section class="section">
                   <div class="section04 bhg">
-
                     <div class="container">
-                      <div class="row">
+                      <div class="row align-items-center">
                         <div class="col-md-6">
                           <div class="ourr_tsgdf">
                             <ul>
                               <li>
                                 <ul>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26692.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26691.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26697.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26700.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26702.png" alt='' /> </a> </li>
+
+                                  {
+                                    getSection(data, 0, 5).map(url => (
+                                      <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                    ))
+                                  }
                                 </ul>
                               </li>
                               <li>
                                 <ul>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26693.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26695.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26698.png" alt='' /></a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26701.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26703.png" alt='' /> </a> </li>
+
+                                  {
+                                    getSection(data, 5, 10).map(url => (
+                                      <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                    ))
+                                  }
                                 </ul>
                               </li>
                               <li>
                                 <ul>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26694.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26696.png" alt='' /> </a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26699.png" alt='' /></a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26704.png" alt='' /></a> </li>
-                                  <li><a href="#"><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/Group-26705.png" alt='' /> </a> </li>
+
+                                  {
+                                    getSection(data, 10, 15).map(url => (
+                                      <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                    ))
+                                  }
                                 </ul>
                               </li>
+
                               <div class="clr"></div>
                             </ul>
                           </div>
@@ -676,7 +690,9 @@ const Home = () => {
                             <div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
                             </div>
-
+                            {/* <div class="btn_g">
+                                  <Link to="/partner">Meet Us</Link>
+                                </div> */}
                           </div>
 
 
@@ -843,9 +859,7 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-                <section className='section scrll_section'>
-
-                </section>
+              
               </div>
             </Layout>
           )}

@@ -23,15 +23,32 @@ const About = () => {
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
+	const getSection = (data, start, end) => {
+		const imageUrls = data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.partner;
+
+		console.log(imageUrls);
+		return imageUrls.slice(start, end) || [];
+
+	}
 	return (
 
 		<StaticQuery
 			// scrollingSpeed={1000}
 			query={graphql`
             query {
-                wpPage(id: { eq: "cG9zdDoxMDM=" }) {
+				wpPage(id: { eq: "cG9zdDoxMDM=" }) {
 					title
 					slug
+				homePartnerSection {
+					  partnerDetail
+					  partner {
+						partnerImage {
+						  sourceUrl
+						}
+                        siteUrl
+					  }
+					}
+				  
 					about {
 					  advisorsheading
 					  description
@@ -60,7 +77,7 @@ const About = () => {
 						}
 					  }
 					}
-				  }
+				}
               }
             `}
 			render={data => (
@@ -224,67 +241,59 @@ const About = () => {
 												</div>
 											</section>
 											<section class="section">
-												<div class="secatioonteam bhg">
-													<div class="jhg_tfrd paddint_top padding_Btnh">
-														<div class="container">
-															<div class="row">
-																<div class="col-md-12">
-																	<div class="main_heading">
-																		<div class="our_about_wrap text-start" dangerouslySetInnerHTML={{ __html: data.wpPage.about.advisorsheading }}>
+												<div class="section04 bhg">
+													<div class="container">
+														<div class="row align-items-center">
+															<div class="col-md-6">
+																<div class="ourr_tsgdf">
+																	<ul>
+																		<li>
+																			<ul>
 
-																		</div>
-																	</div>
+																				{
+																					getSection(data, 0, 5).map(url => (
+																						<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																					))
+																				}
+																			</ul>
+																		</li>
+																		<li>
+																			<ul>
+
+																				{
+																					getSection(data, 5, 10).map(url => (
+																						<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																					))
+																				}
+																			</ul>
+																		</li>
+																		<li>
+																			<ul>
+
+																				{
+																					getSection(data, 10, 15).map(url => (
+																						<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																					))
+																				}
+																			</ul>
+																		</li>
+
+																		<div class="clr"></div>
+																	</ul>
 																</div>
 															</div>
-															<div class="our_vba">
-																<div class="row mar_none">
-																	{data &&
-																		data.wpPage &&
-																		data.wpPage.about &&
-																		data.wpPage.about.ouradvisors.map((prop, i) => {
-																			return (
-																				<>
-																					<div class="col-xsm-12 col-sm-6 col-md-6 col-lg-3 teambx">
-																						<div class="image_tema">
-																							<div class="f1_container">
-																								<div class="f1_card shadow">
-																									<div class="front face">
+															<div class="col-md-6">
+																<div class="our_about_wrap" >
+																	<div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
-																										<img src={prop.image.sourceUrl} />
-																									</div>
-																									<div class="back face center">
-
-																										
-																											 
-																										
-
-																									</div>
-																								</div>
-																							</div>
-																							<div class="details">
-																								<div class="left_part_name">
-																									<h4>{prop.name}</h4>
-																									<span>
-																										{prop.designation}
-																									</span>
-																								</div>
-																								<div class="right_part_name">
-																									<Link to=
-																										{prop.linkedinurl}
-																										target="_blank"
-																									>
-																										<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/linkdin.png" />
-																									</Link>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</>
-																			)
-																		})}
-
-
+																	</div>
+																	{/* <div class="btn_g">
+                                  <Link to="/partner">Meet Us</Link>
+                                </div> */}
 																</div>
+
+
+
 															</div>
 														</div>
 													</div>
@@ -335,7 +344,7 @@ const About = () => {
 															</div>
 
 															<div class="image_gnbdd">
-																
+
 																<div class="image_hfgfss">
 																	<video
 																		autoplay="true"
@@ -430,64 +439,59 @@ const About = () => {
 									</div>
 								</section>
 								<section class="section">
-									<div class="secatioonteam bhg">
-										<div class="jhg_tfrd paddint_top padding_Btnh">
-											<div class="container">
-												<div class="row">
-													<div class="col-md-12">
-														<div class="main_heading">
-															<div class="our_about_wrap text-start" dangerouslySetInnerHTML={{ __html: data.wpPage.about.advisorsheading }}>
+									<div class="section04 bhg">
+										<div class="container">
+											<div class="row align-items-center">
+												<div class="col-md-6">
+													<div class="ourr_tsgdf">
+														<ul>
+															<li>
+																<ul>
 
-															</div>
-														</div>
+																	{
+																		getSection(data, 0, 5).map(url => (
+																			<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																		))
+																	}
+																</ul>
+															</li>
+															<li>
+																<ul>
+
+																	{
+																		getSection(data, 5, 10).map(url => (
+																			<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																		))
+																	}
+																</ul>
+															</li>
+															<li>
+																<ul>
+
+																	{
+																		getSection(data, 10, 15).map(url => (
+																			<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																		))
+																	}
+																</ul>
+															</li>
+
+															<div class="clr"></div>
+														</ul>
 													</div>
 												</div>
-												<div class="our_vba">
-													<div class="row mar_none">
-														{data &&
-															data.wpPage &&
-															data.wpPage.about &&
-															data.wpPage.about.ouradvisors.map((prop, i) => {
-																return (
-																	<>
-																		<div class="col-xsm-12 col-sm-6 col-md-6 col-lg-3 teambx">
-																			<div class="image_tema">
-																				<div class="f1_container">
-																					<div class="f1_card shadow">
-																						<div class="front face">
+												<div class="col-md-6">
+													<div class="our_about_wrap" >
+														<div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
-																							<img src={prop.image.sourceUrl} />
-																						</div>
-																						<div class="back face center">
-
-																							{/* <img src={prop.colourImage.sourceUrl} />  */}
-																						</div>
-																					</div>
-																				</div>
-																				<div class="details">
-																					<div class="left_part_name">
-																						<h4>{prop.name}</h4>
-																						<span>
-																							{prop.designation}
-																						</span>
-																					</div>
-																					<div class="right_part_name">
-																						<Link to=
-																							{prop.linkedinurl}
-																							target="_blank"
-																						>
-																							<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/linkdin.png" />
-																						</Link>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</>
-																)
-															})}
-
-
+														</div>
+														{/* <div class="btn_g">
+                                  <Link to="/partner">Meet Us</Link>
+                                </div> */}
 													</div>
+
+
+
 												</div>
 											</div>
 										</div>

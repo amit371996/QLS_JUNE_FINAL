@@ -134,7 +134,30 @@
       position: relative;
   }
 
-  
+  @media (max-width: 991px) and (min-width: 768px){
+    .solution_secanm .ghbdbx{
+        right: 40px;
+        bottom: 0px;
+    }
+    .solution_secanm .ghbdbx2 img {
+        width: 60px;
+    }
+    .solution_secanm .ghbdbx3 {
+        left: 10px;
+        bottom: 25px;
+    }
+    .solution_secanm .ghbdbx3 img {
+        width: 60px;
+    }
+    .solution_secanm .ghbdbx4 img {
+        width: 40px;
+    }
+    .solution_secanm .ghbdbx4 {
+        right: 20px;
+        top: 10px;
+    }
+  }
+
   
   
   
