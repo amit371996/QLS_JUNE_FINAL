@@ -37,7 +37,7 @@ export default ({ data }) => {
                                     <div class="our_main_heading text-center">
                                         <div class="bread_cumg">
                                             <h1 class="text-center"><strong>Videos </strong> details</h1>
-                                            <p>The future of mining really will come from the sky!</p>
+                                            <p>{videos.title}</p>
                                         </div>
                                     </div>
                                     <div class="img_arrow">
@@ -62,7 +62,7 @@ export default ({ data }) => {
                                         <div class="heading_news">
                                             <h1>{videos.title}</h1>
                                         </div>
-                                        <div class="inner_ghv">
+                                        <div class="inner_ghv vedio_details">
                                             <img src={videos.featuredImage.node.sourceUrl} />
                                             <div class="video_incon_wrap" id="343" data-videourl="https://www.qlspace.com.au/wp-content/uploads/2023/03/1678093494570.mp4">
                                                 
@@ -72,9 +72,7 @@ export default ({ data }) => {
 
                                             </div>
                                         </div>
-                                        <div class="news_details_image">
-                                            <img src={videos.video.videoUrl} />
-                                        </div>
+                                        
                                         <div class="cont_news_details">
                                             <div class="cont_wrsf">
                                                 <div class="col-md-12">

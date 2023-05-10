@@ -24,7 +24,7 @@ export default ({ data }) => {
                   <div class="our_main_heading text-center">
                     <div class="bread_cumg">
                       <h1 class="text-center"><strong>Event </strong> details</h1>
-                      <p>The future of mining really will come from the sky!</p>
+                      <p>{news.title}</p>
                     </div>
                   </div>
                   <div class="img_arrow">

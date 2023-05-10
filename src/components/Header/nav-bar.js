@@ -14,24 +14,8 @@ export default function NavBar(props) {
   const handleClick = () => {
     setShowModal(true);
   }
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
 
-  //   const [position, setPosition] = useState(window.pageYOffset)
-  //   const [visible, setVisible] = useState(true) 
-  //   useEffect(()=> {
-  //       const handleScroll = () => {
-  //         debugger
-  //          let moving = window.pageYOffset
-
-  //          setVisible(position > moving);
-  //          setPosition(moving)
-  //       };
-  //       window.addEventListener("scroll", handleScroll);
-  //       return(() => {
-  //          window.removeEventListener("scroll", handleScroll);
-  //       })
-  //   })
-
-  // const cls = visible ? "visible" : "hidden";
 
   return (
     <StaticQuery
@@ -74,7 +58,8 @@ export default function NavBar(props) {
                               {
                                 <>
                                   {prop.label == "Home" ? (
-                                    <li class="nav-item">
+                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                    onClick={() => setActiveMenuItem(i)}>
                                       <Link
                                         to={"/"}
                                         className="nav-link"
@@ -84,7 +69,8 @@ export default function NavBar(props) {
                                       </Link>
                                     </li>
                                   ) : (
-                                    <li class="nav-item">
+                                    <li  className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                    onClick={() => setActiveMenuItem(i)}>
                                       <Link
                                         to={
                                           "/" +
@@ -107,26 +93,7 @@ export default function NavBar(props) {
                           );
                         })}
 
-                      {/* <li class="nav-item">
-                  <Link to="/" class="nav-link active" aria-current="page" activeClassName="active">Home</Link>
-                  {` `}
-
-                </li>
-                <li class="nav-item">
-                  <Link to="/app/about" class="nav-link" activeClassName="active">About Us</Link>
-                  {` `}
-
-                </li>
-                <li class="nav-item">
-                  <Link to="/app/whatsnew" class="nav-link" activeClassName="active">What’s New</Link>
-                  {` `}
-
-                </li>
-                <li class="nav-item">
-                  <Link to="/app/solution" class="nav-link" activeClassName="active">Solution</Link>
-                  {` `}
-
-                </li> */}
+                     
 
 
                       <div /*style={navev}*/></div>

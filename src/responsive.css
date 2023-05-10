@@ -17,7 +17,7 @@
     display: none !important;
 }*/
 #header {
-    z-index: 111;
+    z-index: 99999;
 }
 }
 
@@ -168,7 +168,7 @@ font-size: 25px;
 }
 .image_tema {
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .our_about_wrap h2{
   font-size: 30px;
@@ -334,7 +334,7 @@ left: 10px;
 @media(max-width: 767px) {
     
     header#header{
-        z-index: 1111;
+        z-index: 99999;
     }
     .model_wrt{
         z-index: 9999;
@@ -387,7 +387,7 @@ left: 10px;
     }
 
     header#header {
-        padding: 10px 0px;
+        padding: 15px 0px;
         height: auto;
     }
 
@@ -495,7 +495,7 @@ left: 10px;
     }
 
     .image_tema {
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
 
     .our_about_wrap h2 {
@@ -586,7 +586,7 @@ left: 10px;
         z-index: 999;
         text-align: center;
     }
-    .secation01{padding: 120px 0;}
+    .homebnr{padding: 120px 0 !important;}
     .secation01::after {
         background-size: 90%;
         background-image: url(http://steamlinedesign.com/suchi/qls/wp-content/uploads/2023/03/sortearth.png);
@@ -697,6 +697,9 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit.btn.btn-primary:hover {
 .inner_ghv img{
         height: auto;
     }
+    .news_details{margin-top:40px;}
+    .news_details{margin-bottom:40px;}
+    .secation01 {padding: 50px 0;}
 }
 /*@media(max-width: 767px){
 .our_main_heading h1{
@@ -1410,7 +1413,9 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 .roww_wrap img {
     width: auto;
 }
-
+.pagination{    margin-bottom: 30px;
+    margin-top: 20px}
+    .sectionnewss{padding-top: 50px;}
 }
 @media(max-width: 575px){
     .kj_bgvcdfs {
@@ -1429,9 +1434,7 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 }
 .our_main_heading {
     height: auto;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    margin-top: 100px;
+   
 }
 .secation01::after{
     display: none;
@@ -1513,9 +1516,7 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 .our_about_wrap {
     margin-top: 0;
 }
-.our_main_heading{
-     margin-top: 50px;   
-}
+
 .list_s ul{
  padding-top: 0;   
 }
@@ -1542,4 +1543,6 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
     width: 100%;
     z-index: -1;
 }
+.pagination{display: block;width: 100%;text-align: center;}
+.pagination li{display: inline-block;padding-bottom: 15px;}
 }

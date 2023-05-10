@@ -194,7 +194,7 @@ const Home = () => {
                 <Layout>
                   <ReactFullpage.Wrapper>
                     <section class="section">
-                      <div class="secation01 bhg">
+                      <div class="secation01 homebnr bhg">
                         <div class="container">
                           <div class="row">
                             <div class="col-md-12">
@@ -523,7 +523,7 @@ const Home = () => {
             <Layout>
               <div>
                 <section class="section">
-                  <div class="secation01 bhg">
+                  <div class="secation01 homebnr bhg">
                     <div class="container">
                       <div class="row">
                         <div class="col-md-12">
