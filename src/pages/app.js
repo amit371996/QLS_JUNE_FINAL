@@ -3,15 +3,16 @@ import { Router } from "@reach/router"
 import Layout from "../components/layout/layout"
 import PrivateRoute from "../components/privateRout/privateRoute"
 import Home from "."
-import About from "../pages/about"
-import Solution from "../pages/solutions"
-import Whatsnew from "../pages/whats_new"
-import Partner from "../pages/partner"
-import Blog from "../pages/blog"
+import About from "./about"
+import Solution from "./solutions"
+import Whatsnew from "./whats_new"
+import Partner from "./partner"
+import Blog from "./blog"
 
-import Event from "../pages/event"
-import Videos from "../pages/videos"
+import Event from "./event"
+import Videos from "./videos"
 import VideoPopup from "../components/Allvideospopup/Evlonpopup/evlonpopup"
+import Privacy_Policy from "./privacy_policy"
 
 const App = () => (
   <Layout>
@@ -22,10 +23,10 @@ const App = () => (
       <PrivateRoute path="/whats_new" component={Whatsnew} />
       <PrivateRoute path="/partner" component={Partner} />
       <PrivateRoute path="/blog" component={Blog} />
-      <PrivateRoute path="/blog/:slug" component={Blog} />
       <PrivateRoute path="/event" component={Event} />
       <PrivateRoute path="/videos" component={Videos} />
       <PrivateRoute path="/videospopup" component={VideoPopup} />
+      <PrivateRoute path="/privacy_policy" component={Privacy_Policy} />
     </Router>
   </Layout>
 )

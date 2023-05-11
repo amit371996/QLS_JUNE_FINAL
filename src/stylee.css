@@ -3114,3 +3114,8 @@ overflow: hidden !important;}
     z-index: 99999;
   }
   .modal.fade.model_wrt.show{z-index: 99999;}
+  .pagination span.dots {
+    color: #00D4FF;
+    line-height: 40px;
+}
+.pagination ul li.active a{border: solid 2px #fff;}

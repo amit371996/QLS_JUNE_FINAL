@@ -2,11 +2,11 @@
 import React from 'react';
 import "../stylee.css";
 import { useState } from 'react';
-import { Link, StaticQuery, navigate,graphql } from "gatsby"
+import { Link, StaticQuery, navigate, graphql } from "gatsby"
 import "../responsive.css"
 import Layout from '../components/layout/layout';
 export default function Partner() {
-   
+
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
     return (
@@ -52,19 +52,65 @@ export default function Partner() {
 
                 const handlePageClick = (pageNumber) => {
                     setCurrentPage(pageNumber);
-                }
+                };
 
                 const renderPageNumbers = () => {
-                    let pageNumbers = [];
-                    for (let i = 1; i <= totalPages; i++) {
+                    const pageNumbers = [];
+
+                    if (currentPage > 1) {
                         pageNumbers.push(
-                            <li key={i}>
-                                <a href="#" className={currentPage === i ? 'active' : null} onClick={() => handlePageClick(i)}>{i}</a>
+                            <li key="prev">
+                                <a href="#" onClick={() => handlePageClick(currentPage - 1)}>
+                                    &laquo;
+                                </a>
                             </li>
                         );
                     }
-                    return pageNumbers;
-                }
+
+                    if (currentPage > 2) {
+                        pageNumbers.push(
+                            <li key="first">
+                                <a href="#" onClick={() => handlePageClick(1)}>1</a>
+                            </li>
+                        );
+
+                        if (currentPage > 3) {
+                            pageNumbers.push(
+                                <li key="dots-1">
+                                    <span className="dots">...</span>
+                                </li>
+                            );
+                        }
+                    }
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                            pageNumbers.push(
+                                <li key={i} >
+                                    <a href="#" className={currentPage === i ? 'active' : null} onClick={() => handlePageClick(i)}>{i}</a>
+                                </li>
+                            );
+                        } else if (i === currentPage - 2 || i === currentPage + 2) {
+                            pageNumbers.push(
+                                <li key={`dots-${i}`}>
+                                    <span className="dots">...</span>
+                                </li>
+                            );
+                        }
+                    }
+
+                    if (currentPage < totalPages) {
+                        pageNumbers.push(
+                            <li key="next">
+                                <a href="#" onClick={() => handlePageClick(currentPage + 1)}>
+                                    &raquo;
+                                </a>
+                            </li>
+                        );
+                    }
+                    return pageNumbers
+
+                };
                 return (
                     <Layout>
                         <section class="section new00">
@@ -131,13 +177,13 @@ export default function Partner() {
                                                             </div>
                                                             <div class="heading_nmb">
                                                                 <h4>
-                                                                    <Link to={"/partner/"+partner.slug}>
+                                                                    <Link to={"/partner/" + partner.slug}>
                                                                         {partner.title}  </Link>
                                                                 </h4>
                                                                 <div class="next_page">
-                                                                <Link to={"/partner/"+partner.slug} className="read-more"> Read more
-																		<span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/arrowright.png" /></span>
-																	</Link>
+                                                                    <Link to={"/partner/" + partner.slug} className="read-more"> Read more
+                                                                        <span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/arrowright.png" /></span>
+                                                                    </Link>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -146,15 +192,15 @@ export default function Partner() {
                                             )
 
                                         })}
-                                       
 
-                                       <ul className="pagination">{renderPageNumbers()}</ul>
+
+                                        <ul className="pagination">{renderPageNumbers()}</ul>
 
                                     </div>
                                 </div>
                             </div>
                         </section>
-                       
+
                     </Layout>
                 )
             }}

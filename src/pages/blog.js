@@ -48,23 +48,68 @@ export default function Blog() {
                 const totalPages = Math.ceil(totalItems / itemsPerPage);
                 const startIndex = (currentPage - 1) * itemsPerPage;
                 const endIndex = startIndex + itemsPerPage;
-
                 const handlePageClick = (pageNumber) => {
-                    setCurrentPage(pageNumber);
-                }
+					setCurrentPage(pageNumber);
+				};
 
-                const renderPageNumbers = () => {
-                    let pageNumbers = [];
-                    for (let i = 1; i <= totalPages; i++) {
-                        pageNumbers.push(
-                            <li key={i}>
-                                <a href="#" className={currentPage === i ? 'active' : null} onClick={() => handlePageClick(i)}>{i}</a>
-                            </li>
-                        );
-                    }
-                    return pageNumbers;
+				const renderPageNumbers = () => {
+					const pageNumbers = [];
 
-                }
+					if (currentPage > 1) {
+						pageNumbers.push(
+							<li key="prev">
+								<a href="#" onClick={() => handlePageClick(currentPage - 1)}>
+									&laquo;
+								</a>
+							</li>
+						);
+					}
+
+					if (currentPage > 2) {
+						pageNumbers.push(
+							<li key="first">
+								<a href="#" onClick={() => handlePageClick(1)}>1</a>
+							</li>
+						);
+
+						if (currentPage > 3) {
+							pageNumbers.push(
+								<li key="dots-1">
+									<span className="dots">...</span>
+								</li>
+							);
+						}
+					}
+
+					for (let i = 1; i <= totalPages; i++) {
+						if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+							pageNumbers.push(
+								<li key={i} >
+									<a href="#" className={currentPage === i ? 'active' : null} onClick={() => handlePageClick(i)}>{i}</a>
+								</li>
+							);
+						} else if (i === currentPage - 2 || i === currentPage + 2) {
+							pageNumbers.push(
+								<li key={`dots-${i}`}>
+									<span className="dots">...</span>
+								</li>
+							);
+						}
+					}
+
+					if (currentPage < totalPages) {
+						pageNumbers.push(
+							<li key="next">
+								<a href="#" onClick={() => handlePageClick(currentPage + 1)}>
+								&raquo;
+								</a>
+							</li>
+						);
+					}
+					return pageNumbers
+					
+				};
+                  
                 return (
                     <Layout>
                         <div>
@@ -150,7 +195,7 @@ export default function Blog() {
                                                 
                                             })}
                                             
-                                            <ul className="pagination">{renderPageNumbers()}</ul>
+                                            <ul className="pagination"> {renderPageNumbers()}</ul>
 
                                         </div>
                                     </div>
