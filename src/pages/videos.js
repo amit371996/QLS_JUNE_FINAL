@@ -129,19 +129,19 @@ export default function Videos() {
 				};
                 return (
                     <Layout>
-                        <section class="new00">
-                            <div class="secation01 bhg secn_abouts">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="our_main_heading text-center">
-                                                <div class="bread_cumg">
-                                                    <h1 class="text-center"><strong>Our  </strong>Videos</h1>
+                        <section className="new00">
+                            <div className="secation01 bhg secn_abouts">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <div className="our_main_heading text-center">
+                                                <div className="bread_cumg">
+                                                    <h1 className="text-center"><strong>Our  </strong>Videos</h1>
                                                     <p>Get the latest updates and helpful information</p>
                                                 </div>
                                             </div>
-                                            <div class="img_arrow">
-                                                <div class="roww_wrap">
+                                            <div className="img_arrow">
+                                                <div className="roww_wrap">
                                                     <a href="#"><img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/arrow.svg" /></a>
                                                 </div>
                                             </div>
@@ -150,18 +150,18 @@ export default function Videos() {
                                 </div>
                             </div>
                         </section>
-                        <section class="section">
-                            <div class="whats_new_page">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="list_tab_wg">
+                        <section className="section">
+                            <div className="whats_new_page">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <div className="list_tab_wg">
                                                 <ul>
                                                     <li ><Link to='/event'>Events</Link></li>
                                                     <li><Link to='/whats_new'>News</Link></li>
                                                     <li><Link to='/blog'>Blogs</Link></li>
                                                     <li><Link to='/partner'>Partner News</Link></li>
-                                                    <li class="active_cl"><Link to='/videos'>Videos</Link></li>
+                                                    <li className="active_cl"><Link to='/videos'>Videos</Link></li>
                                                 </ul>
 
                                             </div>
@@ -169,41 +169,41 @@ export default function Videos() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="list_mnbv">
-                                <div class="container">
-                                    <div class="row">
+                            <div className="list_mnbv">
+                                <div className="container">
+                                    <div className="row">
                                         {videos.slice(startIndex, endIndex).map((vido) => {
                                             const videourl = vido.video.videoUrl;
                                             return (
                                                 <>
-                                                    <div class="col-md-6" key={vido.id}>
+                                                    <div className="col-md-6" key={vido.id}>
 
-                                                        <div class="our_lkhb">
-                                                            <div class="imh_bc">
-                                                                <div class="inner_ghv">
+                                                        <div className="our_lkhb">
+                                                            <div className="imh_bc">
+                                                                <div className="inner_ghv">
                                                                     <img src={vido.news.archiveImage.sourceUrl} />
-                                                                    <div class="video_incon_wrap" id="343" data-videourl={vido.video.videoUrl}>
+                                                                    <div className="video_incon_wrap" id="343" data-videourl={vido.video.videoUrl}>
 
-                                                                        <div class="icon_fgb" onClick={() => handleOpenModal(videourl)} >
+                                                                        <div className="icon_fgb" onClick={() => handleOpenModal(videourl)} >
                                                                             <FontAwesomeIcon icon={faPlay} />
                                                                         </div>
 
                                                                     </div>
                                                                 </div>
-                                                                <div class="date_wrad_news">
-                                                                    <div class="date_rn">
-                                                                        <div class="date_icon"><span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/icon-_calendar-outline_.png" /></span>{vido.featuredImage.node.date}</div>
+                                                                <div className="date_wrad_news">
+                                                                    <div className="date_rn">
+                                                                        <div className="date_icon"><span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/icon-_calendar-outline_.png" /></span>{vido.featuredImage.node.date}</div>
                                                                     </div>
-                                                                    <div class="oir_amin">
-                                                                        <div class="uhgbv"><span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/userfv.png" /></span>{vido.featuredImage.node.author && vido.featuredImage.node.author.node && vido.featuredImage.node.author.node.name}</div>
+                                                                    <div className="oir_amin">
+                                                                        <div className="uhgbv"><span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/userfv.png" /></span>{vido.featuredImage.node.author && vido.featuredImage.node.author.node && vido.featuredImage.node.author.node.name}</div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="heading_nmb">
+                                                                <div className="heading_nmb">
                                                                     <h4>
                                                                         <Link to={"/video/" + vido.slug}>
                                                                             {vido.title}  </Link>
                                                                     </h4>
-                                                                    <div class="next_page">
+                                                                    <div className="next_page">
                                                                         <Link to={"/video/" + vido.slug} className="read-more"> Read more
                                                                             <span><img src="https://www.qlspace.com.au/wp-content/uploads/2023/03/arrowright.png" /></span>
                                                                         </Link>

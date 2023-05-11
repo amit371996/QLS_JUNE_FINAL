@@ -39,58 +39,58 @@ export default function Footer() {
 		`}
 			render={data => (
 				<>
-					<section class="section">
-						<div class="main_fot bhg">
-							<footer class="footer_wrap">
-								<div class="container">
-									<div class="row">
-										<div class="col-md-12">
+					<section className="section">
+						<div className="main_fot bhg">
+							<footer className="footer_wrap">
+								<div className="container">
+									<div className="row">
+										<div className="col-md-12">
 											<h2>Subscribe to our newsletter</h2>
 											<p>Lörem ipsum monomubegt håd epiv dide.</p>
 										</div>
-										<div class="col-md-12">
-											<div class="our_news_leeter">
-												<form class="row g-3">
-													<div class="col-md-6">
-														<div class="hfnfa">
-															<input type="text" class="form-control" id="name" placeholder="Enter Name" />
-															<div class="imgddds">
+										<div className="col-md-12">
+											<div className="our_news_leeter">
+												<form className="row g-3">
+													<div className="col-md-6">
+														<div className="hfnfa">
+															<input type="text" className="form-control" id="name" placeholder="Enter Name" />
+															<div className="imgddds">
 																<img src={userff} alt="" />
 
 															</div>
 														</div>
 													</div>
-													<div class="col-md-6">
-														<div class="hfnfa">
-															<input type="text" class="form-control" id="email" placeholder="Enter Email" />
-															<div class="imgddds">
+													<div className="col-md-6">
+														<div className="hfnfa">
+															<input type="text" className="form-control" id="email" placeholder="Enter Email" />
+															<div className="imgddds">
 																<img src={icon} alt="" />
 
 															</div>
 														</div>
 													</div>
-													<div class="col-12">
-														<button type="submit" class="btn btn-primary">Submit</button>
+													<div className="col-12">
+														<button type="submit" className="btn btn-primary">Submit</button>
 													</div>
 												</form>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="our_main_footer">
-									<div class="container">
-										<div class="row">
-											<div class="col-lg-3 col-md-6 col-sm-12">
-												<div class="images_logo">
-													<div class="logo_footer">
+								<div className="our_main_footer">
+									<div className="container">
+										<div className="row">
+											<div className="col-lg-3 col-md-6 col-sm-12">
+												<div className="images_logo">
+													<div className="logo_footer">
 														<a href="#">
 															<img src={footerlogo} alt="" />
 														</a>
 													</div>
-													<div class="cont_footer">
+													<div className="cont_footer">
 														<p>Our goal is to develop cutting-edge space technology that accomplishes the incredible.</p>
 													</div>
-													<div class="list_s">
+													<div className="list_s">
 														<ul>
 															<li><Link to="https://www.facebook.com/qlspaces">
 															<img src={frame1} alt="" /></Link></li>
@@ -102,9 +102,9 @@ export default function Footer() {
 													</div>
 												</div>
 											</div>
-											<div class="col-lg-3 col-md-6 col-sm-12">
+											<div className="col-lg-3 col-md-6 col-sm-12">
 
-												<div id="myDIV" class="ythfr">
+												<div id="myDIV" className="ythfr">
 													<ul>
 														{data &&
 															data.wpMenu &&
@@ -115,17 +115,17 @@ export default function Footer() {
 																		{
 																			<>
 																				{prop.label == "Home" ? (
-																					<li class="nav-item">
+																					<li className="nav-item">
 																						<Link
 																							to={"/"}
 																							className="nav-link"
-																							activeClassName="active"
+																							activeclassName="active"
 																						>
 																							{prop.label}
 																						</Link>
 																					</li>
 																				) : (
-																					<li class="nav-item">
+																					<li className="nav-item">
 																						<Link
 																							to={
 																								"/" +
@@ -135,7 +135,7 @@ export default function Footer() {
 																									.toLowerCase()
 																							}
 																							className="nav-link"
-																							activeClassName="active"
+																							activeclassName="active"
 																						>
 																							{prop.label}
 																						</Link>
@@ -153,42 +153,42 @@ export default function Footer() {
 												</div>
 
 											</div>
-											<div class="col-lg-3 col-md-6 col-sm-12">
-												<div class="kn_list">
-													<div class="kn_left_list">
-														<div class="lefti_text">
-															<div class="inner_l">
+											<div className="col-lg-3 col-md-6 col-sm-12">
+												<div className="kn_list">
+													<div className="kn_left_list">
+														<div className="lefti_text">
+															<div className="inner_l">
 																<img src={icon} />
 															</div>
 														</div>
-														<div class="righti_text">
-															<div class="rig_th">
+														<div className="righti_text">
+															<div className="rig_th">
 																<span>Mail</span>
 																<p><Link to="mailto:info@qlspace.com.au">info@qlspace.com.au</Link></p>
 															</div>
 														</div>
 													</div>
-													<div class="kn_left_list">
-														<div class="lefti_text">
-															<div class="inner_l">
+													<div className="kn_left_list">
+														<div className="lefti_text">
+															<div className="inner_l">
 																<img src={icon2} />
 															</div>
 														</div>
-														<div class="righti_text">
-															<div class="rig_th">
+														<div className="righti_text">
+															<div className="rig_th">
 																<span>Address</span>
 																<p>45 St Georges Terrace, Ground Floor,Perth, WA, 6000</p>
 															</div>
 														</div>
 													</div>
-													<div class="kn_left_list">
-														<div class="lefti_text">
-															<div class="inner_l">
+													<div className="kn_left_list">
+														<div className="lefti_text">
+															<div className="inner_l">
 																<img src={icon3} />
 															</div>
 														</div>
-														<div class="righti_text">
-															<div class="rig_th">
+														<div className="righti_text">
+															<div className="rig_th">
 																<span>Addess</span>
 																<p>Ground Floor, Space Lab Building, Lot Fourteen, Frome Road, ADELAIDE | SA |5000</p>
 															</div>
@@ -196,16 +196,16 @@ export default function Footer() {
 													</div>
 												</div>
 											</div>
-											<div class="col-lg-3 col-md-6 col-sm-12">
-												<div class="kn_list">
-													<div class="kn_left_list">
-														<div class="lefti_text">
-															<div class="inner_l">
+											<div className="col-lg-3 col-md-6 col-sm-12">
+												<div className="kn_list">
+													<div className="kn_left_list">
+														<div className="lefti_text">
+															<div className="inner_l">
 																<img src={icon4} />
 															</div>
 														</div>
-														<div class="righti_text">
-															<div class="rig_th">
+														<div className="righti_text">
+															<div className="rig_th">
 																<span>Tel</span>
 																<p>
 																	<Link to="tel:+61 8 6262 3559">+61 8 6262 3559</Link>
@@ -214,14 +214,14 @@ export default function Footer() {
 															</div>
 														</div>
 													</div>
-													<div class="kn_left_list">
-														<div class="lefti_text">
-															<div class="inner_l">
+													<div className="kn_left_list">
+														<div className="lefti_text">
+															<div className="inner_l">
 																<img src={icon5} />
 															</div>
 														</div>
-														<div class="righti_text">
-															<div class="rig_th">
+														<div className="righti_text">
+															<div className="rig_th">
 																<span>Tel</span>
 																<p>
 																	<Link to="tel:+61 410 881 616">+61 410 881 616</Link></p>
@@ -234,16 +234,16 @@ export default function Footer() {
 										</div>
 									</div>
 								</div>
-								<div class="copy_right">
-									<div class="container">
-										<div class="row">
-											<div class="col-md-6">
-												<div class="outg_o">
+								<div className="copy_right">
+									<div className="container">
+										<div className="row">
+											<div className="col-md-6">
+												<div className="outg_o">
 													<p>Copyright ©2023 SPACE. Powered By <Link to="https://www.qltech.com.au/" target="_blank"> QL Tech </Link></p>
 												</div>
 											</div>
-											<div class="col-md-6">
-												<div class="right_text_copy">
+											<div className="col-md-6">
+												<div className="right_text_copy">
 													All Rights Reserved <span><ul>
 
 														<li><Link to="/privacy_policy"> Privacy Policy </Link></li>

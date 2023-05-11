@@ -200,14 +200,14 @@ const Home = () => {
               render={({ fullpageApi }) => (
                 <Layout>
                   <ReactFullpage.Wrapper>
-                    <section class="section">
-                      <div class="secation01 homebnr bhg">
-                        <div class="container">
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="our_main_heading">
+                    <section className="section">
+                      <div className="secation01 homebnr bhg">
+                        <div className="container">
+                          <div className="row">
+                            <div className="col-md-12">
+                              <div className="our_main_heading">
                                 <h1 dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.sliderHeading }}></h1>
-                                <div class="imge_for_mobile">
+                                <div className="imge_for_mobile">
                                   <img src="http://steamlinedesign.com/suchi/qls/wp-content/uploads/2023/03/Mask-group-6-1-1.png" />
                                 </div>
                               </div>
@@ -216,19 +216,19 @@ const Home = () => {
                         </div>
                       </div>
                     </section>
-                    <section class="section">
-                      <div class="secation02 bhg">
-                        <div class="jhg_tfrd">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-md-5 colmd5" /*style="position: relative;"*/>
-                                <div class="kj_bgvcdfs">
-                                  <div class="image_hfgfss">
+                    <section className="section">
+                      <div className="secation02 bhg">
+                        <div className="jhg_tfrd">
+                          <div className="container">
+                            <div className="row">
+                              <div className="col-md-5 colmd5" /*style="position: relative;"*/>
+                                <div className="kj_bgvcdfs">
+                                  <div className="image_hfgfss">
                                     <source src="assets/image/vg.mp4" />
                                   </div>
-                                  <div class="image_gnbdd">
-                                    <div class="image_hfgfss">
-                                      <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" class="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
+                                  <div className="image_gnbdd">
+                                    <div className="image_hfgfss">
+                                      <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" className="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
                                         <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4?autoplay=1" />
                                       </video>
                                     </div>
@@ -236,10 +236,10 @@ const Home = () => {
 
                                 </div>
                               </div>
-                              <div class="col-md-7">
-                                <div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
+                              <div className="col-md-7">
+                                <div className="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
                                 </div>
-                                <div class="btn_g">
+                                <div className="btn_g">
                                   <Link to="/about">View More</Link>
                                 </div>
                               </div>
@@ -248,25 +248,25 @@ const Home = () => {
                         </div>
                       </div>
                     </section>
-                    <section class="section id_hide" id="stopr_de">
-                      <div class="secation03 back_ghbd bhg sliderimg">
-                        <div class="container">
-                          <div class="row">
+                    <section className="section id_hide" id="stopr_de">
+                      <div className="secation03 back_ghbd bhg sliderimg">
+                        <div className="container">
+                          <div className="row">
 
-                            <div class="col-md-12">
-                              <div class="our_about_wrap">
-                                <h2 class="text-start">Solutions</h2>
-                                <h4 class="text-start">State-of-the-art technology combined with relentless effort towards excellence</h4>
+                            <div className="col-md-12">
+                              <div className="our_about_wrap">
+                                <h2 className="text-start">Solutions</h2>
+                                <h4 className="text-start">State-of-the-art technology combined with relentless effort towards excellence</h4>
 
 
                               </div>
                             </div>
                           </div>
-                          <div class="row">
-                            <div class="col-md-1">
-                              <div class="progress">
+                          <div className="row">
+                            <div className="col-md-1">
+                              <div className="progress">
                                 <ul>
-                                  <span class="line"></span>
+                                  <span className="line"></span>
                                   <li><a href="#sec1">I</a></li>
                                   <li><a href="#sec2">II</a></li>
                                   <li><a href="#sec3">III</a></li>
@@ -277,17 +277,17 @@ const Home = () => {
                                 </ul>
                               </div>
                             </div>
-                            <div class="col-md-11">
-                              <div class="list_manage">
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <div class="new_idf">
+                            <div className="col-md-11">
+                              <div className="list_manage">
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="new_idf">
                                       {data && data.allWpSolution && data.allWpSolution.edges && data.allWpSolution.edges.map((edge, i) => {
                                         const solution = edge.node;
                                         return (
                                           <>
-                                            <div class="start_y" id="sec1" key={solution.id}>
-                                              <h2 class="text-start">{solution.title}</h2>
+                                            <div className="start_y" id="sec1" key={solution.id}>
+                                              <h2 className="text-start">{solution.title}</h2>
 
                                               <div className='slmntxt' dangerouslySetInnerHTML={{ __html: solution.content }}></div>
                                             </div>
@@ -308,12 +308,12 @@ const Home = () => {
 
                       </div>
                     </section>
-                    <section class="section">
-                      <div class="section04 bhg">
-                        <div class="container">
-                          <div class="row align-items-center">
-                            <div class="col-md-6">
-                              <div class="ourr_tsgdf">
+                    <section className="section">
+                      <div className="section04 bhg">
+                        <div className="container">
+                          <div className="row align-items-center">
+                            <div className="col-md-6">
+                              <div className="ourr_tsgdf">
                                 <ul>
                                   <li>
                                     <ul>
@@ -346,16 +346,16 @@ const Home = () => {
                                     </ul>
                                   </li>
 
-                                  <div class="clr"></div>
+                                  <div className="clr"></div>
                                 </ul>
                               </div>
                             </div>
-                            <div class="col-md-6">
-                              <div class="our_about_wrap" >
+                            <div className="col-md-6">
+                              <div className="our_about_wrap" >
                                 <div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
                                 </div>
-                                {/* <div class="btn_g">
+                                {/* <div className="btn_g">
                                   <Link to="/partner">Meet Us</Link>
                                 </div> */}
                               </div>
@@ -367,45 +367,45 @@ const Home = () => {
                         </div>
                       </div>
                     </section>
-                    <section class="section">
-                      <div class="secation05 bhg">
-                        <div class="container">
-                          <div class="row">
+                    <section className="section">
+                      <div className="secation05 bhg">
+                        <div className="container">
+                          <div className="row">
 
-                            <div class="col-md-12">
-                              <div class="our_about_wrap">
-                                <h2 class="text-start">What's New</h2>
-                                <h4 class="text-start">Get the latest updates and helpful information</h4>
+                            <div className="col-md-12">
+                              <div className="our_about_wrap">
+                                <h2 className="text-start">What's New</h2>
+                                <h4 className="text-start">Get the latest updates and helpful information</h4>
 
 
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="htbdgh">
-                          <div class="htbdgh">
+                        <div className="htbdgh">
+                          <div className="htbdgh">
 
 
-                            <div class="gidr_news">
-                              <div class="grif_wrap grif_wrap1">
-                                <div class="itemg_hbg ngpv1">
-                                  <div class="itemsnq itemsnq1">
+                            <div className="gidr_news">
+                              <div className="grif_wrap grif_wrap1">
+                                <div className="itemg_hbg ngpv1">
+                                  <div className="itemsnq itemsnq1">
                                     {data && data.allWpPost && data.allWpPost.edges && data.allWpPost.edges.map((edge, i) => {
                                       const allddt = edge.node;
                                       return (
-                                        <div class="our_tsadr">
+                                        <div className="our_tsadr">
 
                                           <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
 
-                                          <div class="our_tfdsd">
-                                            <div class="gtfrd">
+                                          <div className="our_tfdsd">
+                                            <div className="gtfrd">
                                               <h3>
                                                 <Link to={"/blog/" + allddt.slug}>
                                                   {allddt.title.slice(0, 50)}...
                                                 </Link></h3>
 
                                               <p>  {allddt.excerpt.slice(0, 50)}... </p>
-                                              <div class="our_tascrt">
+                                              <div className="our_tascrt">
                                                 <Link to="/blog">View All Posts</Link>
 
                                               </div>
@@ -416,20 +416,20 @@ const Home = () => {
                                     })}
 
                                   </div>
-                                  <div class="itemsnq itemsnq2">
+                                  <div className="itemsnq itemsnq2">
                                     {data && data.allWpNews && data.allWpNews.edges && data.allWpNews.edges.map((edge, i) => {
                                       const allddt = edge.node;
                                       return (
-                                        <div class="our_tsadr">
+                                        <div className="our_tsadr">
                                           <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
-                                          <div class="our_tfdsd">
-                                            <div class="gtfrd">
+                                          <div className="our_tfdsd">
+                                            <div className="gtfrd">
                                               <h3>
                                                 <Link to={"/news/" + allddt.slug}>
                                                   {allddt.title.slice(0, 50)}...
                                                 </Link></h3>
                                               <p>  {allddt.excerpt.slice(0, 50)}... </p>
-                                              <div class="our_tascrt">
+                                              <div className="our_tascrt">
                                                 <Link to="/whats_new">View All News</Link>
 
                                               </div>
@@ -441,21 +441,21 @@ const Home = () => {
 
                                   </div>
                                 </div>
-                                <div class="itemg_hbg ngpv2">
+                                <div className="itemg_hbg ngpv2">
                                   {data && data.allWpEvents && data.allWpEvents.edges && data.allWpEvents.edges.map((edge, i) => {
                                     const allddt = edge.node;
                                     return (
-                                      <div class="itemsnq itemsnq3">
+                                      <div className="itemsnq itemsnq3">
                                         <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
 
-                                        <div class="our_tfdsd">
-                                          <div class="gtfrd">
+                                        <div className="our_tfdsd">
+                                          <div className="gtfrd">
                                             <h3>
                                               <Link to={"/event/" + allddt.slug}>
                                                 {allddt.title.slice(0, 50)}...
                                               </Link></h3>
                                             <p>{allddt.excerpt.slice(0, 50)}...</p>
-                                            <div class="our_tascrt">
+                                            <div className="our_tascrt">
                                               <Link to="/event">View All Events</Link>
 
                                             </div>
@@ -467,15 +467,15 @@ const Home = () => {
 
                                 </div>
                               </div>
-                              <div class="grif_wrap grif_wrap2">
+                              <div className="grif_wrap grif_wrap2">
                                 {data && data.allWpPartners && data.allWpPartners.edges && data.allWpPartners.edges.map((edge, i) => {
                                   const allddt = edge.node;
                                   return (
-                                    <div class="itemsnq itemsnq4">
+                                    <div className="itemsnq itemsnq4">
                                       <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
 
-                                      <div class="our_tfdsd">
-                                        <div class="gtfrd">
+                                      <div className="our_tfdsd">
+                                        <div className="gtfrd">
                                           <h3>
                                             <Link to={"/partner/" + allddt.slug}>
                                               {allddt.title.slice(0, 50)}...
@@ -483,7 +483,7 @@ const Home = () => {
                                           </h3>
                                           <p>
                                             {allddt.excerpt.slice(0, 50)}...</p>
-                                          <div class="our_tascrt">
+                                          <div className="our_tascrt">
                                             <Link to="/partner">View All Partners</Link>
                                           </div>
                                         </div>
@@ -496,10 +496,10 @@ const Home = () => {
                                 {data && data.allWpVideos && data.allWpVideos.edges && data.allWpVideos.edges.map((edge, i) => {
                                   const allddt = edge.node;
                                   return (
-                                    <div class="itemsnq itemsnq5">
+                                    <div className="itemsnq itemsnq5">
                                       <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
-                                      <div class="our_tfdsd">
-                                        <div class="gtfrd">
+                                      <div className="our_tfdsd">
+                                        <div className="gtfrd">
                                           <h3>
                                             <Link to={"/video/" + allddt.slug}>
                                               {allddt.title.slice(0, 50)}...
@@ -507,7 +507,7 @@ const Home = () => {
                                           </h3>
                                           <p>
                                             {allddt.excerpt.slice(0, 50)}...</p>
-                                          <div class="our_tascrt">
+                                          <div className="our_tascrt">
                                             <Link to="/videos">View All Videos</Link>
 
                                           </div>
@@ -533,14 +533,14 @@ const Home = () => {
           ) : (
             <Layout>
               <div>
-                <section class="section">
-                  <div class="secation01 homebnr bhg">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="our_main_heading" >
+                <section className="section">
+                  <div className="secation01 homebnr bhg">
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="our_main_heading" >
                             <h1 dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.sliderHeading }}></h1>
-                            <div class="imge_for_mobile">
+                            <div className="imge_for_mobile">
                               <img src="http://steamlinedesign.com/suchi/qls/wp-content/uploads/2023/03/Mask-group-6-1-1.png" />
                             </div>
                           </div>
@@ -549,19 +549,19 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-                <section class="section">
-                  <div class="secation02 bhg">
-                    <div class="jhg_tfrd">
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-md-5 colmd5" /*style="position: relative;"*/>
-                            <div class="kj_bgvcdfs">
-                              <div class="image_hfgfss">
+                <section className="section">
+                  <div className="secation02 bhg">
+                    <div className="jhg_tfrd">
+                      <div className="container">
+                        <div className="row">
+                          <div className="col-md-5 colmd5" /*style="position: relative;"*/>
+                            <div className="kj_bgvcdfs">
+                              <div className="image_hfgfss">
                                 <source src="assets/image/vg.mp4" />
                               </div>
-                              <div class="image_gnbdd">
-                                <div class="image_hfgfss">
-                                  <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" class="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
+                              <div className="image_gnbdd">
+                                <div className="image_hfgfss">
+                                  <video autoplay="true" muted="" loop="" playsInline="" preload="metadata" className="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
                                     <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4?autoplay=1" />
                                   </video>
                                 </div>
@@ -569,10 +569,10 @@ const Home = () => {
 
                             </div>
                           </div>
-                          <div class="col-md-7">
-                            <div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
+                          <div className="col-md-7">
+                            <div className="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
                             </div>
-                            <div class="btn_g">
+                            <div className="btn_g">
                               <Link to="/about">View More</Link>
                             </div>
                           </div>
@@ -581,25 +581,25 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-                <section class="section id_hide" id="stopr_de">
-                  <div class="secation03 back_ghbd bhg sliderimg">
-                    <div class="container">
-                      <div class="row">
+                <section className="section id_hide" id="stopr_de">
+                  <div className="secation03 back_ghbd bhg sliderimg">
+                    <div className="container">
+                      <div className="row">
 
-                        <div class="col-md-12">
-                          <div class="our_about_wrap">
-                            <h2 class="text-start">Solutions</h2>
-                            <h4 class="text-start">State-of-the-art technology combined with relentless effort towards excellence</h4>
+                        <div className="col-md-12">
+                          <div className="our_about_wrap">
+                            <h2 className="text-start">Solutions</h2>
+                            <h4 className="text-start">State-of-the-art technology combined with relentless effort towards excellence</h4>
 
 
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-1">
-                          <div class="progress">
+                      <div className="row">
+                        <div className="col-md-1">
+                          <div className="progress">
                             <ul>
-                              <span class="line"></span>
+                              <span className="line"></span>
                               <li><a href="#sec1">I</a></li>
                               <li><a href="#sec2">II</a></li>
                               <li><a href="#sec3">III</a></li>
@@ -610,19 +610,19 @@ const Home = () => {
                             </ul>
                           </div>
                         </div>
-                        <div class="col-md-11">
+                        <div className="col-md-11">
 
 
-                          <div class="list_manage">
-                            <div class="row">
-                              <div class="col-md-6">
-                                <div class="new_idf">
+                          <div className="list_manage">
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div className="new_idf">
                                   {data && data.allWpSolution && data.allWpSolution.edges && data.allWpSolution.edges.map((edge, i) => {
                                     const solution = edge.node;
                                     return (
                                       <>
-                                        <div class="start_y" id="sec1" key={solution.id}>
-                                          <h2 class="text-start">{solution.title}</h2>
+                                        <div className="start_y" id="sec1" key={solution.id}>
+                                          <h2 className="text-start">{solution.title}</h2>
 
                                           <div className='slmntxt' dangerouslySetInnerHTML={{ __html: solution.content }}></div>
                                         </div>
@@ -643,12 +643,12 @@ const Home = () => {
 
                   </div>
                 </section>
-                <section class="section">
-                  <div class="section04 bhg">
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <div class="col-md-6">
-                          <div class="ourr_tsgdf">
+                <section className="section">
+                  <div className="section04 bhg">
+                    <div className="container">
+                      <div className="row align-items-center">
+                        <div className="col-md-6">
+                          <div className="ourr_tsgdf">
                             <ul>
                               <li>
                                 <ul>
@@ -681,16 +681,16 @@ const Home = () => {
                                 </ul>
                               </li>
 
-                              <div class="clr"></div>
+                              <div className="clr"></div>
                             </ul>
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="our_about_wrap" >
+                        <div className="col-md-6">
+                          <div className="our_about_wrap" >
                             <div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
                             </div>
-                            {/* <div class="btn_g">
+                            {/* <div className="btn_g">
                                   <Link to="/partner">Meet Us</Link>
                                 </div> */}
                           </div>
@@ -702,45 +702,45 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-                <section class="section">
-                  <div class="secation05 bhg">
-                    <div class="container">
-                      <div class="row">
+                <section className="section">
+                  <div className="secation05 bhg">
+                    <div className="container">
+                      <div className="row">
 
-                        <div class="col-md-12">
-                          <div class="our_about_wrap">
-                            <h2 class="text-start">What's New</h2>
-                            <h4 class="text-start">Get the latest updates and helpful information</h4>
+                        <div className="col-md-12">
+                          <div className="our_about_wrap">
+                            <h2 className="text-start">What's New</h2>
+                            <h4 className="text-start">Get the latest updates and helpful information</h4>
 
 
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="htbdgh">
-                      <div class="htbdgh">
+                    <div className="htbdgh">
+                      <div className="htbdgh">
 
 
-                        <div class="gidr_news">
-                          <div class="grif_wrap grif_wrap1">
-                            <div class="itemg_hbg ngpv1">
-                              <div class="itemsnq itemsnq1">
+                        <div className="gidr_news">
+                          <div className="grif_wrap grif_wrap1">
+                            <div className="itemg_hbg ngpv1">
+                              <div className="itemsnq itemsnq1">
                                 {data && data.allWpPost && data.allWpPost.edges && data.allWpPost.edges.map((edge, i) => {
                                   const allddt = edge.node;
                                   return (
-                                    <div class="our_tsadr">
+                                    <div className="our_tsadr">
 
                                       <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
 
-                                      <div class="our_tfdsd">
-                                        <div class="gtfrd">
+                                      <div className="our_tfdsd">
+                                        <div className="gtfrd">
                                           <h3>
                                             <Link to={"/blog/" + allddt.slug}>
                                               {allddt.title.slice(0, 50)}...
                                             </Link></h3>
 
                                           <p>  {allddt.excerpt.slice(0, 50)}... </p>
-                                          <div class="our_tascrt">
+                                          <div className="our_tascrt">
                                             <Link to="/blog">View All Posts</Link>
 
                                           </div>
@@ -751,20 +751,20 @@ const Home = () => {
                                 })}
 
                               </div>
-                              <div class="itemsnq itemsnq2">
+                              <div className="itemsnq itemsnq2">
                                 {data && data.allWpNews && data.allWpNews.edges && data.allWpNews.edges.map((edge, i) => {
                                   const allddt = edge.node;
                                   return (
-                                    <div class="our_tsadr">
+                                    <div className="our_tsadr">
                                       <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
-                                      <div class="our_tfdsd">
-                                        <div class="gtfrd">
+                                      <div className="our_tfdsd">
+                                        <div className="gtfrd">
                                           <h3>
                                             <Link to={"/news/" + allddt.slug}>
                                               {allddt.title.slice(0, 50)}...
                                             </Link></h3>
                                           <p>  {allddt.excerpt.slice(0, 50)}... </p>
-                                          <div class="our_tascrt">
+                                          <div className="our_tascrt">
                                             <Link to="/whats_new">View All News</Link>
 
                                           </div>
@@ -776,21 +776,21 @@ const Home = () => {
 
                               </div>
                             </div>
-                            <div class="itemg_hbg ngpv2">
+                            <div className="itemg_hbg ngpv2">
                               {data && data.allWpEvents && data.allWpEvents.edges && data.allWpEvents.edges.map((edge, i) => {
                                 const allddt = edge.node;
                                 return (
-                                  <div class="itemsnq itemsnq3">
+                                  <div className="itemsnq itemsnq3">
                                     <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
 
-                                    <div class="our_tfdsd">
-                                      <div class="gtfrd">
+                                    <div className="our_tfdsd">
+                                      <div className="gtfrd">
                                         <h3>
                                           <Link to={"/event/" + allddt.slug}>
                                             {allddt.title.slice(0, 50)}...
                                           </Link></h3>
                                         <p>{allddt.excerpt.slice(0, 50)}...</p>
-                                        <div class="our_tascrt">
+                                        <div className="our_tascrt">
                                           <Link to="/event">View All Events</Link>
 
                                         </div>
@@ -802,15 +802,15 @@ const Home = () => {
 
                             </div>
                           </div>
-                          <div class="grif_wrap grif_wrap2">
+                          <div className="grif_wrap grif_wrap2">
                             {data && data.allWpPartners && data.allWpPartners.edges && data.allWpPartners.edges.map((edge, i) => {
                               const allddt = edge.node;
                               return (
-                                <div class="itemsnq itemsnq4">
+                                <div className="itemsnq itemsnq4">
                                   <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
 
-                                  <div class="our_tfdsd">
-                                    <div class="gtfrd">
+                                  <div className="our_tfdsd">
+                                    <div className="gtfrd">
                                       <h3>
                                         <Link to={"/partner/" + allddt.slug}>
                                           {allddt.title.slice(0, 50)}...
@@ -818,7 +818,7 @@ const Home = () => {
                                       </h3>
                                       <p>
                                         {allddt.excerpt.slice(0, 50)}...</p>
-                                      <div class="our_tascrt">
+                                      <div className="our_tascrt">
                                         <Link to="/partner">View All Partners</Link>
                                       </div>
                                     </div>
@@ -831,10 +831,10 @@ const Home = () => {
                             {data && data.allWpVideos && data.allWpVideos.edges && data.allWpVideos.edges.map((edge, i) => {
                               const allddt = edge.node;
                               return (
-                                <div class="itemsnq itemsnq5">
+                                <div className="itemsnq itemsnq5">
                                   <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
-                                  <div class="our_tfdsd">
-                                    <div class="gtfrd">
+                                  <div className="our_tfdsd">
+                                    <div className="gtfrd">
                                       <h3>
                                         <Link to={"/video/" + allddt.slug}>
                                           {allddt.title.slice(0, 50)}...
@@ -842,7 +842,7 @@ const Home = () => {
                                       </h3>
                                       <p>
                                         {allddt.excerpt.slice(0, 50)}...</p>
-                                      <div class="our_tascrt">
+                                      <div className="our_tascrt">
                                         <Link to="/videos">View All Videos</Link>
 
                                       </div>
