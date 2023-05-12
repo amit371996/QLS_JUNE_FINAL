@@ -88,18 +88,18 @@ const About = () => {
 								<Layout>
 									<ReactFullpage.Wrapper>
 										<main>
-											<section class="section">
-												<div class="secation01 bhg secn_abouts">
-													<div class="container">
-														<div class="row">
-															<div class="col-md-12">
-																<div class="our_main_heading text-center">
-																	<div class="bread_cumg" dangerouslySetInnerHTML={{ __html: data.wpPage.about.heading }}>
+											<section className="section">
+												<div className="secation01 bhg secn_abouts">
+													<div className="container">
+														<div className="row">
+															<div className="col-md-12">
+																<div className="our_main_heading text-center">
+																	<div className="bread_cumg" dangerouslySetInnerHTML={{ __html: data.wpPage.about.heading }}>
 
 																	</div>
 																</div>
-																<div class="img_arrow">
-																	<div class="roww_wrap">
+																<div className="img_arrow">
+																	<div className="roww_wrap">
 																		<a href="#">
 																			<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/arrow.svg" />
 																		</a>
@@ -110,51 +110,51 @@ const About = () => {
 													</div>
 												</div>
 											</section>
-											<section class="section">
-												<div class="secation02 bhg">
-													<div class="jhg_tfrd">
-														<div class="container">
-															<div class="row">
-																<div class="col-md-5 colmd5">
-																	<div class="kj_bgvcdfs">
-																		<div class="image_hfgfss">
+											<section className="section">
+												<div className="secation02 bhg">
+													<div className="jhg_tfrd">
+														<div className="container">
+															<div className="row">
+																<div className="col-md-5 colmd5">
+																	<div className="kj_bgvcdfs">
+																		<div className="image_hfgfss">
 																			<source src="assets/image/vg.mp4" />
 																		</div>
 
-																		<div class="image_gnbdd">
-																			{/* <div class="roghrtf">
-																				<div class="ljkf">
+																		<div className="image_gnbdd">
+																			{/* <div className="roghrtf">
+																				<div className="ljkf">
 																					<img src={anmimg1} />
 																				</div>
-																				<div class="ghbd">
+																				<div className="ghbd">
 																					<img src={anmimg2} />
 																					 <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/star.svg">
 																				</div>
-																				<div class="ghbd1">
+																				<div className="ghbd1">
 																					<img src={anmimg3} />
 																					<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/bloone.svg"/>
 																				</div>
-																				<div class="ghbd2">
+																				<div className="ghbd2">
 																					<img src={anmimg4} />
 																					<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/eardff.svg"/>
 																				</div>
-																				<div class="ghbd3">
+																				<div className="ghbd3">
 																					<img src={anmimg5} />
 																					<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/wav.svg"/>
 																				</div>
-																				<div class="ghbd4">
+																				<div className="ghbd4">
 																					<img src={anmimg6} />
 																					<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/moon.svg"/>
 																				</div>
 																			</div> */}
-																			<div class="image_hfgfss">
+																			<div className="image_hfgfss">
 																				<video
 																					autoplay="true"
 																					muted=""
 																					loop=""
 																					playsinline=""
 																					preload="metadata"
-																					class="video"
+																					className="video"
 																					id="myVideo"
 																				>
 																					<source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
@@ -163,8 +163,8 @@ const About = () => {
 																		</div>
 																	</div>
 																</div>
-																<div class="col-md-7">
-																	<div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.about.description }}>
+																<div className="col-md-7">
+																	<div className="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.about.description }}>
 
 
 
@@ -175,49 +175,49 @@ const About = () => {
 													</div>
 												</div>
 											</section>
-											<section class="section">
-												<div class="secatioonteam bhg">
-													<div class="jhg_tfrd paddint_top padding_Btnh">
-														<div class="container">
-															<div class="row">
-																<div class="col-md-12">
-																	<div class="main_heading">
-																		<div class="our_about_wrap text-start" dangerouslySetInnerHTML={{ __html: data.wpPage.about.teamheading }}>
+											<section className="section">
+												<div className="secatioonteam bhg">
+													<div className="jhg_tfrd paddint_top padding_Btnh">
+														<div className="container">
+															<div className="row">
+																<div className="col-md-12">
+																	<div className="main_heading">
+																		<div className="our_about_wrap text-start" dangerouslySetInnerHTML={{ __html: data.wpPage.about.teamheading }}>
 
 																		</div>
 																	</div>
 																</div>
 															</div>
-															<div class="our_vba">
-																<div class="row mar_yes">
+															<div className="our_vba">
+																<div className="row mar_yes">
 																	{data &&
 																		data.wpPage &&
 																		data.wpPage.about &&
 																		data.wpPage.about.ourteam.map((prop, i) => {
 																			return (
 																				<>
-																					<div class="col-xsm-12 col-sm-6 col-md-6 col-lg-3 teambx">
-																						<div class="image_tema">
-																							<div class="f1_container">
-																								<div class="f1_card shadow">
-																									<div class="front face">
+																					<div className="col-xsm-12 col-sm-6 col-md-6 col-lg-3 teambx">
+																						<div className="image_tema">
+																							<div className="f1_container">
+																								<div className="f1_card shadow">
+																									<div className="front face">
 
 																										<img src={prop.image.sourceUrl} />
 																									</div>
-																									<div class="back face center">
+																									<div className="back face center">
 
 																										<img src={prop.colourImage.sourceUrl} />
 																									</div>
 																								</div>
 																							</div>
-																							<div class="details">
-																								<div class="left_part_name">
+																							<div className="details">
+																								<div className="left_part_name">
 																									<h4>{prop.name}</h4>
 																									<span>
 																										{prop.designation}
 																									</span>
 																								</div>
-																								<div class="right_part_name">
+																								<div className="right_part_name">
 																									<Link to=
 																										{prop.linkedinurl}
 																										target="_blank"
@@ -240,12 +240,12 @@ const About = () => {
 													</div>
 												</div>
 											</section>
-											<section class="section">
-												<div class="section04 bhg">
-													<div class="container">
-														<div class="row align-items-center">
-															<div class="col-md-6">
-																<div class="ourr_tsgdf">
+											<section className="section">
+												<div className="section04 bhg">
+													<div className="container">
+														<div className="row align-items-center">
+															<div className="col-md-6">
+																<div className="ourr_tsgdf">
 																	<ul>
 																		<li>
 																			<ul>
@@ -278,16 +278,16 @@ const About = () => {
 																			</ul>
 																		</li>
 
-																		<div class="clr"></div>
+																		<div className="clr"></div>
 																	</ul>
 																</div>
 															</div>
-															<div class="col-md-6">
-																<div class="our_about_wrap" >
+															<div className="col-md-6">
+																<div className="our_about_wrap" >
 																	<div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
 																	</div>
-																	{/* <div class="btn_g">
+																	{/* <div className="btn_g">
                                   <Link to="/partner">Meet Us</Link>
                                 </div> */}
 																</div>
@@ -310,18 +310,18 @@ const About = () => {
 					) : (
 						<Layout>
 							<main>
-								<section class="section">
-									<div class="secation01 bhg secn_abouts">
-										<div class="container">
-											<div class="row">
-												<div class="col-md-12">
-													<div class="our_main_heading text-center">
-														<div class="bread_cumg" dangerouslySetInnerHTML={{ __html: data.wpPage.about.heading }}>
+								<section className="section">
+									<div className="secation01 bhg secn_abouts">
+										<div className="container">
+											<div className="row">
+												<div className="col-md-12">
+													<div className="our_main_heading text-center">
+														<div className="bread_cumg" dangerouslySetInnerHTML={{ __html: data.wpPage.about.heading }}>
 
 														</div>
 													</div>
-													<div class="img_arrow">
-														<div class="roww_wrap">
+													<div className="img_arrow">
+														<div className="roww_wrap">
 															<a href="#">
 																<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/arrow.svg" />
 															</a>
@@ -332,27 +332,27 @@ const About = () => {
 										</div>
 									</div>
 								</section>
-								<section class="section">
-									<div class="secation02 bhg">
-										<div class="jhg_tfrd">
-											<div class="container">
-												<div class="row">
-													<div class="col-md-5 colmd5">
-														<div class="kj_bgvcdfs">
-															<div class="image_hfgfss">
+								<section className="section">
+									<div className="secation02 bhg">
+										<div className="jhg_tfrd">
+											<div className="container">
+												<div className="row">
+													<div className="col-md-5 colmd5">
+														<div className="kj_bgvcdfs">
+															<div className="image_hfgfss">
 																<source src="assets/image/vg.mp4" />
 															</div>
 
-															<div class="image_gnbdd">
+															<div className="image_gnbdd">
 
-																<div class="image_hfgfss">
+																<div className="image_hfgfss">
 																	<video
 																		autoplay="true"
 																		muted=""
 																		loop=""
 																		playsinline=""
 																		preload="metadata"
-																		class="video"
+																		className="video"
 																		id="myVideo"
 																	>
 																		<source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
@@ -361,8 +361,8 @@ const About = () => {
 															</div>
 														</div>
 													</div>
-													<div class="col-md-7">
-														<div class="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.about.description }}>
+													<div className="col-md-7">
+														<div className="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.about.description }}>
 
 
 
@@ -373,49 +373,49 @@ const About = () => {
 										</div>
 									</div>
 								</section>
-								<section class="section">
-									<div class="secatioonteam bhg">
-										<div class="jhg_tfrd paddint_top padding_Btnh">
-											<div class="container">
-												<div class="row">
-													<div class="col-md-12">
-														<div class="main_heading">
-															<div class="our_about_wrap text-start" dangerouslySetInnerHTML={{ __html: data.wpPage.about.teamheading }}>
+								<section className="section">
+									<div className="secatioonteam bhg">
+										<div className="jhg_tfrd paddint_top padding_Btnh">
+											<div className="container">
+												<div className="row">
+													<div className="col-md-12">
+														<div className="main_heading">
+															<div className="our_about_wrap text-start" dangerouslySetInnerHTML={{ __html: data.wpPage.about.teamheading }}>
 
 															</div>
 														</div>
 													</div>
 												</div>
-												<div class="our_vba">
-													<div class="row mar_yes">
+												<div className="our_vba">
+													<div className="row mar_yes">
 														{data &&
 															data.wpPage &&
 															data.wpPage.about &&
 															data.wpPage.about.ourteam.map((prop, i) => {
 																return (
 																	<>
-																		<div class="col-xsm-12 col-sm-6 col-md-6 col-lg-3 teambx">
-																			<div class="image_tema">
-																				<div class="f1_container">
-																					<div class="f1_card shadow">
-																						<div class="front face">
+																		<div className="col-xsm-12 col-sm-6 col-md-6 col-lg-3 teambx">
+																			<div className="image_tema">
+																				<div className="f1_container">
+																					<div className="f1_card shadow">
+																						<div className="front face">
 
 																							<img src={prop.image.sourceUrl} />
 																						</div>
-																						<div class="back face center">
+																						<div className="back face center">
 
 																							<img src={prop.colourImage.sourceUrl} />
 																						</div>
 																					</div>
 																				</div>
-																				<div class="details">
-																					<div class="left_part_name">
+																				<div className="details">
+																					<div className="left_part_name">
 																						<h4>{prop.name}</h4>
 																						<span>
 																							{prop.designation}
 																						</span>
 																					</div>
-																					<div class="right_part_name">
+																					<div className="right_part_name">
 																						<Link to=
 																							{prop.linkedinurl}
 																							target="_blank"
@@ -438,12 +438,12 @@ const About = () => {
 										</div>
 									</div>
 								</section>
-								<section class="section">
-									<div class="section04 bhg">
-										<div class="container">
-											<div class="row align-items-center">
-												<div class="col-md-6">
-													<div class="ourr_tsgdf">
+								<section className="section">
+									<div className="section04 bhg">
+										<div className="container">
+											<div className="row align-items-center">
+												<div className="col-md-6">
+													<div className="ourr_tsgdf">
 														<ul>
 															<li>
 																<ul>
@@ -476,16 +476,16 @@ const About = () => {
 																</ul>
 															</li>
 
-															<div class="clr"></div>
+															<div className="clr"></div>
 														</ul>
 													</div>
 												</div>
-												<div class="col-md-6">
-													<div class="our_about_wrap" >
+												<div className="col-md-6">
+													<div className="our_about_wrap" >
 														<div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
 														</div>
-														{/* <div class="btn_g">
+														{/* <div className="btn_g">
                                   <Link to="/partner">Meet Us</Link>
                                 </div> */}
 													</div>
