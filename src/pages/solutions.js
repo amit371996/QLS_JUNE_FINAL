@@ -67,7 +67,7 @@ const Solution = () => {
 							render={({ fullpageApi }) => (
 								<Layout>
 									<ReactFullpage.Wrapper>
-										<section className="section">
+										<section className="section sol_sec">
 											<div className="secation01 bhg secn_abouts">
 												<div className="container">
 													<div className="row">
@@ -92,7 +92,7 @@ const Solution = () => {
 											const solution = edge.node;
 											return (
 												<>
-													<section className="section main_jngbv12" key={solution.id}>
+													<section className="section sol_sec main_jngbv12" key={solution.id}>
 														<div className="solution_secanm" >
 															<div className="container">
 																<div className="row align-items-center">

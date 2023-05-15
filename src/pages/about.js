@@ -26,7 +26,6 @@ const About = () => {
 	const getSection = (data, start, end) => {
 		const imageUrls = data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.partner;
 
-		console.log(imageUrls);
 		return imageUrls.slice(start, end) || [];
 
 	}
@@ -84,6 +83,8 @@ const About = () => {
 				<>
 					{isFullpage ? (
 						<ReactFullpage
+						scrollingSpeed={1000} /* Options here */
+						normalScrollElements="#footer"
 							render={({ fullpageApi }) => (
 								<Layout>
 									<ReactFullpage.Wrapper>
@@ -122,34 +123,11 @@ const About = () => {
 																		</div>
 
 																		<div className="image_gnbdd">
-																			{/* <div className="roghrtf">
-																				<div className="ljkf">
-																					<img src={anmimg1} />
-																				</div>
-																				<div className="ghbd">
-																					<img src={anmimg2} />
-																					 <img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/star.svg">
-																				</div>
-																				<div className="ghbd1">
-																					<img src={anmimg3} />
-																					<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/bloone.svg"/>
-																				</div>
-																				<div className="ghbd2">
-																					<img src={anmimg4} />
-																					<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/eardff.svg"/>
-																				</div>
-																				<div className="ghbd3">
-																					<img src={anmimg5} />
-																					<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/wav.svg"/>
-																				</div>
-																				<div className="ghbd4">
-																					<img src={anmimg6} />
-																					<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/moon.svg"/>
-																				</div>
-																			</div> */}
+																			
 																			<div className="image_hfgfss">
 																				<video
-																					autoplay="true"
+																					
+																					autoPlay="true"
 																					muted=""
 																					loop=""
 																					playsinline=""
@@ -175,7 +153,7 @@ const About = () => {
 													</div>
 												</div>
 											</section>
-											<section className="section">
+											<section className="section" >
 												<div className="secatioonteam bhg">
 													<div className="jhg_tfrd paddint_top padding_Btnh">
 														<div className="container">
@@ -252,7 +230,7 @@ const About = () => {
 
 																				{
 																					getSection(data, 0, 5).map(url => (
-																						<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																						<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																					))
 																				}
 																			</ul>
@@ -262,7 +240,7 @@ const About = () => {
 
 																				{
 																					getSection(data, 5, 10).map(url => (
-																						<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																						<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																					))
 																				}
 																			</ul>
@@ -272,7 +250,7 @@ const About = () => {
 
 																				{
 																					getSection(data, 10, 15).map(url => (
-																						<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																						<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																					))
 																				}
 																			</ul>
@@ -287,9 +265,7 @@ const About = () => {
 																	<div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
 																	</div>
-																	{/* <div className="btn_g">
-                                  <Link to="/partner">Meet Us</Link>
-                                </div> */}
+
 																</div>
 
 
@@ -299,11 +275,8 @@ const About = () => {
 													</div>
 												</div>
 											</section>
-
-
 										</main>
 									</ReactFullpage.Wrapper>
-
 								</Layout>
 							)}
 						/>
@@ -347,7 +320,7 @@ const About = () => {
 
 																<div className="image_hfgfss">
 																	<video
-																		autoplay="true"
+																		autoPlay="true"
 																		muted=""
 																		loop=""
 																		playsinline=""

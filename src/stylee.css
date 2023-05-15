@@ -1104,7 +1104,7 @@ footer.footer_wrap button.btn.btn-primary:hover {
       box-sizing: border-box;
   }*/
   header .header_innerd {
-      background: #000 !important;
+      background: transparent !important;
   }
   header li.nav-item a {
       font-family: 'Nova Square';
@@ -2956,7 +2956,7 @@ header {
     width: 100%;
     height: 90px;
     display: block;
-   background: #000;
+   background: transparent;
       z-index: 99999;
       color: #f2f2f2;
       padding: 10px 0 10px 0px;
@@ -3119,3 +3119,4 @@ overflow: hidden !important;}
     line-height: 40px;
 }
 .pagination ul li.active a{border: solid 2px #fff;}
+.sol_sec.fp-table{flex-direction:unset !important;}

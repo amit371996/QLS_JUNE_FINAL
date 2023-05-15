@@ -20,7 +20,7 @@ const EvlonPopUp = ({ isOpen, onClose, videoSrc }) => {
           width="100%"
           height="100%"
           frameborder="0"
-          allow="autoplay; encrypted-media"
+          allow="autoPlay; encrypted-media"
           allowfullscreen
         ></iframe>
       </div>
