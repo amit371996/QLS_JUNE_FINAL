@@ -1416,6 +1416,10 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 .pagination{    margin-bottom: 30px;
     margin-top: 20px}
     .sectionnewss{padding-top: 50px;}
+    .mar_yes .teambx:last-child{margin-bottom:0}
+    .section04.bhg{padding-top:30px;}
+    .section04{padding-bottom: 0px;}
+    .mar_yes .teambx{margin-bottom:50px;}
 }
 @media(max-width: 575px){
     .kj_bgvcdfs {
@@ -1545,4 +1549,7 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 }
 .pagination{display: block;width: 100%;text-align: center;}
 .pagination li{display: inline-block;padding-bottom: 15px;}
+.mar_yes .teambx:last-child{margin-bottom:0}
+.list_s ul{padding-bottom:15px}
+footer.footer_wrap button.btn.btn-primary{margin-top: 15px;}
 }

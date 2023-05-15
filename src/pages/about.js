@@ -378,7 +378,7 @@ const About = () => {
 																					<div className="f1_card shadow">
 																						<div className="front face">
 
-																							<img src={prop.image.sourceUrl} />
+																							<img src={prop.image.sourceUrl} className="img-fluid" />
 																						</div>
 																						<div className="back face center">
 
