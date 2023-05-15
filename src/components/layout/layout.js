@@ -4,9 +4,9 @@ import '../../stylee.css'
 import '../../responsive.css'
 import NavBar from "../Header/nav-bar"
 
-const Layout = ({ children,headervisiblity }) => (
+const Layout = ({ children }) => (
   <>
-  <div className={headervisiblity}> <NavBar /></div>
+  <NavBar />
    
     {children}
     <Footer/> 

@@ -92,12 +92,12 @@ export default function Footer() {
 													</div>
 													<div className="list_s">
 														<ul>
-															<li><Link to="https://www.facebook.com/qlspaces">
-															<img src={frame1} alt="" /></Link></li>
-															<li><Link to='https://www.linkedin.com/company/qlspace/' ><img src={frame2} alt="" /></Link></li>
-															<li><Link to="https://twitter.com/qlspace_"><img src={frame3} alt="" /></Link></li>
-															<li><Link to="https://www.youtube.com/channel/UC6xhk9nI6VxQ0UJpLjDmKvA/videos"><img src={frame4} alt="" /></Link></li>
-															<li><Link to=""><img src={frame5} alt="" /></Link></li>
+															<li><a href="https://www.facebook.com/qlspaces">
+															<img src={frame1} alt="" /></a></li>
+															<li><a href='https://www.linkedin.com/company/qlspace/' ><img src={frame2} alt="" /></a></li>
+															<li><a href="https://twitter.com/qlspace_"><img src={frame3} alt="" /></a></li>
+															<li><a href="https://www.youtube.com/channel/UC6xhk9nI6VxQ0UJpLjDmKvA/videos"><img src={frame4} alt="" /></a></li>
+															<li><a href=""><img src={frame5} alt="" /></a></li>
 														</ul>
 													</div>
 												</div>
@@ -164,7 +164,7 @@ export default function Footer() {
 														<div className="righti_text">
 															<div className="rig_th">
 																<span>Mail</span>
-																<p><Link to="mailto:info@qlspace.com.au">info@qlspace.com.au</Link></p>
+																<p><a href="mailto:info@qlspace.com.au">info@qlspace.com.au</a></p>
 															</div>
 														</div>
 													</div>
@@ -208,7 +208,7 @@ export default function Footer() {
 															<div className="rig_th">
 																<span>Tel</span>
 																<p>
-																	<Link to="tel:+61 8 6262 3559">+61 8 6262 3559</Link>
+																	<a href="tel:+61 8 6262 3559">+61 8 6262 3559</a>
 																</p>
 
 															</div>
@@ -224,7 +224,7 @@ export default function Footer() {
 															<div className="rig_th">
 																<span>Tel</span>
 																<p>
-																	<Link to="tel:+61 410 881 616">+61 410 881 616</Link></p>
+																	<a href="tel:+61 410 881 616">+61 410 881 616</a></p>
 															</div>
 														</div>
 													</div>
@@ -239,7 +239,7 @@ export default function Footer() {
 										<div className="row">
 											<div className="col-md-6">
 												<div className="outg_o">
-													<p>Copyright ©2023 SPACE. Powered By <Link to="https://www.qltech.com.au/" target="_blank"> QL Tech </Link></p>
+													<p>Copyright ©2023 SPACE. Powered By <a href="https://www.qltech.com.au/" target="_blank"> QL Tech </a></p>
 												</div>
 											</div>
 											<div className="col-md-6">

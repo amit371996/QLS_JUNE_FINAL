@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import Layout from "../components/layout/layout";
 import { graphql, StaticQuery, Link } from "gatsby";
 import ReactFullpage from "@fullpage/react-fullpage";
+import NavBar from "../components/Header/nav-bar";
+import Footer from "../components/footer/footer";
 
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
@@ -83,12 +85,13 @@ const About = () => {
 				<>
 					{isFullpage ? (
 						<ReactFullpage
-						scrollingSpeed={1000} /* Options here */
-						normalScrollElements="#footer"
+							scrollingSpeed={1000} /* Options here */
+							normalScrollElements="#footer"
 							render={({ fullpageApi }) => (
-								<Layout>
+								
 									<ReactFullpage.Wrapper>
 										<main>
+											<NavBar/>
 											<section className="section">
 												<div className="secation01 bhg secn_abouts">
 													<div className="container">
@@ -123,14 +126,14 @@ const About = () => {
 																		</div>
 
 																		<div className="image_gnbdd">
-																			
+
 																			<div className="image_hfgfss">
 																				<video
-																					
-																					autoPlay="true"
+
+																					autoPlay={true}
 																					muted=""
 																					loop=""
-																					playsinline=""
+																					playsInline=""
 																					preload="metadata"
 																					className="video"
 																					id="myVideo"
@@ -196,12 +199,12 @@ const About = () => {
 																									</span>
 																								</div>
 																								<div className="right_part_name">
-																									<Link to=
+																									<a href=
 																										{prop.linkedinurl}
 																										target="_blank"
 																									>
 																										<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/linkdin.png" />
-																									</Link>
+																									</a>
 																								</div>
 																							</div>
 																						</div>
@@ -275,14 +278,16 @@ const About = () => {
 													</div>
 												</div>
 											</section>
+											<Footer/>
 										</main>
 									</ReactFullpage.Wrapper>
-								</Layout>
+								
 							)}
 						/>
 					) : (
-						<Layout>
+						
 							<main>
+								<NavBar/>
 								<section className="section">
 									<div className="secation01 bhg secn_abouts">
 										<div className="container">
@@ -320,17 +325,17 @@ const About = () => {
 
 																<div className="image_hfgfss">
 																	<video
-																		autoPlay="true"
+																		autoPlay={true}
 																		muted=""
 																		loop=""
-																		playsinline=""
+																		playsInline=""
 																		preload="metadata"
 																		className="video"
 																		id="myVideo"
 																	>
-																		<source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+																		<source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4?autoPlay=1" />
 																	</video>
-																</div>
+																</div> 
 															</div>
 														</div>
 													</div>
@@ -389,12 +394,12 @@ const About = () => {
 																						</span>
 																					</div>
 																					<div className="right_part_name">
-																						<Link to=
+																						<a href=
 																							{prop.linkedinurl}
 																							target="_blank"
 																						>
 																							<img src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/linkdin.png" />
-																						</Link>
+																						</a>
 																					</div>
 																				</div>
 																			</div>
@@ -423,7 +428,7 @@ const About = () => {
 
 																	{
 																		getSection(data, 0, 5).map(url => (
-																			<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																			<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																		))
 																	}
 																</ul>
@@ -433,7 +438,7 @@ const About = () => {
 
 																	{
 																		getSection(data, 5, 10).map(url => (
-																			<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																			<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																		))
 																	}
 																</ul>
@@ -443,12 +448,11 @@ const About = () => {
 
 																	{
 																		getSection(data, 10, 15).map(url => (
-																			<li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+																			<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																		))
 																	}
 																</ul>
 															</li>
-
 															<div className="clr"></div>
 														</ul>
 													</div>
@@ -458,9 +462,7 @@ const About = () => {
 														<div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
 
 														</div>
-														{/* <div className="btn_g">
-                                  <Link to="/partner">Meet Us</Link>
-                                </div> */}
+
 													</div>
 
 
@@ -470,10 +472,9 @@ const About = () => {
 										</div>
 									</div>
 								</section>
-
-
+								<Footer/>
 							</main>
-						</Layout>
+						
 					)}
 				</>
 
