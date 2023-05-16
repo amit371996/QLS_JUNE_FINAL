@@ -1055,7 +1055,7 @@ left: 10px;
     border: 1px solid #00D4FF;
 }
 .list_tab_wg ul li {
-    margin-left: 0px;
+    margin-left: 4px;
     margin-right: 0px;
     border: 1px solid #FFFFFF;
     border-radius: 2px;
@@ -1268,7 +1268,11 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 .roww_wrap img {
     width: auto;
 }
-
+.solution_secanm .kng_hbx h2 {
+    font-size: 35px;
+    line-height: 38px;
+    padding-top: 100px;
+}
 }
 /*new  chnages  Date  07-04-2023*/
 @media(max-width: 767px){
@@ -1420,6 +1424,23 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
     .section04.bhg{padding-top:30px;}
     .section04{padding-bottom: 0px;}
     .mar_yes .teambx{margin-bottom:50px;}
+.soltion_newsbx {
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+.solution_secanm .kng_hbx h2 {
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 23px !important;
+    padding-top:10px !important; 
+}
+.solution_secanm .image_sidebx{margin-top: 30px;}
+.btn_g {
+    display: inline-block;
+    float: none;
+    margin-bottom: 30px;}
+
 }
 @media(max-width: 575px){
     .kj_bgvcdfs {
@@ -1552,4 +1573,40 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
 .mar_yes .teambx:last-child{margin-bottom:0}
 .list_s ul{padding-bottom:15px}
 footer.footer_wrap button.btn.btn-primary{margin-top: 15px;}
+.solution_secanm .roghrtfbx img {
+    width: auto;
+}
+.ghbdbx {
+    width: 30px !important;
+}
+.solution_secanm .ghbdbx {
+    right: 40px !important;
+    bottom: 0px !important;
+}
+.ghbdbx2 {
+    width: 30px !important;
+    left: 40px !important;
+    top: 15px !important;
+}
+.ghbdbx2 img {
+    width: 30px !important;
+}
+.solution_secanm .image_sidebx {
+    max-width: 300px;
+    margin: auto;
+}
+.solution_secanm .ghbdbx3 {
+    left: 30px;
+    bottom: 25px;
+}
+.ghbdbx3 img {
+    width: 30px !important;
+}
+.solution_secanm .ghbdbx4 {
+    right: 20px !important;
+    top: 10px !important;
+}
+.solution_secanm .ghbdbx4 img {
+    width: 40px !important;
+}
 }

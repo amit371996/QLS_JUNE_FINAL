@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import "../stylee.css"
 import "../responsive.css"
 import { Link, StaticQuery, graphql } from 'gatsby';
@@ -68,11 +68,6 @@ export default function Whatsnew() {
 					}
 
 					if (currentPage > 2) {
-						pageNumbers.push(
-							<li key="first">
-								<a href="#" onClick={() => handlePageClick(1)}>1</a>
-							</li>
-						);
 
 						if (currentPage > 3) {
 							pageNumbers.push(

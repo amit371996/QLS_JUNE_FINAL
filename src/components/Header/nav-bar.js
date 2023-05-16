@@ -9,6 +9,25 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { useStaticQuery, graphql } from 'gatsby';
 
 export default function NavBar(props) {
+  useEffect(() => {
+		const handleScroll = () => {
+		  const header = document.getElementById("header");
+		  const sticky = header.offsetTop;
+		  
+		  if (window.pageYOffset > sticky) {
+			header.classList.add("sticky");
+		  } else {
+			header.classList.remove("sticky");
+		  }
+		};
+	
+		window.addEventListener("scroll", handleScroll);
+		
+		// Cleanup the event listener on component unmount
+		return () => {
+		  window.removeEventListener("scroll", handleScroll);
+		};
+	  }, []);
   library.add(faBars)
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => {

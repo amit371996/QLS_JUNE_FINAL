@@ -3061,6 +3061,7 @@ overflow: hidden !important;}
         text-align: center;
         border-radius: 100%;
         line-height: 25px;
+        border:none;
     }
     .ReactModal__Overlay{z-index: 99999;background: rgba(0, 0, 0, 0.5) !important;}
 
@@ -3119,3 +3120,4 @@ overflow: hidden !important;}
     line-height: 40px;
 }
 .pagination ul li.active a{border: solid 2px #fff;}
+header.sticky{background: #000 !important;}
