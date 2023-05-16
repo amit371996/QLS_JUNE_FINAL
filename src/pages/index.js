@@ -561,8 +561,8 @@ const Home = () => {
                               </div>
                               <div className="image_gnbdd">
                                 <div className="image_hfgfss">
-                                  <video autoPlay={true} muted="" loop="" playsInline="" preload="metadata" className="video" id="myVideo" /*style="min-width:100%; min-height:100%;"*/>
-                                    <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4?autoPlay=1" />
+                                  <video autoPlay muted loop playsInline preload="metadata" className="video" id="myVideo">
+                                    <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
                                   </video>
                                 </div>
                               </div>
@@ -859,7 +859,7 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-              
+
               </div>
             </Layout>
           )}

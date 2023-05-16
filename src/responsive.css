@@ -89,7 +89,7 @@ background-position: right 0 center;
 
 @media(max-width: 991px){
 #navbarSupportedContent {
-    background: transparent;
+    background: #000;
     padding: 25px;
     margin-top: 10px;
 }
