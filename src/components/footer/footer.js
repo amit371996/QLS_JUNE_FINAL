@@ -17,6 +17,7 @@ import icon3 from '../../image/map.png';
 import icon4 from '../../image/phone.png';
 import icon5 from '../../image/phone.png';
 import { graphql } from 'gatsby';
+import ScrollToTopButton from '../scroll_top/scroll_top'
 
 export default function Footer() {
 	library.add(faEnvelope)
@@ -239,6 +240,7 @@ export default function Footer() {
 										<div className="row">
 											<div className="col-md-6">
 												<div className="outg_o">
+												
 													<p>Copyright ©2023 SPACE. Powered By <a href="https://www.qltech.com.au/" target="_blank"> QL Tech </a></p>
 												</div>
 											</div>
@@ -260,7 +262,9 @@ export default function Footer() {
 								</div>
 							</footer>
 						</div>
+						
 					</section>
+					<ScrollToTopButton/>
 				</>
 			)
 

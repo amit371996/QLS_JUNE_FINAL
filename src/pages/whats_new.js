@@ -5,6 +5,7 @@ import "../stylee.css"
 import "../responsive.css"
 import { Link, StaticQuery, graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
+
 export default function Whatsnew() {
 
 	const [currentPage, setCurrentPage] = useState(1);
@@ -199,7 +200,9 @@ export default function Whatsnew() {
 									</div>
 								</div>
 							</section>
-
+							<>
+							
+							</>
 						</div>
 					</Layout>
 				)

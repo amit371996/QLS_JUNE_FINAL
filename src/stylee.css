@@ -3121,3 +3121,25 @@ overflow: hidden !important;}
 }
 .pagination ul li.active a{border: solid 2px #fff;}
 header.sticky{background: #000 !important;}
+.scroll-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0.5;
+  }
+  
+  .scroll-top-button:hover {
+    opacity: 1;
+  }
+  

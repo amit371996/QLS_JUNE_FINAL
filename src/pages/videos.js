@@ -10,7 +10,7 @@ import EvlonPopUp from '../components/Allvideospopup/Evlonpopup/evlonpopup';
 import Layout from '../components/layout/layout';
 
 export default function Videos() {
- 
+
     library.add(faEnvelope, faPlay)
     const [isOpen, setIsOpen] = useState(false);
     const [popUpUrl, setPopUpUrl] = useState('');
@@ -67,66 +67,66 @@ export default function Videos() {
                 const endIndex = startIndex + itemsPerPage;
 
                 const handlePageClick = (pageNumber) => {
-					setCurrentPage(pageNumber);
-				};
+                    setCurrentPage(pageNumber);
+                };
 
-				const renderPageNumbers = () => {
-					const pageNumbers = [];
+                const renderPageNumbers = () => {
+                    const pageNumbers = [];
 
-					if (currentPage > 1) {
-						pageNumbers.push(
-							<li key="prev">
-								<a href="#" onClick={() => handlePageClick(currentPage - 1)}>
-									&laquo;
-								</a>
-							</li>
-						);
-					}
+                    if (currentPage > 1) {
+                        pageNumbers.push(
+                            <li key="prev">
+                                <a href="#" onClick={() => handlePageClick(currentPage - 1)}>
+                                    &laquo;
+                                </a>
+                            </li>
+                        );
+                    }
 
-					if (currentPage > 2) {
-						pageNumbers.push(
-							<li key="first">
-								<a href="#" onClick={() => handlePageClick(1)}>1</a>
-							</li>
-						);
+                    if (currentPage > 2) {
+                        pageNumbers.push(
+                            <li key="first">
+                                <a href="#" onClick={() => handlePageClick(1)}>1</a>
+                            </li>
+                        );
 
-						if (currentPage > 3) {
-							pageNumbers.push(
-								<li key="dots-1">
-									<span className="dots">...</span>
-								</li>
-							);
-						}
-					}
+                        if (currentPage > 3) {
+                            pageNumbers.push(
+                                <li key="dots-1">
+                                    <span className="dots">...</span>
+                                </li>
+                            );
+                        }
+                    }
 
-					for (let i = 1; i <= totalPages; i++) {
-						if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-							pageNumbers.push(
-								<li key={i} >
-									<a href="#" className={currentPage === i ? 'active' : null} onClick={() => handlePageClick(i)}>{i}</a>
-								</li>
-							);
-						} else if (i === currentPage - 2 || i === currentPage + 2) {
-							pageNumbers.push(
-								<li key={`dots-${i}`}>
-									<span className="dots">...</span>
-								</li>
-							);
-						}
-					}
+                    for (let i = 1; i <= totalPages; i++) {
+                        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                            pageNumbers.push(
+                                <li key={i} >
+                                    <a href="#" className={currentPage === i ? 'active' : null} onClick={() => handlePageClick(i)}>{i}</a>
+                                </li>
+                            );
+                        } else if (i === currentPage - 2 || i === currentPage + 2) {
+                            pageNumbers.push(
+                                <li key={`dots-${i}`}>
+                                    <span className="dots">...</span>
+                                </li>
+                            );
+                        }
+                    }
 
-					if (currentPage < totalPages) {
-						pageNumbers.push(
-							<li key="next">
-								<a href="#" onClick={() => handlePageClick(currentPage + 1)}>
-								&raquo;
-								</a>
-							</li>
-						);
-					}
-					return pageNumbers
-					
-				};
+                    if (currentPage < totalPages) {
+                        pageNumbers.push(
+                            <li key="next">
+                                <a href="#" onClick={() => handlePageClick(currentPage + 1)}>
+                                    &raquo;
+                                </a>
+                            </li>
+                        );
+                    }
+                    return pageNumbers
+
+                };
                 return (
                     <Layout>
                         <section className="new00">
@@ -182,9 +182,10 @@ export default function Videos() {
                                                             <div className="imh_bc">
                                                                 <div className="inner_ghv">
                                                                     <img src={vido.news.archiveImage.sourceUrl} />
-                                                                    <div className="video_incon_wrap" id="343" data-videourl={vido.video.videoUrl}>
 
-                                                                        <div className="icon_fgb" onClick={() => handleOpenModal(videourl)} >
+                                                                    <div className="video_incon_wrap" id="343">
+
+                                                                        <div className="icon_fgb" onClick={() => handleOpenModal(vido.video.videoUrl + "?autoplay=1")} >
                                                                             <FontAwesomeIcon icon={faPlay} />
                                                                         </div>
 
