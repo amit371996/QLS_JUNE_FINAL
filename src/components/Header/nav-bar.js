@@ -7,27 +7,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { useStaticQuery, graphql } from 'gatsby';
+import ScrollToTopButton from "../scroll_top/scroll_top";
 
 export default function NavBar(props) {
   useEffect(() => {
-		const handleScroll = () => {
-		  const header = document.getElementById("header");
-		  const sticky = header.offsetTop;
-		  
-		  if (window.pageYOffset > sticky) {
-			header.classList.add("sticky");
-		  } else {
-			header.classList.remove("sticky");
-		  }
-		};
-	
-		window.addEventListener("scroll", handleScroll);
-		
-		// Cleanup the event listener on component unmount
-		return () => {
-		  window.removeEventListener("scroll", handleScroll);
-		};
-	  }, []);
+    const handleScroll = () => {
+      const header = document.getElementById("header");
+      const sticky = header.offsetTop;
+
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   library.add(faBars)
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => {
@@ -53,6 +54,7 @@ export default function NavBar(props) {
               }
             `}
       render={data => (
+
         <div>
           <div /*classNameName={props.headervisiblity}*/>
             <header id="header">
@@ -78,7 +80,7 @@ export default function NavBar(props) {
                                 <>
                                   {prop.label == "Home" ? (
                                     <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                    onClick={() => setActiveMenuItem(i)}>
+                                      onClick={() => setActiveMenuItem(i)}>
                                       <Link
                                         to={"/"}
                                         className="nav-link"
@@ -88,8 +90,8 @@ export default function NavBar(props) {
                                       </Link>
                                     </li>
                                   ) : (
-                                    <li  className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                    onClick={() => setActiveMenuItem(i)}>
+                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                      onClick={() => setActiveMenuItem(i)}>
                                       <Link
                                         to={
                                           "/" +
@@ -112,7 +114,7 @@ export default function NavBar(props) {
                           );
                         })}
 
-                     
+
 
 
                       <div /*style={navev}*/></div>
@@ -134,6 +136,9 @@ export default function NavBar(props) {
             className="overlay"
             style={{ display: showModal ? "block" : "none" }}>
 
+          </div>
+          <div className="scrollbtn">
+            <ScrollToTopButton />
           </div>
           <div className="modal fade model_wrt show" tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
 

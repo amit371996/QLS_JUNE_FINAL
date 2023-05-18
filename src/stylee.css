@@ -2956,7 +2956,7 @@ header {
     width: 100%;
     height: 90px;
     display: block;
-   background: transparent;
+   background: #000;
       z-index: 99999;
       color: #f2f2f2;
       padding: 10px 0 10px 0px;
@@ -3142,4 +3142,6 @@ header.sticky{background: #000 !important;}
   .scroll-top-button:hover {
     opacity: 1;
   }
-  
+
+
+ 
