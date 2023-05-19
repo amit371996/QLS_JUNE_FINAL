@@ -345,7 +345,7 @@ const Home = () => {
                           </div>
                         </section>
                         <section className="section">
-                          <div className="section04 bhg">
+                          <div className="section04 bhg extra_padinng">
                             <div className="container">
                               <div className="row align-items-center">
                                 <div className="col-md-6">

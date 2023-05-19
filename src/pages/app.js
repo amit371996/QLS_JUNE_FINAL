@@ -13,6 +13,7 @@ import Event from "./event"
 import Videos from "./videos"
 import VideoPopup from "../components/Allvideospopup/Evlonpopup/evlonpopup"
 import Privacy_Policy from "./privacy_policy"
+import Tab from "./tab"
 
 const App = () => (
   <Layout>
@@ -27,6 +28,7 @@ const App = () => (
       <PrivateRoute path="/videos" component={Videos} />
       <PrivateRoute path="/videospopup" component={VideoPopup} />
       <PrivateRoute path="/privacy_policy" component={Privacy_Policy} />
+      <PrivateRoute path="/tab" component={Tab} />
     </Router>
   </Layout>
 )

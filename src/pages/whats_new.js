@@ -144,6 +144,7 @@ export default function Whatsnew() {
 														<li><Link to='/blog'>Blogs</Link></li>
 														<li><Link to='/partner'>Partner News</Link></li>
 														<li><Link to='/videos'>Videos</Link></li>
+														{/* <li><Link to='/tab'>Videos</Link></li> */}
 
 
 													</ul>
