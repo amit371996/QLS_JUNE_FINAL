@@ -34,56 +34,50 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   //video autoplay and infinite play
-  // const videoRef = useRef(null);
+  const videoRef = useRef(null);
 
-  // useEffect(() => {
-  //   const video = videoRef.current;
+	useEffect(() => {
+		const video = videoRef.current;
 
-  //   const handleVideoEnd = () => {
-  //     video.currentTime = 0;
-  //     video.play();
-  //   };
+		const handleVideoEnd = () => {
+			video.currentTime = 0;
+			video.play();
+		};
 
-  //   video.addEventListener('ended', handleVideoEnd);
+		const handleVisibilityChange = () => {
+			if (document.visibilityState === 'visible') {
+				playVideo();
+			} else {
+				pauseVideo();
+			}
+		};
 
-  //   return () => {
-  //     video.removeEventListener('ended', handleVideoEnd);
-  //   };
-  // }, []);
+		const playVideo = () => {
+			if (video.paused) {
+				video.play();
+			}
+		};
 
-  // useEffect(() => {
-  //   const video = videoRef.current;
+		const pauseVideo = () => {
+			if (!video.paused) {
+				video.pause();
+			}
+		};
 
-  //   const playVideo = () => {
-  //     if (video.paused) {
-  //       video.play();
-  //     }
-  //   };
+		const handleLoadedMetadata = () => {
+			playVideo();
+		};
 
-  //   const pauseVideo = () => {
-  //     if (!video.paused) {
-  //       video.pause();
-  //     }
-  //   };
+		video.addEventListener('ended', handleVideoEnd);
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+		video.addEventListener('loadedmetadata', handleLoadedMetadata);
 
-  //   const handleVisibilityChange = () => {
-  //     if (document.visibilityState === 'visible') {
-  //       playVideo();
-  //     } else {
-  //       pauseVideo();
-  //     }
-  //   };
-
-  //   document.addEventListener('visibilitychange', handleVisibilityChange);
-
-  //   return () => {
-  //     document.removeEventListener('visibilitychange', handleVisibilityChange);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   videoRef.current.play();
-  // }, []);
+		return () => {
+			video.removeEventListener('ended', handleVideoEnd);
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
+			video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+		};
+	}, []);
   // header sticky after scroll
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const handleLeave = (origin, destination) => {
@@ -257,14 +251,14 @@ const Home = () => {
                             <div className="jhg_tfrd">
                               <div className="container">
                                 <div className="row">
-                                  <div className="col-md-5 colmd5" /*style="position: relative;"*/>
+                                  <div className="col-md-5 colmd5" style={{position:'relative'}}>
                                     <div className="kj_bgvcdfs">
 
                                       <div className="image_gnbdd">
                                         <div className="image_hfgfss">
                                           <video
 
-                                            // ref={videoRef}
+                                             ref={videoRef}
                                             muted
                                             playsInline
                                             preload="metadata"
@@ -566,14 +560,14 @@ const Home = () => {
                             </div>
                           </div>
                         </section>
-                        <Footer/>
+                        <Footer />
                       </ReactFullpage.Wrapper>
-                      
+
                     </>
 
                   )}
                 />
-               
+
               </Layout>
 
             </>
@@ -602,17 +596,24 @@ const Home = () => {
                     <div className="jhg_tfrd">
                       <div className="container">
                         <div className="row">
-                          <div className="col-md-5 colmd5 fok_ng" style={{position:'relative'}} >
+                          <div className="col-md-5 colmd5 fok_ng" style={{ position: 'relative' }}>
                             <div className="kj_bgvcdfs">
-            
+
                               <div className="image_gnbdd">
+
                                 <div className="image_hfgfss">
-                                  <video autoPlay muted loop playsInline preload="metadata" className="video" id="myVideo">
+                                  <video
+                                    ref={videoRef}
+                                    muted
+                                    playsInline
+                                    preload="metadata"
+                                    className="video"
+                                    id="myVideo"
+                                  >
                                     <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
                                   </video>
                                 </div>
                               </div>
-
                             </div>
                           </div>
                           <div className="col-md-7">
@@ -620,6 +621,27 @@ const Home = () => {
                             </div>
                             <div className="btn_g">
                               <Link to="/about">View More</Link>
+                            </div>
+                          </div>
+                          <div class="col-md-5 fok_ng_hggth" style={{ position: 'relative' }}>
+                            <div class="kj_bgvcdfs">
+                              <div class="image_gnbdd">
+                                <div class="roghrtf">
+
+                                </div>
+                                <div class="image_hfgfss">
+                                  <video
+                                    ref={videoRef}
+                                    muted
+                                    playsInline
+                                    preload="metadata"
+                                    className="video"
+                                    id="myVideo">
+                                    <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+                                  </video>
+                                </div>
+                              </div>
+
                             </div>
                           </div>
                         </div>
@@ -914,7 +936,7 @@ const Home = () => {
 
       )}
     />
-      )
+  )
 
 }
-      export default Home;
+export default Home;

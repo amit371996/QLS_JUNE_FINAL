@@ -2823,8 +2823,8 @@ background: #00D4FF;
 }
 .image_gnbdd {
     position: relative;
-    height: auto;
-    width: 100%;
+    height: 350px;
+    width: 350px;
 }
 .image_hfgfss {
     width: 95%;
@@ -2909,10 +2909,12 @@ background: #00D4FF;
     position: relative;
     left: 0; 
 }
+.jhg_tfrd .fok_ng{display: none !important;}
+.jhg_tfrd .fok_ng_hggth{display: block !important;}
 .image_gnbdd {
     position: relative;
-    height: 100%;
-    width: 100%;
+    height: 300px;
+    width: 300px;
 }
 .image_hfgfss {
     width: 95%;
@@ -2924,7 +2926,7 @@ background: #00D4FF;
 }
 @media(max-width: 575px){
   .kj_bgvcdfs{
-      max-width: 320px;
+      max-width: 320px !important;
       margin: 0 auto; 
       }
       .ghbd2 img {
@@ -3099,6 +3101,7 @@ overflow: hidden !important;}
     margin: 0;
     border: solid 2px #00D4FF;
     line-height: 15px;
+    z-index: 9999;
 }
 .nav-link:focus, .nav-link:hover{color:#fff;}
 .vedio_details img{height: auto !important;padding-bottom: 20px;}
