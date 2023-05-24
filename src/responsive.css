@@ -412,7 +412,7 @@ left: 10px;
     }
 
     header#header {
-        padding: 15px 0px;
+        padding: 25px 0px;
         height: auto;
     }
 
@@ -1298,6 +1298,7 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
     line-height: 38px;
     padding-top: 100px;
 }
+.back_ghbd{background: unset;}
 }
 /*new  chnages  Date  07-04-2023*/
 @media(max-width: 767px){
@@ -1465,6 +1466,8 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
     display: inline-block;
     float: none;
     margin-bottom: 30px;}
+
+    
 
 }
 @media (min-width: 576px) and (max-width: 767px){
@@ -1642,5 +1645,8 @@ footer.footer_wrap button.btn.btn-primary{margin-top: 15px;}
 }
 .solution_secanm .ghbdbx4 img {
     width: 40px !important;
+}
+.imged {
+    width: 300px;
 }
 }

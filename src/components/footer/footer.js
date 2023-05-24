@@ -46,8 +46,8 @@ export default function Footer() {
 								<div className="container">
 									<div className="row">
 										<div className="col-md-12">
-											<h2>Subscribe to our newsletter</h2>
-											<p>Lörem ipsum monomubegt håd epiv dide.</p>
+											<h2>Subscribe</h2>
+											<p>Join our community and never miss a beat</p>
 										</div>
 										<div className="col-md-12">
 											<div className="our_news_leeter">

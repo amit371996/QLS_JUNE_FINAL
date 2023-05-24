@@ -2923,6 +2923,7 @@ background: #00D4FF;
     transform: translate(-50%, -50%);
     top: 50%;
 }
+
 }
 @media(max-width: 575px){
   .kj_bgvcdfs{
@@ -3146,5 +3147,45 @@ header.sticky{background: #000 !important;}
     opacity: 1;
   }
 
+  .scroll_1{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group.png');}
+  .scroll_2{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-1.png');}
+  .scroll_3{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-2.png');}
+  .scroll_4{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-3.png');}
+  .scroll_5{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-4.png');}
+  .scroll_6{background-image: url('https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png');}
+  .our_data_for_mob {
+    color: #fff !important;
+    margin-bottom: 20px !important;
+}
+.our_data_for_mob h2 {
+    font-size: 18px;
+    line-height: 21px;
+}
+.our_data_for_mob p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+.our_data_for_mob ul {
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.our_data_for_mob ul li {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    list-style: outside;
+    margin-bottom: 10px;
+}
+.imged {
+    width: 70%;
+    margin: 0 auto;
+}
 
  

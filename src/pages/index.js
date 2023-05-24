@@ -36,48 +36,58 @@ const Home = () => {
   //video autoplay and infinite play
   const videoRef = useRef(null);
 
-	useEffect(() => {
-		const video = videoRef.current;
+  useEffect(() => {
+    const video = videoRef.current;
 
-		const handleVideoEnd = () => {
-			video.currentTime = 0;
-			video.play();
-		};
+    const handleVideoEnd = () => {
+      video.currentTime = 0;
+      video.play();
+    };
 
-		const handleVisibilityChange = () => {
-			if (document.visibilityState === 'visible') {
-				playVideo();
-			} else {
-				pauseVideo();
-			}
-		};
+    // const handleVisibilityChange = () => {
+    //   if (document.visibilityState === 'visible') {
+    //     playVideo();
+    //   } else {
+    //     pauseVideo();
+    //   }
+    // };
 
-		const playVideo = () => {
-			if (video.paused) {
-				video.play();
-			}
-		};
+    const playVideo = () => {
+      if (video.paused) {
+        video.play();
+      }
+    };
 
-		const pauseVideo = () => {
-			if (!video.paused) {
-				video.pause();
-			}
-		};
+    const pauseVideo = () => {
+      if (!video.paused) {
+        video.pause();
+      }
+    };
+    const handleResize = () => {
+      if (video.paused && document.visibilityState === 'visible') {
+        playVideo();
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+   
+    const handleLoadedMetadata = () => {
+      playVideo();
+    };
 
-		const handleLoadedMetadata = () => {
-			playVideo();
-		};
+    video.addEventListener('ended', handleVideoEnd);
+    // document.addEventListener('visibilitychange', handleVisibilityChange);
+    video.addEventListener('loadedmetadata', handleLoadedMetadata);
 
-		video.addEventListener('ended', handleVideoEnd);
-		document.addEventListener('visibilitychange', handleVisibilityChange);
-		video.addEventListener('loadedmetadata', handleLoadedMetadata);
-
-		return () => {
-			video.removeEventListener('ended', handleVideoEnd);
-			document.removeEventListener('visibilitychange', handleVisibilityChange);
-			video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-		};
-	}, []);
+    return () => {
+      video.removeEventListener('ended', handleVideoEnd);
+      // document.removeEventListener('visibilitychange', handleVisibilityChange);
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      window.removeEventListener('resize', handleResize);
+    };
+    
+  }, []);
   // header sticky after scroll
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const handleLeave = (origin, destination) => {
@@ -102,6 +112,62 @@ const Home = () => {
     };
   }, [currentSectionIndex]);
 
+  const [scroll, setScroll] = useState(0);
+  const [scrollClass, setScrollClass] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollDiv = document.querySelector('.list_manage');
+      const scrollTop = scrollDiv.scrollTop;
+
+      setScroll(scrollTop);
+
+      if (scrollTop < 1) {
+        setScrollClass('scroll_1');
+        document.querySelector('.progress').scrollTop = 1;
+        console.log("1");
+      } else if (scrollTop > 548 && scrollTop < 600) {
+        setScrollClass('scroll_2');
+        document.querySelector('.progress').scrollTop = 542;
+        console.log("2");
+      } else if (scrollTop > 1180 && scrollTop < 1300) {
+        setScrollClass('scroll_3');
+        document.querySelector('.progress').scrollTop = 1101;
+        console.log("3");
+      } else if (scrollTop > 1748 && scrollTop < 1800) {
+        setScrollClass('scroll_4');
+        document.querySelector('.progress').scrollTop = 1660;
+        console.log("4");
+      } else if (scrollTop > 2120 && scrollTop < 2200) {
+        setScrollClass('scroll_5');
+        document.querySelector('.progress').scrollTop = 2231;
+        console.log("5");
+      } else if (scrollTop > 2520 && scrollTop < 2560) {
+        setScrollClass('scroll_6');
+        document.querySelector('.progress').scrollTop = 2772;
+        console.log("6");
+      } else if (scrollTop > 2575) {
+
+        const fullpageApi = window.fullpage_api;
+        // fullpageApi.moveSectionDown();
+        fullpageApi.moveTo(4);
+      }
+
+      const docHeight = scrollDiv.scrollHeight;
+      const winHeight = scrollDiv.clientHeight;
+      const lineHeight = (scrollTop / (docHeight - winHeight)) * 5;
+
+      const progressLine = document.querySelector('.progress .line');
+      progressLine.style.height = `${scrollTop}px`;
+    };
+
+    const scrollDiv = document.querySelector('.list_manage');
+    scrollDiv.addEventListener('scroll', handleScroll);
+    return () => {
+      scrollDiv.removeEventListener('scroll', handleScroll);
+    };
+
+  }, []);
   return (
 
     <StaticQuery
@@ -251,14 +317,14 @@ const Home = () => {
                             <div className="jhg_tfrd">
                               <div className="container">
                                 <div className="row">
-                                  <div className="col-md-5 colmd5" style={{position:'relative'}}>
+                                  <div className="col-md-5 colmd5" style={{ position: 'relative' }}>
                                     <div className="kj_bgvcdfs">
 
                                       <div className="image_gnbdd">
                                         <div className="image_hfgfss">
                                           <video
 
-                                             ref={videoRef}
+                                            ref={videoRef}
                                             muted
                                             playsInline
                                             preload="metadata"
@@ -284,17 +350,14 @@ const Home = () => {
                             </div>
                           </div>
                         </section>
-                        <section className="section id_hide" id="stopr_de">
-                          <div className="secation03 back_ghbd bhg sliderimg">
+                        <section className="section id_hide" id="stopr_de" >
+                          <div className={`secation03 back_ghbd bhg sliderimg ${scrollClass}`} >
                             <div className="container">
                               <div className="row">
-
                                 <div className="col-md-12">
                                   <div className="our_about_wrap">
                                     <h2 className="text-start">Solutions</h2>
                                     <h4 className="text-start">State-of-the-art technology combined with relentless effort towards excellence</h4>
-
-
                                   </div>
                                 </div>
                               </div>
@@ -314,34 +377,29 @@ const Home = () => {
                                   </div>
                                 </div>
                                 <div className="col-md-11">
-                                  <div className="list_manage">
+                                  <div className='list_manage'>
                                     <div className="row">
                                       <div className="col-md-6">
                                         <div className="new_idf">
-                                          {data && data.allWpSolution && data.allWpSolution.edges && data.allWpSolution.edges.map((edge, i) => {
-                                            const solution = edge.node;
-                                            return (
-                                              <>
+                                          {data &&
+                                            data.allWpSolution &&
+                                            data.allWpSolution.edges &&
+                                            data.allWpSolution.edges.map((edge, i) => {
+                                              const solution = edge.node;
+                                              return (
                                                 <div className="start_y" id="sec1" key={solution.id}>
                                                   <h2 className="text-start">{solution.title}</h2>
-
-                                                  <div className='slmntxt' dangerouslySetInnerHTML={{ __html: solution.content }}></div>
+                                                  <div className="slmntxt" dangerouslySetInnerHTML={{ __html: solution.content }}></div>
                                                 </div>
-
-                                              </>
-                                            )
-                                          })}
-
+                                              );
+                                            })}
                                         </div>
                                       </div>
                                     </div>
-
                                   </div>
                                 </div>
-
                               </div>
                             </div>
-
                           </div>
                         </section>
                         <section className="section">
@@ -650,10 +708,9 @@ const Home = () => {
                   </div>
                 </section>
                 <section className="section id_hide" id="stopr_de">
-                  <div className="secation03 back_ghbd bhg sliderimg">
+                  <div className={`secation03 back_ghbd bhg sliderimg ${scrollClass}`}>
                     <div className="container">
                       <div className="row">
-
                         <div className="col-md-12">
                           <div className="our_about_wrap">
                             <h2 className="text-start">Solutions</h2>
@@ -663,48 +720,87 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="row">
-                        <div className="col-md-1">
-                          <div className="progress">
-                            <ul>
-                              <span className="line"></span>
-                              <li><a href="#sec1">I</a></li>
-                              <li><a href="#sec2">II</a></li>
-                              <li><a href="#sec3">III</a></li>
-                              <li><a href="#sec4">IV</a></li>
-                              <li><a href="#sec5">V</a></li>
-                              <li><a href="#sec5">VI</a></li>
-                              <li><a href="#sec5">7</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="col-md-11">
-
-
-                          <div className="list_manage">
-                            <div className="row">
-                              <div className="col-md-6">
-                                <div className="new_idf">
-                                  {data && data.allWpSolution && data.allWpSolution.edges && data.allWpSolution.edges.map((edge, i) => {
-                                    const solution = edge.node;
-                                    return (
-                                      <>
-                                        <div className="start_y" id="sec1" key={solution.id}>
-                                          <h2 className="text-start">{solution.title}</h2>
-
-                                          <div className='slmntxt' dangerouslySetInnerHTML={{ __html: solution.content }}></div>
-                                        </div>
-
-                                      </>
-                                    )
-                                  })}
-
-                                </div>
+                    
+                      <div className="row mobrow">
+                        <div className="col-md-12">
+                          <div class="list_inner_Wrsd">
+                            <div class="our_data_for_mob">
+                              <h2 class="text-start">MINING</h2>
+                              <p>Revolutionise the future of critical earth mineral discovery and extraction</p>
+                              <ul>
+                                <li>Reduce CAPEX for exploratory critical earth mining and improve ESG using artificial intelligence, high-resolution satellite images, data, and sensors</li>
+                                <li>Interpretation of aeromagnetic and satellite imagery data to produce structural and geological maps that help target deposits</li>
+                                <li>Improve demand and supply chain mapping in mining commodities by monitoring different aspects of the supply chain, ranging from mining activity, port inventory and industrial plant production</li>
+                                <li>Near real-time emission monitoring in mining</li>
+                              </ul>
+                              <div class="imged">
+                                <img src="https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group.png" />
                               </div>
                             </div>
-
+                            <div class="our_data_for_mob">
+                              <h2 class="text-start">AGRICULTURE</h2>
+                              <p>Develop next-generation agri-tech solutions, including precision farming, agri-insurance and agriculture monitoring</p>
+                              <ul>
+                                <li>Use real-time data relating crop condition, as well as information on soil, carbon levels, air and temperature to provide analytic insights on crop rotation, planting and harvesting times</li>
+                                <li>Remotely detect pests and differentiate crop species and weeds to improve crop yield targets and crop health</li>
+                                <li>Detect changes in land use and cover from high-resolution satellite data, the more accurate assess management of agriculture, forestry and coastal resources</li>
+                                <li>Improve agri-banking and crop insurance by reducing losses with smarter risk estimates and real-time monitoring</li>
+                              </ul>
+                              <div class="imged">
+                                <img src="https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-1.png" />
+                              </div>
+                            </div>
+                            <div class="our_data_for_mob">
+                              <h2 class="text-start">INFRASTRUCTURE</h2>
+                              <p>Improve management of infrastructure risk through proactive monitoring</p>
+                              <ul>
+                                <li>Transmission line planning and route optimization using machine learning and satellite data</li>
+                                <li>Airport information management using geospatial data and machine learning</li>
+                                <li>Monitor sophisticated infrastructures for development, site feasibility analysis and risk management</li>
+                                <li>Rail-road conditions at regional and national levels</li>
+                                <li>Remote location monitoring of assets and infrastructure</li>
+                              </ul>
+                              <div class="imged">
+                                <img src="https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-2.png" />
+                              </div>
+                            </div>
+                            <div class="our_data_for_mob">
+                              <h2 class="text-start">ENVIRONMENT </h2>
+                              <p>Protecting the environment through accurate earth observation datasets</p>
+                              <ul>
+                                <li>Monitor methane emissions, as well as carbon levels</li>
+                                <li>Provide more accurate environmental impact assessments through to use of spatially explicit and frequently updated data</li>
+                                <li>Monitor inland waterway health</li>
+                              </ul>
+                              <div class="imged">
+                                <img src="https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-3.png" />
+                              </div>
+                            </div>
+                            <div class="our_data_for_mob">
+                              <h2 class="text-start">DISASTER AND RECOVERY</h2>
+                              <p>Offer solutions to better predict, monitor, assess and respond to natural disasters</p>
+                              <ul>
+                                <li>Improve disaster response and management through analysis of natural disasters like earthquake, cyclones, floods, and bushfire damages</li>
+                                <li>Aid recovery by detecting near real time changes to allow immediate relief measures to be taken during natural calamities</li>
+                              </ul>
+                              <div class="imged">
+                                <img src="https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-4.png" />
+                              </div>
+                            </div>
+                            <div class="our_data_for_mob">
+                              <h2 class="text-start">DEFENCE AND SECURITY</h2>
+                              <p>Use high-resolution satellite data, AI and machine learning to derive intelligent information for defence surveillance and security monitoring</p>
+                              <ul>
+                                <li>Identify military resources and troop movement to aid with relief and security efforts</li>
+                                <li>Detect chemical seepages across land classes</li>
+                              </ul>
+                              <div class="imged">
+                                <img src="https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png" />
+                              </div>
+                            </div>
                           </div>
                         </div>
+
 
                       </div>
                     </div>
@@ -829,9 +925,9 @@ const Home = () => {
                                         <div className="gtfrd">
                                           <h3>
                                             <Link to={"/news/" + allddt.slug}>
-                                              {allddt.title.slice(0, 50)}...
+                                              {allddt.title.slice(0, 30)}...
                                             </Link></h3>
-                                          <p>  {allddt.excerpt.slice(0, 50)}... </p>
+                                          <p>  {allddt.excerpt.slice(0, 30)}... </p>
                                           <div className="our_tascrt">
                                             <Link to="/whats_new">View All News</Link>
 
@@ -855,9 +951,9 @@ const Home = () => {
                                       <div className="gtfrd">
                                         <h3>
                                           <Link to={"/event/" + allddt.slug}>
-                                            {allddt.title.slice(0, 50)}...
+                                            {allddt.title.slice(0, 30)}...
                                           </Link></h3>
-                                        <p>{allddt.excerpt.slice(0, 50)}...</p>
+                                        <p>{allddt.excerpt.slice(0, 30)}...</p>
                                         <div className="our_tascrt">
                                           <Link to="/event">View All Events</Link>
 
@@ -881,11 +977,11 @@ const Home = () => {
                                     <div className="gtfrd">
                                       <h3>
                                         <Link to={"/partner/" + allddt.slug}>
-                                          {allddt.title.slice(0, 50)}...
+                                          {allddt.title.slice(0, 30)}...
                                         </Link>
                                       </h3>
                                       <p>
-                                        {allddt.excerpt.slice(0, 50)}...</p>
+                                        {allddt.excerpt.slice(0, 30)}...</p>
                                       <div className="our_tascrt">
                                         <Link to="/partner">View All Partners</Link>
                                       </div>
@@ -905,11 +1001,11 @@ const Home = () => {
                                     <div className="gtfrd">
                                       <h3>
                                         <Link to={"/video/" + allddt.slug}>
-                                          {allddt.title.slice(0, 50)}...
+                                          {allddt.title.slice(0, 30)}...
                                         </Link>
                                       </h3>
                                       <p>
-                                        {allddt.excerpt.slice(0, 50)}...</p>
+                                        {allddt.excerpt.slice(0, 30)}...</p>
                                       <div className="our_tascrt">
                                         <Link to="/videos">View All Videos</Link>
 

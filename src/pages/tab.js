@@ -38,6 +38,70 @@ const Tab = () => {
     };
   }, []);
 
+  // const [scrollClass, setScrollClass] = useState('');
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollDiv = document.getElementById('scroll-div');
+  //     if (scrollDiv.scrollTop > 400) { // Change the scroll position as per your requirement
+  //       setScrollClass('background-image-2');
+  //     }if(scrollDiv.scrollTo > 100) {
+  //       setScrollClass('background-image-1');
+  //     }
+  //     if(scrollDiv.scrollTo > 900) {
+  //       setScrollClass('background-image-1');
+  //     }
+  //   };
+
+  //   const scrollDiv = document.getElementById('scroll-div');
+  //   scrollDiv.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     scrollDiv.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+
+  const [scroll, setScroll] = useState(0);
+  const [scrollClass, setScrollClass] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollDiv = document.querySelector('.list_manage');
+      const scrollTop = scrollDiv.scrollTop;
+
+      setScroll(scrollTop);
+
+      if (scrollTop < 1) {
+        setScrollClass('scroll_1');
+      } else if (scrollTop > 548 && scrollTop < 600) {
+        setScrollClass('scroll_2');
+      } else if (scrollTop > 1180 && scrollTop < 1300) {
+        setScrollClass('scroll_3');
+      } else if (scrollTop > 1748 && scrollTop < 1800) {
+        setScrollClass('scroll_4');
+      } else if (scrollTop > 2120 && scrollTop < 2200) {
+        setScrollClass('scroll_5');
+      } else if (scrollTop > 2520 && scrollTop < 2560) {
+        setScrollClass('scroll_6');
+      } else if (scrollTop > 2575) {
+        // Handle moving to another section/page
+        // fullpage_api.moveSectionDown();
+        // fullpage_api.moveTo(4);
+      }
+
+      const docHeight = scrollDiv.scrollHeight;
+      const winHeight = scrollDiv.clientHeight;
+      const lineHeight = (scrollTop / (docHeight - winHeight)) * 5;
+
+      const progressLine = document.querySelector('.progress .line');
+      progressLine.style.height = `${scrollTop}px`;
+    };
+
+    const scrollDiv = document.querySelector('.list_manage');
+    scrollDiv.addEventListener('scroll', handleScroll);
+    return () => {
+      scrollDiv.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <StaticQuery
       query={graphql`
@@ -82,7 +146,7 @@ const Tab = () => {
               <Layout>
                 <ReactFullpage.Wrapper>
                   <section className="section id_hide" id="stopr_de" >
-                    <div className="secation03 back_ghbd bhg sliderimg "style={{ backgroundImage: `url(${backgroundImage})` }}>
+                    <div className={`secation03 back_ghbd bhg sliderimg ${scrollClass}`}>
                       <div className="container">
                         <div className="row">
                           <div className="col-md-12">
@@ -108,7 +172,7 @@ const Tab = () => {
                             </div>
                           </div>
                           <div className="col-md-11">
-                            <div className="list_manage">
+                            <div className='list_manage'>
                               <div className="row">
                                 <div className="col-md-6">
                                   <div className="new_idf">
