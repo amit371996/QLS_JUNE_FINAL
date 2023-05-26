@@ -1,5 +1,5 @@
 import React from "react"
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Link, graphql, StaticQuery } from "gatsby"
 import Layout from "../components/layout/layout"
 import "../stylee.css"
@@ -23,7 +23,7 @@ export default ({ data }) => {
         setIsOpen(false);
     };
     library.add(faEnvelope, faPlay);
-    const popurlvideo=videos.video.videoUrl;
+    const popurlvideo = videos.video.videoUrl;
     return (
 
         <Layout>
@@ -64,15 +64,15 @@ export default ({ data }) => {
                                         </div>
                                         <div className="inner_ghv vedio_details">
                                             <img src={videos.featuredImage.node.sourceUrl} />
-                                            <div className="video_incon_wrap" id="343" data-videourl="https://www.qlspace.com.au/wp-content/uploads/2023/03/1678093494570.mp4">
-                                                
-                                                <div className="icon_fgb" onClick={() => handleOpenModal(`${popurlvideo}?autoPlay=1`)} >
+                                            <div className="video_incon_wrap" id="343">
+
+                                                <div className="icon_fgb" onClick={() => handleOpenModal(videos.video.videoUrl + "?autoplay=1")} >
                                                     <FontAwesomeIcon icon={faPlay} />
                                                 </div>
 
                                             </div>
                                         </div>
-                                        
+
                                         <div className="cont_news_details">
                                             <div className="cont_wrsf">
                                                 <div className="col-md-12">

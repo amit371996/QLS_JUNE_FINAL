@@ -46,7 +46,7 @@ export default function Footer() {
 								<div className="container">
 									<div className="row">
 										<div className="col-md-12">
-											<h2>Subscribe</h2>
+											<h2>Subscribe to our newsletter</h2>
 											<p>Join our community and never miss a beat</p>
 										</div>
 										<div className="col-md-12">
@@ -70,7 +70,7 @@ export default function Footer() {
 															</div>
 														</div>
 													</div>
-													<div className="col-12">
+													<div className="col-12 mt-5">
 														<button type="submit" className="btn btn-primary">Submit</button>
 													</div>
 												</form>

@@ -2,7 +2,6 @@ import React from "react";
 import "../stylee.css";
 import "../responsive.css"
 import { useState, useEffect, useRef } from "react";
-import Layout from "../components/layout/layout";
 import { graphql, StaticQuery, Link } from "gatsby";
 import ReactFullpage from "@fullpage/react-fullpage";
 import NavBar from "../components/Header/nav-bar";
@@ -32,59 +31,12 @@ const About = () => {
 		return imageUrls.slice(start, end) || [];
 
 	}
-	const videoRef = useRef(null);
-
-	useEffect(() => {
-		const video = videoRef.current;
-
-		const handleVideoEnd = () => {
-			video.currentTime = 0;
-			video.play();
-		};
-
-		const handleVisibilityChange = () => {
-			if (document.visibilityState === 'visible') {
-				playVideo();
-			} else {
-				pauseVideo();
-			}
-		};
-
-		const playVideo = () => {
-			if (video.paused) {
-				video.play();
-			}
-		};
-
-		const pauseVideo = () => {
-			if (!video.paused) {
-				video.pause();
-			}
-		};
-
-		const handleLoadedMetadata = () => {
-			playVideo();
-		};
-
-		video.addEventListener('ended', handleVideoEnd);
-		document.addEventListener('visibilitychange', handleVisibilityChange);
-		video.addEventListener('loadedmetadata', handleLoadedMetadata);
-
-		return () => {
-			video.removeEventListener('ended', handleVideoEnd);
-			document.removeEventListener('visibilitychange', handleVisibilityChange);
-			video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-		};
-	}, []);
-
 
 	const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 	const handleLeave = (origin, destination) => {
 		setCurrentSectionIndex(destination.index);
 	};
 	useEffect(() => {
-
-
 		const header = document.querySelector('header');
 		if (header) {
 			if (currentSectionIndex > 0) {
@@ -100,12 +52,31 @@ const About = () => {
 			}
 		};
 	}, [currentSectionIndex]);
+	const videoRef = useRef(null);
+
+	useEffect(() => {
+	  const video = videoRef.current;
+	  const playPromise = video.play();
+	  if (playPromise !== undefined) {
+		playPromise
+		  .then(() => {
+			video.play();
+		  })
+		  .catch(error => {
+			
+		  });
+	  }
+	}, []);
+	const handleVideoEnded = () => {
+		const video = videoRef.current;
+		video.play();
+	  };
 	return (
 		<>
 
 			<ScrollToTopButton />
 			<StaticQuery
-				// scrollingSpeed={1000}
+				
 				query={graphql`
             query {
 				wpPage(id: { eq: "cG9zdDoxMDM=" }) {
@@ -160,7 +131,7 @@ const About = () => {
 								<NavBar />
 
 								<ReactFullpage
-									scrollingSpeed={1000} /* Options here */
+									scrollingSpeed={1000}
 									normalScrollElements="#footer"
 									onLeave={handleLeave}
 									render={({ fullpageApi }) => (
@@ -202,14 +173,18 @@ const About = () => {
 
 																				<div className="image_hfgfss">
 																					<video
-																						ref={videoRef}
-																						muted
-																						playsInline
-																						preload="metadata"
+																						 id="myVideo"
+																						 preload=""
+																						 src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																						 ref={videoRef}
+																						 autoPlay
+																						 muted
+																						 onEnded={handleVideoEnded}
+								
 																						className="video"
-																						id="myVideo"
+																				
 																					>
-																						<source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+																						
 																					</video>
 																				</div>
 																			</div>
@@ -284,9 +259,6 @@ const About = () => {
 																					</>
 																				)
 																			})}
-
-
-
 																	</div>
 																</div>
 															</div>
@@ -302,7 +274,6 @@ const About = () => {
 																		<ul>
 																			<li>
 																				<ul>
-
 																					{
 																						getSection(data, 0, 5).map(url => (
 																							<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
@@ -312,7 +283,6 @@ const About = () => {
 																			</li>
 																			<li>
 																				<ul>
-
 																					{
 																						getSection(data, 5, 10).map(url => (
 																							<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
@@ -330,7 +300,6 @@ const About = () => {
 																					}
 																				</ul>
 																			</li>
-
 																			<div className="clr"></div>
 																		</ul>
 																	</div>
@@ -338,13 +307,8 @@ const About = () => {
 																<div className="col-md-6">
 																	<div className="our_about_wrap" >
 																		<div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
-
 																		</div>
-
 																	</div>
-
-
-
 																</div>
 															</div>
 														</div>
@@ -353,14 +317,10 @@ const About = () => {
 												<Footer />
 											</main>
 										</ReactFullpage.Wrapper>
-
 									)}
 								/>
-
 							</>
-
 						) : (
-
 							<main>
 								<NavBar />
 								<section className="section">
@@ -397,7 +357,7 @@ const About = () => {
 
 																<div className="image_hfgfss">
 																	<video
-																		ref={videoRef}
+																		
 																		muted
 																		playsInline
 																		preload="metadata"
@@ -425,7 +385,7 @@ const About = () => {
 																</div>
 																<div class="image_hfgfss">
 																	<video
-																		ref={videoRef}
+																		
 																		muted
 																		playsInline
 																		preload="metadata"
@@ -499,9 +459,6 @@ const About = () => {
 																	</>
 																)
 															})}
-
-
-
 													</div>
 												</div>
 											</div>
@@ -566,13 +523,9 @@ const About = () => {
 								</section>
 								<Footer />
 							</main>
-
 						)}
 					</>
-
-
 				)}
-
 			/>
 		</>
 	);

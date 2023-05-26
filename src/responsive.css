@@ -696,7 +696,7 @@ left: 10px;
     background-image: unset !important;
 }
 .sliderimg {
-    padding-bottom: 30px !important;
+    padding-bottom: 0px !important;
 }
 .list_manage{
     height: auto !important;

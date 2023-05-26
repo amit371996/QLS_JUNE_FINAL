@@ -39,59 +39,31 @@ const Home = () => {
   useEffect(() => {
     const video = videoRef.current;
 
-    const handleVideoEnd = () => {
-      video.currentTime = 0;
-      video.play();
-    };
+    // Show loading animation.
 
-    // const handleVisibilityChange = () => {
-    //   if (document.visibilityState === 'visible') {
-    //     playVideo();
-    //   } else {
-    //     pauseVideo();
-    //   }
-    // };
+    // Play the video and handle the result using promises.
+    const playPromise = video.play();
 
-    const playVideo = () => {
-      if (video.paused) {
-        video.play();
-      }
-    };
-
-    const pauseVideo = () => {
-      if (!video.paused) {
-        video.pause();
-      }
-    };
-    const handleResize = () => {
-      if (video.paused && document.visibilityState === 'visible') {
-        playVideo();
-      }
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
-   
-    const handleLoadedMetadata = () => {
-      playVideo();
-    };
-
-    video.addEventListener('ended', handleVideoEnd);
-    // document.addEventListener('visibilitychange', handleVisibilityChange);
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
-
-    return () => {
-      video.removeEventListener('ended', handleVideoEnd);
-      // document.removeEventListener('visibilitychange', handleVisibilityChange);
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      window.removeEventListener('resize', handleResize);
-    };
-    
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          video.play();
+        })
+        .catch(error => {
+          // Auto-play was prevented
+          // Show paused UI.
+        });
+    }
   }, []);
+  const handleVideoEnded = () => {
+    const video = videoRef.current;
+    video.play();
+  };
   // header sticky after scroll
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const handleLeave = (origin, destination) => {
     setCurrentSectionIndex(destination.index);
+
   };
   useEffect(() => {
 
@@ -148,9 +120,9 @@ const Home = () => {
         console.log("6");
       } else if (scrollTop > 2575) {
 
-        const fullpageApi = window.fullpage_api;
-        // fullpageApi.moveSectionDown();
-        fullpageApi.moveTo(4);
+        // const fullpageApi = window.fullpage_api;
+        // // fullpageApi.moveSectionDown();
+        // fullpageApi.moveTo(4);
       }
 
       const docHeight = scrollDiv.scrollHeight;
@@ -168,6 +140,11 @@ const Home = () => {
     };
 
   }, []);
+  const fullpageOptions = {
+
+    scrollOverflow: true,
+    normalScrollElements: '.scrollable-content'
+  };
   return (
 
     <StaticQuery
@@ -283,16 +260,15 @@ const Home = () => {
                 
 			}
 		`}
-
-
       render={data => (
         <>
           {isFullpage ? (
             <>
               <Layout>
-                <ReactFullpage
+                <ReactFullpage {...fullpageOptions}
                   scrollingSpeed={1000} /* Options here */
                   onLeave={handleLeave}
+
                   render={({ fullpageApi }) => (
                     <>
                       <ReactFullpage.Wrapper>
@@ -324,14 +300,17 @@ const Home = () => {
                                         <div className="image_hfgfss">
                                           <video
 
-                                            ref={videoRef}
-                                            muted
-                                            playsInline
-                                            preload="metadata"
-                                            className="video"
                                             id="myVideo"
+                                            preload=""
+                                            src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+                                            ref={videoRef}
+                                            autoPlay
+                                            muted
+                                            onEnded={handleVideoEnded}
+
+                                            className="video"
                                           >
-                                            <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+                                           
                                           </video>
                                         </div>
                                       </div>
@@ -453,9 +432,6 @@ const Home = () => {
                                   <Link to="/partner">Meet Us</Link>
                                 </div> */}
                                   </div>
-
-
-
                                 </div>
                               </div>
                             </div>
@@ -620,16 +596,11 @@ const Home = () => {
                         </section>
                         <Footer />
                       </ReactFullpage.Wrapper>
-
                     </>
-
                   )}
                 />
-
               </Layout>
-
             </>
-
           ) : (
             <Layout>
               <div>
@@ -661,14 +632,17 @@ const Home = () => {
 
                                 <div className="image_hfgfss">
                                   <video
-                                    ref={videoRef}
-                                    muted
-                                    playsInline
-                                    preload="metadata"
+                                     id="myVideo"
+                                     preload=""
+                                     src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+                                     ref={videoRef}
+                                     autoPlay
+                                     muted
+                                     onEnded={handleVideoEnded}
+        
                                     className="video"
-                                    id="myVideo"
                                   >
-                                    <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+                                    
                                   </video>
                                 </div>
                               </div>
@@ -720,7 +694,7 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                    
+
                       <div className="row mobrow">
                         <div className="col-md-12">
                           <div class="list_inner_Wrsd">
