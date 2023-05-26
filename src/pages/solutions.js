@@ -123,7 +123,7 @@ const Solution = () => {
 												return (
 													<>
 														<section className="section sol_sec main_jngbv12" key={solution.id}>
-															<div className="solution_secanm" >
+															<div className="solution_secanm" style={{overflow:'hidden'}} >
 																<div className="container">
 																	<div className="row align-items-center">
 																		<div className="col-md-5">
@@ -216,7 +216,7 @@ const Solution = () => {
 								return (
 									<>
 										<section className="section main_jngbv12" key={solution.id}>
-											<div className="solution_secanm" >
+											<div className="solution_secanm" style={{overflow:'hidden'}} >
 												<div className="container">
 													<div className="row align-items-center">
 														<div className="col-md-5">
