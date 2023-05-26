@@ -426,7 +426,6 @@ const Home = () => {
                                 <div className="col-md-6">
                                   <div className="our_about_wrap" >
                                     <div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
-
                                     </div>
                                     {/* <div className="btn_g">
                                   <Link to="/partner">Meet Us</Link>
@@ -627,9 +626,7 @@ const Home = () => {
                         <div className="row">
                           <div className="col-md-5 colmd5 fok_ng" style={{ position: 'relative' }}>
                             <div className="kj_bgvcdfs">
-
                               <div className="image_gnbdd">
-
                                 <div className="image_hfgfss">
                                   <video
                                      id="myVideo"
@@ -641,8 +638,7 @@ const Home = () => {
                                      onEnded={handleVideoEnded}
         
                                     className="video"
-                                  >
-                                    
+                                  > 
                                   </video>
                                 </div>
                               </div>
@@ -659,21 +655,22 @@ const Home = () => {
                             <div class="kj_bgvcdfs">
                               <div class="image_gnbdd">
                                 <div class="roghrtf">
-
                                 </div>
                                 <div class="image_hfgfss">
                                   <video
+                                    id="myVideo"
+                                    preload=""
+                                    src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
                                     ref={videoRef}
+                                    autoPlay
                                     muted
-                                    playsInline
-                                    preload="metadata"
-                                    className="video"
-                                    id="myVideo">
-                                    <source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+                                    onEnded={handleVideoEnded}
+       
+                                   className="video">
+                                   
                                   </video>
                                 </div>
                               </div>
-
                             </div>
                           </div>
                         </div>
@@ -689,12 +686,9 @@ const Home = () => {
                           <div className="our_about_wrap">
                             <h2 className="text-start">Solutions</h2>
                             <h4 className="text-start">State-of-the-art technology combined with relentless effort towards excellence</h4>
-
-
                           </div>
                         </div>
                       </div>
-
                       <div className="row mobrow">
                         <div className="col-md-12">
                           <div class="list_inner_Wrsd">
@@ -778,7 +772,6 @@ const Home = () => {
 
                       </div>
                     </div>
-
                   </div>
                 </section>
                 <section className="section">
@@ -790,7 +783,6 @@ const Home = () => {
                             <ul>
                               <li>
                                 <ul>
-
                                   {
                                     getSection(data, 0, 5).map(url => (
                                       <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
@@ -800,7 +792,6 @@ const Home = () => {
                               </li>
                               <li>
                                 <ul>
-
                                   {
                                     getSection(data, 5, 10).map(url => (
                                       <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
@@ -810,7 +801,6 @@ const Home = () => {
                               </li>
                               <li>
                                 <ul>
-
                                   {
                                     getSection(data, 10, 15).map(url => (
                                       <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
@@ -818,7 +808,6 @@ const Home = () => {
                                   }
                                 </ul>
                               </li>
-
                               <div className="clr"></div>
                             </ul>
                           </div>
@@ -826,15 +815,11 @@ const Home = () => {
                         <div className="col-md-6">
                           <div className="our_about_wrap" >
                             <div className='' dangerouslySetInnerHTML={{ __html: data.wpPage.homePartnerSection.partnerDetail }}>
-
                             </div>
                             {/* <div className="btn_g">
                                   <Link to="/partner">Meet Us</Link>
                                 </div> */}
                           </div>
-
-
-
                         </div>
                       </div>
                     </div>
@@ -849,16 +834,12 @@ const Home = () => {
                           <div className="our_about_wrap">
                             <h2 className="text-start">What's New</h2>
                             <h4 className="text-start">Get the latest updates and helpful information</h4>
-
-
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="htbdgh">
                       <div className="htbdgh">
-
-
                         <div className="gidr_news">
                           <div className="grif_wrap grif_wrap1">
                             <div className="itemg_hbg ngpv1">
@@ -867,27 +848,22 @@ const Home = () => {
                                   const allddt = edge.node;
                                   return (
                                     <div className="our_tsadr">
-
                                       <img src={allddt.news.homePageImage.sourceUrl} alt='' className='img-fluid' />
-
                                       <div className="our_tfdsd">
                                         <div className="gtfrd">
                                           <h3>
                                             <Link to={"/blog/" + allddt.slug}>
                                               {allddt.title.slice(0, 50)}...
                                             </Link></h3>
-
                                           <p>  {allddt.excerpt.slice(0, 50)}... </p>
                                           <div className="our_tascrt">
                                             <Link to="/blog">View All Posts</Link>
-
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   )
                                 })}
-
                               </div>
                               <div className="itemsnq itemsnq2">
                                 {data && data.allWpNews && data.allWpNews.edges && data.allWpNews.edges.map((edge, i) => {
@@ -904,7 +880,6 @@ const Home = () => {
                                           <p>  {allddt.excerpt.slice(0, 30)}... </p>
                                           <div className="our_tascrt">
                                             <Link to="/whats_new">View All News</Link>
-
                                           </div>
                                         </div>
                                       </div>
@@ -930,7 +905,6 @@ const Home = () => {
                                         <p>{allddt.excerpt.slice(0, 30)}...</p>
                                         <div className="our_tascrt">
                                           <Link to="/event">View All Events</Link>
-
                                         </div>
                                       </div>
                                     </div>
@@ -965,7 +939,6 @@ const Home = () => {
                                 </div>
                               )
                             })}
-
                             {data && data.allWpVideos && data.allWpVideos.edges && data.allWpVideos.edges.map((edge, i) => {
                               const allddt = edge.node;
                               return (
@@ -982,11 +955,9 @@ const Home = () => {
                                         {allddt.excerpt.slice(0, 30)}...</p>
                                       <div className="our_tascrt">
                                         <Link to="/videos">View All Videos</Link>
-
                                       </div>
                                     </div>
                                   </div>
-
                                 </div>
                               )
                             })}
@@ -997,13 +968,10 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-
               </div>
-
             </Layout>
           )}
         </>
-
       )}
     />
   )
