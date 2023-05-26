@@ -55,28 +55,28 @@ const About = () => {
 	const videoRef = useRef(null);
 
 	useEffect(() => {
-	  const video = videoRef.current;
-	  const playPromise = video.play();
-	  if (playPromise !== undefined) {
-		playPromise
-		  .then(() => {
-			video.play();
-		  })
-		  .catch(error => {
-			
-		  });
-	  }
+		const video = videoRef.current;
+		const playPromise = video.play();
+		if (playPromise !== undefined) {
+			playPromise
+				.then(() => {
+					video.play();
+				})
+				.catch(error => {
+
+				});
+		}
 	}, []);
 	const handleVideoEnded = () => {
 		const video = videoRef.current;
 		video.play();
-	  };
+	};
 	return (
 		<>
 
 			<ScrollToTopButton />
 			<StaticQuery
-				
+
 				query={graphql`
             query {
 				wpPage(id: { eq: "cG9zdDoxMDM=" }) {
@@ -173,18 +173,18 @@ const About = () => {
 
 																				<div className="image_hfgfss">
 																					<video
-																						 id="myVideo"
-																						 preload=""
-																						 src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
-																						 ref={videoRef}
-																						 autoPlay
-																						 muted
-																						 onEnded={handleVideoEnded}
-								
+																						id="myVideo"
+																						preload=""
+																						src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																						ref={videoRef}
+																						autoPlay
+																						muted
+																						onEnded={handleVideoEnded}
+
 																						className="video"
-																				
+
 																					>
-																						
+
 																					</video>
 																				</div>
 																			</div>
@@ -196,7 +196,7 @@ const About = () => {
 
 
 																		</div>
-																		
+
 																	</div>
 																</div>
 															</div>
@@ -357,14 +357,18 @@ const About = () => {
 
 																<div className="image_hfgfss">
 																	<video
-																		
-																		muted
-																		playsInline
-																		preload="metadata"
-																		className="video"
+
 																		id="myVideo"
+																		preload=""
+																		src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																		ref={videoRef}
+																		autoPlay
+																		muted
+																		onEnded={handleVideoEnded}
+
+																		className="video"
 																	>
-																		<source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+
 																	</video>
 																</div>
 															</div>
@@ -383,15 +387,18 @@ const About = () => {
 																<div class="roghrtf">
 
 																</div>
-																<div class="image_hfgfss">
+																<div className="image_hfgfss">
 																	<video
-																		
+																		id="myVideo"
+																		preload=""
+																		src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																		ref={videoRef}
+																		autoPlay
 																		muted
-																		playsInline
-																		preload="metadata"
+																		onEnded={handleVideoEnded}
+
 																		className="video"
-																		id="myVideo">
-																		<source src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4" />
+																	>
 																	</video>
 																</div>
 															</div>
