@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://steamlinedesign.com/suchi/qls/graphql`,
+    // siteUrl: `https://steamlinedesign.com/suchi/qls/graphql`,
+    siteUrl: `https://www.qlspace.com.au/graphql`,
   },
   plugins: [
     {
@@ -19,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
           // Specify the URL of the WordPress source
-          url: `https://steamlinedesign.com/suchi/qls/graphql`,
+          url: `https://www.qlspace.com.au/graphql`,
           protocol: `https`,
           // Indicates if a site is hosted on WordPress.com
           hostingWPCOM: false,
