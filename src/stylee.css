@@ -2475,6 +2475,7 @@ background: #00D4FF;
       height: 333px;
       border-radius: 5px;
       overflow: hidden;
+      object-fit: cover;
   }
   .section04.bhg.extra_padinng{
       padding-bottom: 0;
