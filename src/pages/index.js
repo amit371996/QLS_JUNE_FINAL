@@ -320,9 +320,9 @@ const Home = () => {
                                   <div className="col-md-7">
                                     <div className="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
                                     </div>
-                                    <div className="btn_g">
+                                    {/* <div className="btn_g">
                                       <Link to="/about">View More</Link>
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </div>
                               </div>
@@ -647,9 +647,9 @@ const Home = () => {
                           <div className="col-md-7">
                             <div className="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.homeSlider.about }}>
                             </div>
-                            <div className="btn_g">
+                            {/* <div className="btn_g">
                               <Link to="/about">View More</Link>
-                            </div>
+                            </div> */}
                           </div>
                           <div class="col-md-5 fok_ng_hggth" style={{ position: 'relative' }}>
                             <div class="kj_bgvcdfs">

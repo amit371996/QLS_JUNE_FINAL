@@ -3,7 +3,7 @@ import { Router } from "@reach/router"
 import Layout from "../components/layout/layout"
 import PrivateRoute from "../components/privateRout/privateRoute"
 import Home from "."
-import About from "./about"
+import About from "./about_us"
 import Solution from "./solutions"
 import Whatsnew from "./whats_new"
 import Partner from "./partner"
@@ -19,7 +19,7 @@ const App = () => (
   <Layout>
     <Router basepath="/app">
       <PrivateRoute path="/" component={Home} />
-      <PrivateRoute path="/about" component={About} />
+      <PrivateRoute path="/about_us" component={About} />
       <PrivateRoute path="/solutions" component={Solution} />
       <PrivateRoute path="/whats_new" component={Whatsnew} />
       <PrivateRoute path="/partner" component={Partner} />
