@@ -140,17 +140,12 @@ const Home = () => {
     };
 
   }, []);
-  const onScrollOverflow = (section, slide, position, direction) => {
-    const params = {
-      section: section,
-      slide: slide,
-      position: position,
-      direction: direction
-    };
-
-    console.log('--- onScrollOverflow ---');
-    console.log(params);
+  const fullpageOptions = {
+   
+    scrollOverflow: true,
+    scrollOverflowOptions: { scrollbars: true },
   };
+
   return (
 
     <StaticQuery
@@ -274,8 +269,7 @@ const Home = () => {
                 <ReactFullpage
                   scrollingSpeed={1000} /* Options here */
                   onLeave={handleLeave}
-                  scrollOverflow={true}
-                  onScrollOverflow={onScrollOverflow}
+                  {...fullpageOptions}
                   render={({ fullpageApi }) => (
                     <>
                       <ReactFullpage.Wrapper>
