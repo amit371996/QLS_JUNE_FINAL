@@ -6,7 +6,7 @@ import "../responsive.css"
 import Layout from "../components/layout/layout"
 import { Link, StaticQuery, graphql } from 'gatsby';
 import Footer from '../components/footer/footer';
-import fullpage from 'fullpage.js';
+
 
 const getSection = (data, start, end) => {
   const imageUrls = data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.partner;
@@ -86,7 +86,7 @@ const Home = () => {
 
   const [scroll, setScroll] = useState(0);
   const [scrollClass, setScrollClass] = useState('');
-
+  const fullpageApiRef = useRef<FullpageApi>(null); 
   useEffect(() => {
     const handleScroll = () => {
       const scrollDiv = document.querySelector('.list_manage');
@@ -94,7 +94,7 @@ const Home = () => {
       setScroll(scrollTop);
       if (scrollTop < 1) {
         // setScrollClass('scroll_1');
-        
+        fullpageApiRef.current.moveSectionUp()
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -118,7 +118,7 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-2.png")';
         }
       } else if (scrollTop > 1748 && scrollTop < 1800) {
-       
+        // setScrollClass('scroll_4');
         document.querySelector('.progress').scrollTop = 1660;
         console.log("4");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -126,7 +126,7 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-3.png")';
         }
       } else if (scrollTop > 2120 && scrollTop < 2200) {
-       
+        // setScrollClass('scroll_5');
         document.querySelector('.progress').scrollTop = 2231;
         console.log("5");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -134,7 +134,7 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-4.png")';
         }
       } else if (scrollTop > 2520 && scrollTop < 2560) {
-       
+        // setScrollClass('scroll_6');
         document.querySelector('.progress').scrollTop = 2772;
         console.log("6");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -142,9 +142,18 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png")';
         }
       } else if (scrollTop > 2575) {
-         
+        
+        if (fullpageApiRef.current) {
+          fullpageApiRef.current.moveSectionDown(); // Use the Fullpage.js API instance to move down a section
+        }
       }
-      
+      else if (scrollTop > 0) {
+        
+        if (fullpageApiRef.current) {
+          fullpageApiRef.current.moveSectionUp(); // Use the Fullpage.js API instance to move down a section
+        }
+      }
+
       const docHeight = scrollDiv.scrollHeight;
       const winHeight = scrollDiv.clientHeight;
       const lineHeight = (scrollTop / (docHeight - winHeight)) * 5;
@@ -157,7 +166,6 @@ const Home = () => {
     scrollDiv.addEventListener('scroll', handleScroll);
     return () => {
       scrollDiv.removeEventListener('scroll', handleScroll);
-      
     };
 
   }, []);
@@ -168,7 +176,14 @@ const Home = () => {
     scrollOverflow: true,
     normalScrollElements: '.list_manage',
   };
-
+  const handleSlideChange = (destination) => {
+    console.log('Slide changed to:', destination);
+  
+    if (destination === 3) {
+     
+      fullpage_api.moveTo(2, 1);
+    }
+  };
   return (
 
     <StaticQuery
@@ -358,7 +373,7 @@ const Home = () => {
                             </div>
                           </div>
                         </section>
-                        <section className="section id_hide" id="stopr_de fullpage">
+                        <section className="section id_hide" id="stopr_de" >
                           <div className={`secation03 back_ghbd bhg sliderimg ${scrollClass}`} id='back_ghbdd' >
                             <div className="container">
                               <div className="row">
