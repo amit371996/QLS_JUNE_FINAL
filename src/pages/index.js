@@ -6,7 +6,7 @@ import "../responsive.css"
 import Layout from "../components/layout/layout"
 import { Link, StaticQuery, graphql } from 'gatsby';
 import Footer from '../components/footer/footer';
-
+import fullpage from 'fullpage.js';
 
 const getSection = (data, start, end) => {
   const imageUrls = data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.partner;
@@ -86,14 +86,22 @@ const Home = () => {
 
   const [scroll, setScroll] = useState(0);
   const [scrollClass, setScrollClass] = useState('');
-  const fullpageApiRef = useRef<FullpageApi>(null); 
+  const fullpageApiRef = useRef(null);
   useEffect(() => {
+    const fullpageInstance = new fullpage('#fullpage', {
+    
+      navigation: true,
+    });
+
+    fullpageApiRef.current = fullpageInstance;
+
     const handleScroll = () => {
       const scrollDiv = document.querySelector('.list_manage');
       const scrollTop = scrollDiv.scrollTop;
       setScroll(scrollTop);
       if (scrollTop < 1) {
         // setScrollClass('scroll_1');
+        fullpageApiRef.current.moveSectionUp()
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -141,18 +149,9 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png")';
         }
       } else if (scrollTop > 2575) {
-        
-        if (fullpageApiRef.current) {
           fullpageApiRef.current.moveTo(4); // Use the Fullpage.js API instance to move down a section
-        }
       }
-      else if (scrollTop > 0) {
-        
-        if (fullpageApiRef.current) {
-          fullpageApiRef.current.moveSectionUp(); // Use the Fullpage.js API instance to move down a section
-        }
-      }
-
+      
       const docHeight = scrollDiv.scrollHeight;
       const winHeight = scrollDiv.clientHeight;
       const lineHeight = (scrollTop / (docHeight - winHeight)) * 5;
@@ -165,6 +164,7 @@ const Home = () => {
     scrollDiv.addEventListener('scroll', handleScroll);
     return () => {
       scrollDiv.removeEventListener('scroll', handleScroll);
+      fullpageInstance.destroy();
     };
 
   }, []);
@@ -365,7 +365,7 @@ const Home = () => {
                             </div>
                           </div>
                         </section>
-                        <section className="section id_hide" id="stopr_de" >
+                        <section className="section id_hide" id="stopr_de fullpage">
                           <div className={`secation03 back_ghbd bhg sliderimg ${scrollClass}`} id='back_ghbdd' >
                             <div className="container">
                               <div className="row">
