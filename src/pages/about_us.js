@@ -79,29 +79,29 @@ const About = () => {
 	//   document.documentElement.scrollTop = 0;
 	// }
 	
+	
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			setIsVisible(scrollTop > window.innerHeight);
+		};
 
-	// useEffect(() => {
-	// 	const handleScroll = () => {
-	// 		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	// 		setIsVisible(scrollTop > window.innerHeight);
-	// 	};
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
-	// 	window.addEventListener('scroll', handleScroll);
-	// 	return () => {
-	// 		window.removeEventListener('scroll', handleScroll);
-	// 	};
-	// }, []);
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
 
-	// const scrollToTop = () => {
-	// 	window.scrollTo({
-	// 		top: 0,
-	// 		behavior: 'smooth',
-	// 	});
-	// };
-
-	// if (!isVisible) {
-	// 	return null;
-	// }
+	if (!isVisible) {
+		return null;
+	}
 
 	return (
 		<>
@@ -194,9 +194,9 @@ const About = () => {
 															</div>
 														</div>
 													</section>
-													<section className="section">
+													
 														<AboutVideo/>
-													</section>
+													
 													<section className="section" >
 														<div className="secatioonteam bhg">
 															<div className="jhg_tfrd paddint_top padding_Btnh">
@@ -320,13 +320,13 @@ const About = () => {
 									)}
 								/>
 								<div className="btn">
-									{/* <button
+									<button
 										id="scroll-to-top"
 										className="top_arrow_wrap"
 										onClick={scrollToTop}
 									>
 										scr
-									</button> */}
+									</button>
 								</div>
 							</>
 						) : (
