@@ -75,23 +75,35 @@ const About = () => {
 		const video = videoRef.current;
 		video.play();
 	};
-	const handleAfterLoad = (origin, destination, direction) => {
-		const scrollToTopButton = document.getElementById('scroll-to-top');
-		if (destination.index > 0) {
-			scrollToTopButton.style.display = 'block';
-		} else {
-			scrollToTopButton.style.display = 'none';
-		}
-	};
+	const [isVisible, setIsVisible] = useState(false);
 
-	const handleScrollToTop = (fullpageApi) => {
-		fullpageApi.moveTo(1);
-	};
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setIsVisible(scrollTop > window.innerHeight); 
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  if (!isVisible) {
+    return null; 
+  }
+
+	
 
 	return (
 		<>
-
-			<ScrollToTopButton />
 			<StaticQuery
 
 				query={graphql`
@@ -151,7 +163,7 @@ const About = () => {
 									scrollingSpeed={1000}
 									normalScrollElements="#footer"
 									onLeave={handleLeave}
-									afterLoad={handleAfterLoad}
+									
 									render={({ fullpageApi }) => (
 										<>
 											<ReactFullpage.Wrapper>
@@ -343,8 +355,8 @@ const About = () => {
 
 									)}
 								/>
-								<ScrollToTopButton/>
-								<button id="scroll-to-top" className='top_arrow_wrap' onClick={() => handleScrollToTop(fullpageApi)}>
+								
+								<button id="scroll-to-top" className='top_arrow_wrap'  onClick={scrollToTop}>
 								<FontAwesomeIcon icon={faAngleUp} />	
 								</button>
 							</>
