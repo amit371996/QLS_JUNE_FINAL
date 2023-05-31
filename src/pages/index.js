@@ -118,7 +118,7 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-2.png")';
         }
       } else if (scrollTop > 1748 && scrollTop < 1800) {
-        // setScrollClass('scroll_4');
+       
         document.querySelector('.progress').scrollTop = 1660;
         console.log("4");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -126,7 +126,7 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-3.png")';
         }
       } else if (scrollTop > 2120 && scrollTop < 2200) {
-        // setScrollClass('scroll_5');
+       
         document.querySelector('.progress').scrollTop = 2231;
         console.log("5");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -134,7 +134,7 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-4.png")';
         }
       } else if (scrollTop > 2520 && scrollTop < 2560) {
-        // setScrollClass('scroll_6');
+       
         document.querySelector('.progress').scrollTop = 2772;
         console.log("6");
         const back_ghbdd = document.getElementById('back_ghbdd');
