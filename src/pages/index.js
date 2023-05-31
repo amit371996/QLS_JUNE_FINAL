@@ -88,7 +88,7 @@ const Home = () => {
   const [scrollClass, setScrollClass] = useState('');
   const fullpageApiRef = useRef<FullpageApi>(null); 
   useEffect(() => {
-    const handleScroll = (fullpage_Api) => {
+    const handleScroll = () => {
       const scrollDiv = document.querySelector('.list_manage');
       const scrollTop = scrollDiv.scrollTop;
 
@@ -166,8 +166,10 @@ const Home = () => {
   }, []);
   const fullpageOptions = {
 
+    // scrollOverflow: true,
+    // scrollOverflowOptions: { scrollbars: true },
     scrollOverflow: true,
-    scrollOverflowOptions: { scrollbars: true },
+    normalScrollElements: '.list_manage',
   };
 
   return (
