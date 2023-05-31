@@ -7,8 +7,12 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import NavBar from "../components/Header/nav-bar";
 import Footer from "../components/footer/footer";
 import ScrollToTopButton from "../components/scroll_top/scroll_top";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 const About = () => {
+	library.add(faAngleUp);
 	const [isFullpage, setIsFullpage] = useState(true);
 
 	useEffect(() => {
@@ -339,8 +343,9 @@ const About = () => {
 
 									)}
 								/>
+								<ScrollToTopButton/>
 								<button id="scroll-to-top" className='top_arrow_wrap' onClick={() => handleScrollToTop(fullpageApi)}>
-									Scroll to Top
+								<FontAwesomeIcon icon={faAngleUp} />	
 								</button>
 							</>
 						) : (
