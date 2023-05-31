@@ -71,21 +71,29 @@ const About = () => {
 		const video = videoRef.current;
 		video.play();
 	};
-	const handleAfterLoad = (origin, destination, direction) => {
-		const scrollToTopButton = document.getElementById('scroll-to-top');
-		if (destination.index > 0) {
-			scrollToTopButton.style.display = 'block';
-		} else {
-			scrollToTopButton.style.display = 'none';
-		}
-		
+	const [showBtn, setShowBtn] = useState("myBtn none");
+
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function () {
+	  scrollFunction();
 	};
-	
-	function topFunction() {
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
+  
+	function scrollFunction() {
+	  if (
+		document.body.scrollTop > 20 ||
+		document.documentElement.scrollTop > 20
+	  ) {
+		setShowBtn("myBtn");
+	  } else {
+		setShowBtn("none");
 	  }
-	
+	}
+  
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	  document.body.scrollTop = 0;
+	  document.documentElement.scrollTop = 0;
+	}
 
 	
 	return (
@@ -344,8 +352,9 @@ const About = () => {
 									)}
 								/>
 								
-								<button id="scroll-to-top" className='top_arrow_wrap' onClick={topFunction}>
-									
+      
+								<button id="myBtn" className={`top_arrow_wrap ${showBtn}`} onClick={topFunction}>
+								top
 								</button>
 							</>
 						) : (
