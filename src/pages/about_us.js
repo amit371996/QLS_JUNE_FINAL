@@ -355,7 +355,7 @@ const About = () => {
 									<button
 										id="scroll-to-top"
 										className="top_arrow_wrap"
-										
+										onClick={topFunction}
 									>
 										
 									</button>
