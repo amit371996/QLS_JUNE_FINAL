@@ -10,7 +10,29 @@ import ScrollToTopButton from "../components/scroll_top/scroll_top";
 
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
-
+	const [isVisible, setIsVisible] = useState(false);
+	useEffect(() => {
+		const handleScroll = () => {
+		  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		  setIsVisible(scrollTop > window.innerHeight); 
+		};
+	
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+		  window.removeEventListener('scroll', handleScroll);
+		};
+	  }, []);
+	
+	const handleScrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+	if (!isVisible) {
+		return null; 
+	  }
+	
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 992) {
@@ -71,22 +93,7 @@ const About = () => {
 		const video = videoRef.current;
 		video.play();
 	};
-	const handleAfterLoad = (origin, destination, direction) => {
-		const scrollToTopButton = document.getElementById('scroll-to-top');
-		if (destination.index > 0) {
-			scrollToTopButton.style.display = 'block';
-		} else {
-			scrollToTopButton.style.display = 'none';
-		}
-		scrollToTopButton.addEventListener('click', handleScrollToTop);
-	};
 	
-	const handleScrollToTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		});
-	};
 	
 
 	
