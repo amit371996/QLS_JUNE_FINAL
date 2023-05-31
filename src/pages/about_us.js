@@ -77,7 +77,7 @@ const About = () => {
 	// window.onscroll = function () {
 	//   scrollFunction();
 	// };
-  
+
 	// function scrollFunction() {
 	//   if (
 	// 	document.body.scrollTop > 20 ||
@@ -88,14 +88,37 @@ const About = () => {
 	// 	setShowBtn("none");
 	//   }
 	// }
-  
+
 	// // When the user clicks on the button, scroll to the top of the document
 	// function topFunction() {
 	//   document.body.scrollTop = 0;
 	//   document.documentElement.scrollTop = 0;
 	// }
+	const [isVisible, setIsVisible] = useState(false);
 
-	
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			setIsVisible(scrollTop > window.innerHeight);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+
+	if (!isVisible) {
+		return null;
+	}
+
 	return (
 		<>
 
@@ -159,7 +182,7 @@ const About = () => {
 									scrollingSpeed={1000}
 									normalScrollElements="#footer"
 									onLeave={handleLeave}
-									
+
 									render={({ fullpageApi }) => (
 										<>
 											<ReactFullpage.Wrapper>
@@ -352,8 +375,14 @@ const About = () => {
 									)}
 								/>
 								<div className="btn">
-									<ScrollToTopButton/>
-				                </div>
+									<button
+										id="scroll-to-top"
+										className="top_arrow_wrap"
+										onClick={scrollToTop}
+									>
+										scroll
+									</button>
+								</div>
 							</>
 						) : (
 							<main>
