@@ -81,17 +81,17 @@ const About = () => {
 	  };
 	
 	  const topFunction = () => {
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
+		window.scrollTo({
+		  top: 0,
+		  behavior: 'smooth',
+		});
 	  };
 	
 	  useEffect(() => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		scrollToTopButton.addEventListener('click', topFunction);
 		
-		return () => {
-		  scrollToTopButton.removeEventListener('click', topFunction);
-		};
+		
 	  }, []);
 	
 
