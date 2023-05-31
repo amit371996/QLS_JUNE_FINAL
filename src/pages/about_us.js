@@ -10,7 +10,36 @@ import ScrollToTopButton from "../components/scroll_top/scroll_top";
 
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
-	// const [isVisible, setIsVisible] = useState(false);
+	const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+	const [isVisible, setIsVisible] = useState(false);
+
+	const videoRef = useRef(null);
+	useEffect(() => {
+	  const video = videoRef.current;
+  
+	  // Show loading animation.
+  
+	  // Play the video and handle the result using promises.
+	  const playPromise = video.play();
+  
+	  if (playPromise !== undefined) {
+		playPromise
+		  .then(() => {
+			video.play();
+		  })
+		  .catch(error => {
+			// Auto-play was prevented
+			// Show paused UI.
+		  });
+	  }
+	}, []);
+	const handleVideoEnded = () => {
+	  const video = videoRef.current;
+	  video.play();
+	};
+
+	
+	
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 992) {
@@ -32,7 +61,7 @@ const About = () => {
 
 	}
 
-	const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+	
 	const handleLeave = (origin, destination) => {
 		setCurrentSectionIndex(destination.index);
 	};
@@ -52,25 +81,7 @@ const About = () => {
 			}
 		};
 	}, [currentSectionIndex]);
-	const videoRef = useRef(null);
-
-	useEffect(() => {
-		const video = videoRef.current;
-
-		if (video && typeof video.play === 'function') {
-			video.play()
-				.then(() => {
-					// Video playback started successfully
-				})
-				.catch(error => {
-					// Handle any errors that occurred during playback
-				});
-		}
-	}, []);
-	const handleVideoEnded = () => {
-		const video = videoRef.current;
-		video.play();
-	};
+	
 	// const [showBtn, setShowBtn] = useState("myBtn none");
 
 	// // When the user scrolls down 20px from the top of the document, show the button
@@ -94,7 +105,7 @@ const About = () => {
 	//   document.body.scrollTop = 0;
 	//   document.documentElement.scrollTop = 0;
 	// }
-	const [isVisible, setIsVisible] = useState(false);
+	
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -380,7 +391,7 @@ const About = () => {
 										className="top_arrow_wrap"
 										onClick={scrollToTop}
 									>
-										scroll
+										scr
 									</button>
 								</div>
 							</>
