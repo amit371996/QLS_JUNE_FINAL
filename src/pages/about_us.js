@@ -7,10 +7,10 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import NavBar from "../components/Header/nav-bar";
 import Footer from "../components/footer/footer";
 import ScrollToTopButton from "../components/scroll_top/scroll_top";
-
+import fullpage from 'fullpage.js';
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
-
+	const [fullpageApi, setFullpageApi] = useState(null);
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 992) {
@@ -81,10 +81,9 @@ const About = () => {
 	  };
 	
 	  const topFunction = () => {
-		window.scrollTo({
-		  top: 0,
-		  behavior: 'smooth',
-		});
+		if (fullpageApi) {
+			fullpageApi.moveTo(1);
+		  }
 	  };
 	
 	  useEffect(() => {
@@ -160,7 +159,8 @@ const About = () => {
 									normalScrollElements="#footer"
 									onLeave={handleLeave}
 									afterLoad={handleAfterLoad}
-									render={({ fullpageApi }) => (
+									render={({ fullpageApi }) => {
+										setFullpageApi(fullpageApi);
 										<>
 											<ReactFullpage.Wrapper>
 												<main>
@@ -349,7 +349,7 @@ const About = () => {
 										</>
 
 
-									)}
+									}}
 								/>
 								<div className="btn">
 									<button
