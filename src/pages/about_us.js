@@ -10,7 +10,7 @@ import ScrollToTopButton from "../components/scroll_top/scroll_top";
 import fullpage from 'fullpage.js';
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
-	const [fullpageApi, setFullpageApi] = useState(null);
+
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 992) {
@@ -71,28 +71,31 @@ const About = () => {
 		const video = videoRef.current;
 		video.play();
 	};
+	const [fullpageApi, setFullpageApi] = useState(null);
 	const handleAfterLoad = (origin, destination, direction) => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		if (destination.index > 0) {
-		  scrollToTopButton.style.display = 'block';
+			scrollToTopButton.style.display = 'block';
 		} else {
-		  scrollToTopButton.style.display = 'none';
+			scrollToTopButton.style.display = 'none';
 		}
-	  };
-	
-	  const topFunction = () => {
+	};
+
+	const topFunction = () => {
 		if (fullpageApi) {
 			fullpageApi.moveTo(1);
-		  }
-	  };
-	
-	  useEffect(() => {
+		}
+	};
+
+	useEffect(() => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		scrollToTopButton.addEventListener('click', topFunction);
-		
-		
-	  }, []);
-	
+
+		return () => {
+			scrollToTopButton.removeEventListener('click', topFunction);
+		};
+	}, []);
+
 
 
 	return (
@@ -357,7 +360,7 @@ const About = () => {
 										className="top_arrow_wrap"
 										onClick={topFunction}
 									>
-										
+
 									</button>
 								</div>
 							</>
