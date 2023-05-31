@@ -89,7 +89,7 @@ const Home = () => {
       const scrollDiv = document.querySelector('.list_manage');
       const scrollTop = scrollDiv.scrollTop;
       setScroll(scrollTop);
-      if (scrollTop < 1) {
+      if (fullpage_Api && scrollTop < 1) {
         // setScrollClass('scroll_1');
         fullpage_Api.moveSectionUp()
         document.querySelector('.progress').scrollTop = 1;
@@ -138,7 +138,7 @@ const Home = () => {
         if (back_ghbdd) {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png")';
         }
-      } else if (scrollTop > 2575) {
+      } else if (fullpage_Api && scrollTop > 2575) {
         
         fullpage_Api.moveSectionDown()
       }
