@@ -10,7 +10,7 @@ import ScrollToTopButton from "../components/scroll_top/scroll_top";
 
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
-	
+
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 992) {
@@ -71,13 +71,35 @@ const About = () => {
 		const video = videoRef.current;
 		video.play();
 	};
+	const handleAfterLoad = (origin, destination, direction) => {
+		const scrollToTopButton = document.getElementById('scroll-to-top');
+		if (destination.index > 0) {
+		  scrollToTopButton.style.display = 'block';
+		} else {
+		  scrollToTopButton.style.display = 'none';
+		}
+	  };
+	
+	  const topFunction = () => {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	  };
+	
+	  useEffect(() => {
+		const scrollToTopButton = document.getElementById('scroll-to-top');
+		scrollToTopButton.addEventListener('click', topFunction);
+		
+		return () => {
+		  scrollToTopButton.removeEventListener('click', topFunction);
+		};
+	  }, []);
 	
 
-	
+
 	return (
 		<>
 
-			<ScrollToTopButton />
+
 			<StaticQuery
 
 				query={graphql`
@@ -135,9 +157,9 @@ const About = () => {
 
 								<ReactFullpage
 									scrollingSpeed={1000}
-									
+									normalScrollElements="#footer"
 									onLeave={handleLeave}
-									
+									afterLoad={handleAfterLoad}
 									render={({ fullpageApi }) => (
 										<>
 											<ReactFullpage.Wrapper>
@@ -329,7 +351,15 @@ const About = () => {
 
 									)}
 								/>
-								
+								<div className="btn">
+									<button
+										id="scroll-to-top"
+										className="top_arrow_wrap"
+										
+									>
+										
+									</button>
+								</div>
 							</>
 						) : (
 							<main>
