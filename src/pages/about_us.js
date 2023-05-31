@@ -7,7 +7,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import NavBar from "../components/Header/nav-bar";
 import Footer from "../components/footer/footer";
 import ScrollToTopButton from "../components/scroll_top/scroll_top";
-import fullpage from 'fullpage.js';
+
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
 
@@ -71,34 +71,29 @@ const About = () => {
 		const video = videoRef.current;
 		video.play();
 	};
-	// const [fullpageApi, setFullpageApi] = useState(null);
 	const handleAfterLoad = (origin, destination, direction) => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		if (destination.index > 0) {
-			scrollToTopButton.style.display = 'block';
+		  scrollToTopButton.style.display = 'block';
 		} else {
-			scrollToTopButton.style.display = 'none';
+		  scrollToTopButton.style.display = 'none';
 		}
-	};
-
-	const topFunction = () => {
-		// if (fullpageApi) {
-		// 	fullpageApi.moveTo(1);
-		// }
-		window.scroll({
-			top: 0,
-			left: 0,
-			behavior: 'smooth',
-		  });
-	};
-
-	useEffect(() => {
+	  };
+	
+	  const topFunction = () => {
+		window.scrollTo({
+		  top: 0,
+		  behavior: 'smooth',
+		});
+	  };
+	
+	  useEffect(() => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		scrollToTopButton.addEventListener('click', topFunction);
-
 		
-	}, []);
-
+		
+	  }, []);
+	
 
 
 	return (
@@ -165,8 +160,7 @@ const About = () => {
 									normalScrollElements="#footer"
 									onLeave={handleLeave}
 									afterLoad={handleAfterLoad}
-									render={({ fullpageApi }) => {
-										// setFullpageApi(fullpageApi);
+									render={({ fullpageApi }) => (
 										<>
 											<ReactFullpage.Wrapper>
 												<main>
@@ -355,7 +349,7 @@ const About = () => {
 										</>
 
 
-									}}
+									)}
 								/>
 								<div className="btn">
 									<button
@@ -363,7 +357,7 @@ const About = () => {
 										className="top_arrow_wrap"
 										onClick={topFunction}
 									>
-
+										
 									</button>
 								</div>
 							</>
