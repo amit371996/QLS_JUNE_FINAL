@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import ReactFullpage from "@fullpage/react-fullpage";
+import ReactFullpage, { FullpageApi } from "@fullpage/react-fullpage";
 import "../stylee.css"
 import "../responsive.css"
 import Layout from "../components/layout/layout"
@@ -86,43 +86,67 @@ const Home = () => {
 
   const [scroll, setScroll] = useState(0);
   const [scrollClass, setScrollClass] = useState('');
-
+  const fullpageApiRef = useRef<FullpageApi>(null); 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (fullpage_Api) => {
       const scrollDiv = document.querySelector('.list_manage');
       const scrollTop = scrollDiv.scrollTop;
 
       setScroll(scrollTop);
 
       if (scrollTop < 1) {
-        setScrollClass('scroll_1');
+        // setScrollClass('scroll_1');
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
+        const back_ghbdd = document.getElementById('back_ghbdd');
+        if (back_ghbdd) {
+          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group.png")';
+        }
       } else if (scrollTop > 548 && scrollTop < 600) {
-        setScrollClass('scroll_2');
+        // setScrollClass('scroll_2');
         document.querySelector('.progress').scrollTop = 542;
         console.log("2");
+        const back_ghbdd = document.getElementById('back_ghbdd');
+        if (back_ghbdd) {
+          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-1.png")';
+        }
       } else if (scrollTop > 1180 && scrollTop < 1300) {
-        setScrollClass('scroll_3');
+        // setScrollClass('scroll_3');
         document.querySelector('.progress').scrollTop = 1101;
         console.log("3");
+        const back_ghbdd = document.getElementById('back_ghbdd');
+        if (back_ghbdd) {
+          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-2.png")';
+        }
       } else if (scrollTop > 1748 && scrollTop < 1800) {
-        setScrollClass('scroll_4');
+        // setScrollClass('scroll_4');
         document.querySelector('.progress').scrollTop = 1660;
         console.log("4");
+        const back_ghbdd = document.getElementById('back_ghbdd');
+        if (back_ghbdd) {
+          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-3.png")';
+        }
       } else if (scrollTop > 2120 && scrollTop < 2200) {
-        setScrollClass('scroll_5');
+        // setScrollClass('scroll_5');
         document.querySelector('.progress').scrollTop = 2231;
         console.log("5");
+        const back_ghbdd = document.getElementById('back_ghbdd');
+        if (back_ghbdd) {
+          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-4.png")';
+        }
       } else if (scrollTop > 2520 && scrollTop < 2560) {
-        setScrollClass('scroll_6');
+        // setScrollClass('scroll_6');
         document.querySelector('.progress').scrollTop = 2772;
         console.log("6");
+        const back_ghbdd = document.getElementById('back_ghbdd');
+        if (back_ghbdd) {
+          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png")';
+        }
       } else if (scrollTop > 2575) {
-
-        // const fullpageApi = window.fullpage_api;
-        // // fullpageApi.moveSectionDown();
-        // fullpageApi.moveTo(4);
+        
+        if (fullpageApiRef.current) {
+          fullpageApiRef.current.moveSectionDown(); // Use the Fullpage.js API instance to move down a section
+        }
       }
 
       const docHeight = scrollDiv.scrollHeight;
@@ -141,7 +165,7 @@ const Home = () => {
 
   }, []);
   const fullpageOptions = {
-   
+
     scrollOverflow: true,
     scrollOverflowOptions: { scrollbars: true },
   };
@@ -269,8 +293,13 @@ const Home = () => {
                 <ReactFullpage
                   scrollingSpeed={1000} /* Options here */
                   onLeave={handleLeave}
+                  afterLoad={(origin, destination, direction) => {
+                    // Handle section load event
+                    console.log('--- afterLoad ---');
+                    console.log(origin, destination, direction);
+                  }}
                   {...fullpageOptions}
-                  render={({ fullpageApi }) => (
+                  render={({ fullpage_Api }) => (
                     <>
                       <ReactFullpage.Wrapper>
                         <section className="section">
@@ -331,7 +360,7 @@ const Home = () => {
                           </div>
                         </section>
                         <section className="section id_hide" id="stopr_de" >
-                          <div className={`secation03 back_ghbd bhg sliderimg ${scrollClass}`} >
+                          <div className={`secation03 back_ghbd bhg sliderimg ${scrollClass}`} id='back_ghbdd' >
                             <div className="container">
                               <div className="row">
                                 <div className="col-md-12">
