@@ -333,14 +333,15 @@ const About = () => {
 												</main>
 
 											</ReactFullpage.Wrapper>
-											<button id="scroll-to-top" className='top_arrow_wrap' onClick={() => handleScrollToTop(fullpageApi)}>
-												Scroll to Top
-											</button>
+
 										</>
 
 
 									)}
 								/>
+								<button id="scroll-to-top" className='top_arrow_wrap' onClick={() => handleScrollToTop(fullpageApi)}>
+									Scroll to Top
+								</button>
 							</>
 						) : (
 							<main>
