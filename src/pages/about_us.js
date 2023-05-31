@@ -7,12 +7,8 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import NavBar from "../components/Header/nav-bar";
 import Footer from "../components/footer/footer";
 import ScrollToTopButton from "../components/scroll_top/scroll_top";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
 
 const About = () => {
-	library.add(faAngleUp);
 	const [isFullpage, setIsFullpage] = useState(true);
 
 	useEffect(() => {
@@ -75,35 +71,26 @@ const About = () => {
 		const video = videoRef.current;
 		video.play();
 	};
-	const [isVisible, setIsVisible] = useState(false);
+	const handleAfterLoad = (origin, destination, direction) => {
+		const scrollToTopButton = document.getElementById('scroll-to-top');
+		if (destination.index > 0) {
+			scrollToTopButton.style.display = 'block';
+		} else {
+			scrollToTopButton.style.display = 'none';
+		}
+	};
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setIsVisible(scrollTop > window.innerHeight); 
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  if (!isVisible) {
-    return null; 
-  }
-
-	
+	const handleScrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		  });
+	};
 
 	return (
 		<>
+
+			<ScrollToTopButton />
 			<StaticQuery
 
 				query={graphql`
@@ -163,7 +150,7 @@ const About = () => {
 									scrollingSpeed={1000}
 									normalScrollElements="#footer"
 									onLeave={handleLeave}
-									
+									afterLoad={handleAfterLoad}
 									render={({ fullpageApi }) => (
 										<>
 											<ReactFullpage.Wrapper>
@@ -356,8 +343,8 @@ const About = () => {
 									)}
 								/>
 								
-								<button id="scroll-to-top" className='top_arrow_wrap'  onClick={scrollToTop}>
-								<FontAwesomeIcon icon={faAngleUp} />	
+								<button id="scroll-to-top" className='top_arrow_wrap' onClick={handleScrollToTop}>
+									
 								</button>
 							</>
 						) : (
