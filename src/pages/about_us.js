@@ -86,7 +86,7 @@ const About = () => {
 	
 	  useEffect(() => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
-		scrollToTopButton.addEventListener('click', topFunction);
+		scrollToTopButton.addEventListener('click', handleScrollToTop);
 		
 		
 	  }, []);
