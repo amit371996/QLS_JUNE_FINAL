@@ -17,10 +17,8 @@ const getSection = (data, start, end) => {
 }
 
 const Home = () => {
-  const [fullpage_Api, setFullpageApi] = useState(null);
   // remove fullpagejs after 991 width
   const [isFullpage, setIsFullpage] = useState(true);
-  
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 992) {
@@ -40,6 +38,10 @@ const Home = () => {
 
   useEffect(() => {
     const video = videoRef.current;
+
+    // Show loading animation.
+
+    // Play the video and handle the result using promises.
     const playPromise = video.play();
 
     if (playPromise !== undefined) {
@@ -48,7 +50,8 @@ const Home = () => {
           video.play();
         })
         .catch(error => {
-          
+          // Auto-play was prevented
+          // Show paused UI.
         });
     }
   }, []);
@@ -83,17 +86,15 @@ const Home = () => {
 
   const [scroll, setScroll] = useState(0);
   const [scrollClass, setScrollClass] = useState('');
-  const handleFullpageInitialized = (api) => {
-    setFullpageApi(api);
-  };
+  const fullpageApiRef = useRef<FullpageApi>(null); 
   useEffect(() => {
     const handleScroll = () => {
       const scrollDiv = document.querySelector('.list_manage');
       const scrollTop = scrollDiv.scrollTop;
       setScroll(scrollTop);
-      if (fullpage_Api && scrollTop < 1) {
+      if (scrollTop < 1) {
         // setScrollClass('scroll_1');
-        fullpage_Api.moveSectionUp()
+        fullpageApiRef.current.moveSectionUp()
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -140,11 +141,19 @@ const Home = () => {
         if (back_ghbdd) {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png")';
         }
-      } else if (fullpage_Api && scrollTop > 2575) {
+      } else if (scrollTop > 2575) {
         
-        fullpage_Api.moveSectionDown()
+        if (fullpageApiRef.current) {
+          fullpageApiRef.current.moveSectionDown(); // Use the Fullpage.js API instance to move down a section
+        }
       }
-     
+      else if (scrollTop > 0) {
+        
+        if (fullpageApiRef.current) {
+          fullpageApiRef.current.moveSectionUp(); // Use the Fullpage.js API instance to move down a section
+        }
+      }
+
       const docHeight = scrollDiv.scrollHeight;
       const winHeight = scrollDiv.clientHeight;
       const lineHeight = (scrollTop / (docHeight - winHeight)) * 5;
@@ -164,12 +173,17 @@ const Home = () => {
 
     // scrollOverflow: true,
     // scrollOverflowOptions: { scrollbars: true },
-    afterRender: handleFullpageInitialized,
     scrollOverflow: true,
     normalScrollElements: '.list_manage',
-   
   };
-
+  const handleSlideChange = (destination) => {
+    console.log('Slide changed to:', destination);
+  
+    if (destination === 3) {
+     
+      fullpage_api.moveTo(2, 1);
+    }
+  };
   return (
 
     <StaticQuery
@@ -299,8 +313,7 @@ const Home = () => {
                     console.log(origin, destination, direction);
                   }}
                   {...fullpageOptions}
-                  render={({ fullpage_Api }) => {
-                    setFullpageApi(fullpage_Api);
+                  render={({ fullpage_Api }) => (
                     <>
                       <ReactFullpage.Wrapper>
                         <section className="section">
@@ -672,7 +685,7 @@ const Home = () => {
                         <Footer />
                       </ReactFullpage.Wrapper>
                     </>
-                  }}
+                  )}
                 />
               </Layout>
             </>
