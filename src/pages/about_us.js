@@ -10,7 +10,7 @@ import ScrollToTopButton from "../components/scroll_top/scroll_top";
 
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
-	const [isVisible, setIsVisible] = useState(false);
+	// const [isVisible, setIsVisible] = useState(false);
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 992) {
@@ -159,7 +159,7 @@ const About = () => {
 									scrollingSpeed={1000}
 									normalScrollElements="#footer"
 									onLeave={handleLeave}
-									afterLoad={handleAfterLoad}
+									
 									render={({ fullpageApi }) => (
 										<>
 											<ReactFullpage.Wrapper>
