@@ -71,7 +71,7 @@ const About = () => {
 		const video = videoRef.current;
 		video.play();
 	};
-	const [fullpageApi, setFullpageApi] = useState(null);
+	// const [fullpageApi, setFullpageApi] = useState(null);
 	const handleAfterLoad = (origin, destination, direction) => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		if (destination.index > 0) {
@@ -82,18 +82,21 @@ const About = () => {
 	};
 
 	const topFunction = () => {
-		if (fullpageApi) {
-			fullpageApi.moveTo(1);
-		}
+		// if (fullpageApi) {
+		// 	fullpageApi.moveTo(1);
+		// }
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		  });
 	};
 
 	useEffect(() => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		scrollToTopButton.addEventListener('click', topFunction);
 
-		return () => {
-			scrollToTopButton.removeEventListener('click', topFunction);
-		};
+		
 	}, []);
 
 
@@ -163,7 +166,7 @@ const About = () => {
 									onLeave={handleLeave}
 									afterLoad={handleAfterLoad}
 									render={({ fullpageApi }) => {
-										setFullpageApi(fullpageApi);
+										// setFullpageApi(fullpageApi);
 										<>
 											<ReactFullpage.Wrapper>
 												<main>
