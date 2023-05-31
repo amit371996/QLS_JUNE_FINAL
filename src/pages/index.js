@@ -17,8 +17,10 @@ const getSection = (data, start, end) => {
 }
 
 const Home = () => {
+  const [fullpage_Api, setFullpageApi] = useState(null);
   // remove fullpagejs after 991 width
   const [isFullpage, setIsFullpage] = useState(true);
+  
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 992) {
@@ -38,10 +40,6 @@ const Home = () => {
 
   useEffect(() => {
     const video = videoRef.current;
-
-    // Show loading animation.
-
-    // Play the video and handle the result using promises.
     const playPromise = video.play();
 
     if (playPromise !== undefined) {
@@ -50,8 +48,7 @@ const Home = () => {
           video.play();
         })
         .catch(error => {
-          // Auto-play was prevented
-          // Show paused UI.
+          
         });
     }
   }, []);
@@ -86,7 +83,7 @@ const Home = () => {
 
   const [scroll, setScroll] = useState(0);
   const [scrollClass, setScrollClass] = useState('');
-  const fullpageApiRef = useRef<FullpageApi>(null); 
+ 
   useEffect(() => {
     const handleScroll = () => {
       const scrollDiv = document.querySelector('.list_manage');
@@ -94,7 +91,7 @@ const Home = () => {
       setScroll(scrollTop);
       if (scrollTop < 1) {
         // setScrollClass('scroll_1');
-        fullpageApiRef.current.moveSectionUp()
+        fullpage_Api.moveSectionUp()
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -143,17 +140,9 @@ const Home = () => {
         }
       } else if (scrollTop > 2575) {
         
-        if (fullpageApiRef.current) {
-          fullpageApiRef.current.moveSectionDown(); // Use the Fullpage.js API instance to move down a section
-        }
+        fullpage_Api.moveSectionDown()
       }
-      else if (scrollTop > 0) {
-        
-        if (fullpageApiRef.current) {
-          fullpageApiRef.current.moveSectionUp(); // Use the Fullpage.js API instance to move down a section
-        }
-      }
-
+     
       const docHeight = scrollDiv.scrollHeight;
       const winHeight = scrollDiv.clientHeight;
       const lineHeight = (scrollTop / (docHeight - winHeight)) * 5;
@@ -176,14 +165,7 @@ const Home = () => {
     scrollOverflow: true,
     normalScrollElements: '.list_manage',
   };
-  const handleSlideChange = (destination) => {
-    console.log('Slide changed to:', destination);
-  
-    if (destination === 3) {
-     
-      fullpage_api.moveTo(2, 1);
-    }
-  };
+
   return (
 
     <StaticQuery
@@ -313,7 +295,8 @@ const Home = () => {
                     console.log(origin, destination, direction);
                   }}
                   {...fullpageOptions}
-                  render={({ fullpage_Api }) => (
+                  render={({ fullpage_Api }) => {
+                    setFullpageApi(fullpage_Api);
                     <>
                       <ReactFullpage.Wrapper>
                         <section className="section">
@@ -685,7 +668,7 @@ const Home = () => {
                         <Footer />
                       </ReactFullpage.Wrapper>
                     </>
-                  )}
+                  }}
                 />
               </Layout>
             </>
