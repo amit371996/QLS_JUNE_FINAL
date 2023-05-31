@@ -80,11 +80,8 @@ const About = () => {
 		}
 	  };
 	
-	  const topFunction = () => {
-		window.scrollTo({
-		  top: 0,
-		  behavior: 'smooth',
-		});
+	  const handleScrollToTop = (fullpageApi) => {
+		fullpageApi.moveTo(1);
 	  };
 	
 	  useEffect(() => {
@@ -355,7 +352,7 @@ const About = () => {
 									<button
 										id="scroll-to-top"
 										className="top_arrow_wrap"
-										onClick={topFunction}
+										onClick={() => handleScrollToTop(fullpageApi)}
 									>
 										
 									</button>
