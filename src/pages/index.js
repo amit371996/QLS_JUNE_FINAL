@@ -157,7 +157,7 @@ const Home = () => {
     scrollDiv.addEventListener('scroll', handleScroll);
     return () => {
       scrollDiv.removeEventListener('scroll', handleScroll);
-      fullpageInstance.destroy();
+      
     };
 
   }, []);
