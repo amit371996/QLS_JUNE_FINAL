@@ -84,13 +84,7 @@ const About = () => {
 		fullpageApi.moveTo(1);
 	  };
 	
-	  useEffect(() => {
-		const scrollToTopButton = document.getElementById('scroll-to-top');
-		scrollToTopButton.addEventListener('click', handleScrollToTop);
-		
-		
-	  }, []);
-	
+	  
 
 
 	return (
