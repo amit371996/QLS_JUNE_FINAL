@@ -7,12 +7,10 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import NavBar from "../components/Header/nav-bar";
 import Footer from "../components/footer/footer";
 import ScrollToTopButton from "../components/scroll_top/scroll_top";
-import AboutVideo from "./about_video";
 
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
-	const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-	const [isVisible, setIsVisible] = useState(false);
+	
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 992) {
@@ -34,7 +32,7 @@ const About = () => {
 
 	}
 
-	
+	const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 	const handleLeave = (origin, destination) => {
 		setCurrentSectionIndex(destination.index);
 	};
@@ -54,55 +52,28 @@ const About = () => {
 			}
 		};
 	}, [currentSectionIndex]);
-	
-	// const [showBtn, setShowBtn] = useState("myBtn none");
+	const videoRef = useRef(null);
 
-	// // When the user scrolls down 20px from the top of the document, show the button
-	// window.onscroll = function () {
-	//   scrollFunction();
-	// };
-
-	// function scrollFunction() {
-	//   if (
-	// 	document.body.scrollTop > 20 ||
-	// 	document.documentElement.scrollTop > 20
-	//   ) {
-	// 	setShowBtn("myBtn");
-	//   } else {
-	// 	setShowBtn("none");
-	//   }
-	// }
-
-	// // When the user clicks on the button, scroll to the top of the document
-	// function topFunction() {
-	//   document.body.scrollTop = 0;
-	//   document.documentElement.scrollTop = 0;
-	// }
-	
-	
 	useEffect(() => {
-		const handleScroll = () => {
-			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			setIsVisible(scrollTop > window.innerHeight);
-		};
+		const video = videoRef.current;
+		const playPromise = video.play();
+		if (playPromise !== undefined) {
+			playPromise
+				.then(() => {
+					video.play();
+				})
+				.catch(error => {
 
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
+				});
+		}
 	}, []);
-
-	const scrollToTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		});
+	const handleVideoEnded = () => {
+		const video = videoRef.current;
+		video.play();
 	};
+	
 
-	if (!isVisible) {
-		return null;
-	}
-
+	
 	return (
 		<>
 
@@ -164,9 +135,9 @@ const About = () => {
 
 								<ReactFullpage
 									scrollingSpeed={1000}
-									normalScrollElements="#footer"
+									
 									onLeave={handleLeave}
-
+									
 									render={({ fullpageApi }) => (
 										<>
 											<ReactFullpage.Wrapper>
@@ -194,9 +165,48 @@ const About = () => {
 															</div>
 														</div>
 													</section>
-													
-														<AboutVideo/>
-													
+													<section className="section">
+														<div className="secation02 bhg">
+															<div className="jhg_tfrd">
+																<div className="container">
+																	<div className="row">
+																		<div className="col-md-5 colmd5" style={{ position: 'relative' }}>
+																			<div className="kj_bgvcdfs">
+
+																				<div className="image_gnbdd">
+
+																					<div className="image_hfgfss">
+																						<video
+																							id="myVideo"
+																							preload=""
+																							src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																							ref={videoRef}
+																							autoPlay
+																							muted
+																							onEnded={handleVideoEnded}
+
+																							className="video"
+
+																						>
+
+																						</video>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div className="col-md-7">
+																			<div className="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.about.description }}>
+
+
+
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
 													<section className="section" >
 														<div className="secatioonteam bhg">
 															<div className="jhg_tfrd paddint_top padding_Btnh">
@@ -319,15 +329,7 @@ const About = () => {
 
 									)}
 								/>
-								<div className="btn">
-									<button
-										id="scroll-to-top"
-										className="top_arrow_wrap"
-										onClick={scrollToTop}
-									>
-										scr
-									</button>
-								</div>
+								
 							</>
 						) : (
 							<main>
@@ -354,7 +356,71 @@ const About = () => {
 										</div>
 									</div>
 								</section>
-								<AboutVideo/>
+								<section className="section">
+									<div className="secation02 bhg">
+										<div className="jhg_tfrd">
+											<div className="container">
+												<div className="row">
+													<div className="col-md-5 colmd5 fok_ng" style={{ position: 'relative' }}>
+														<div className="kj_bgvcdfs">
+
+															<div className="image_gnbdd">
+
+																<div className="image_hfgfss">
+																	<video
+
+																		id="myVideo"
+																		preload=""
+																		src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																		ref={videoRef}
+																		autoPlay
+																		muted
+																		onEnded={handleVideoEnded}
+
+																		className="video"
+																	>
+
+																	</video>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div className="col-md-7">
+														<div className="our_about_wrap" dangerouslySetInnerHTML={{ __html: data.wpPage.about.description }}>
+
+
+
+														</div>
+													</div>
+													<div class="col-md-5 fok_ng_hggth" style={{ position: 'relative' }}>
+														<div class="kj_bgvcdfs">
+															<div class="image_gnbdd">
+																<div class="roghrtf">
+
+																</div>
+																<div className="image_hfgfss">
+																	<video
+																		id="myVideo"
+																		preload=""
+																		src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																		ref={videoRef}
+																		autoPlay
+																		muted
+																		onEnded={handleVideoEnded}
+
+																		className="video"
+																	>
+																	</video>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
 								<section className="section">
 									<div className="secatioonteam bhg">
 										<div className="jhg_tfrd paddint_top padding_Btnh">
