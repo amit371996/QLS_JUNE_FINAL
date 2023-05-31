@@ -78,6 +78,7 @@ const About = () => {
 		} else {
 			scrollToTopButton.style.display = 'none';
 		}
+		scrollToTopButton.addEventListener('click', handleScrollToTop);
 	};
 	
 	const handleScrollToTop = () => {
@@ -87,8 +88,8 @@ const About = () => {
 		});
 	};
 	
-	const scrollToTopButton = document.getElementById('scroll-to-top');
-	scrollToTopButton.addEventListener('click', handleScrollToTop);
+
+	
 	return (
 		<>
 
