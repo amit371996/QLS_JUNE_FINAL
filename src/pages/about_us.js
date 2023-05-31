@@ -79,14 +79,16 @@ const About = () => {
 			scrollToTopButton.style.display = 'none';
 		}
 	};
-
+	
 	const handleScrollToTop = () => {
 		window.scrollTo({
 			top: 0,
 			behavior: 'smooth',
-		  });
+		});
 	};
-
+	
+	const scrollToTopButton = document.getElementById('scroll-to-top');
+	scrollToTopButton.addEventListener('click', handleScrollToTop);
 	return (
 		<>
 
