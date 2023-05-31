@@ -56,17 +56,14 @@ const About = () => {
 
 	useEffect(() => {
 		const video = videoRef.current;
+
 		if (video && typeof video.play === 'function') {
-			const playPromise = video.play();
-			// Rest of the code
-		  }
-		if (playPromise !== undefined) {
-			playPromise
+			video.play()
 				.then(() => {
-					video.play();
+					// Video playback started successfully
 				})
 				.catch(error => {
-
+					// Handle any errors that occurred during playback
 				});
 		}
 	}, []);
