@@ -154,7 +154,7 @@ export default function NavBar(props) {
 
                     <div className="wpcf7 js" id="wpcf7-f463-o1" lang="en-US" dir="ltr">
                       <div className="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-                      <form action="/#wpcf7-f463-o1" method="post" class="wpcf7-form init" aria-label="Contact form" noValidate="noValidate" data-status="init">
+                      {/* <form action="/#wpcf7-f463-o1" method="post" class="wpcf7-form init" aria-label="Contact form" noValidate="noValidate" data-status="init">
                         <div style={{ display: 'none' }}>
                           <input type="hidden" name="_wpcf7" value="463" />
                           <input type="hidden" name="_wpcf7_version" value="1681278275" />
@@ -219,7 +219,12 @@ export default function NavBar(props) {
 
                           </div>
                         </div><div className="wpcf7-response-output" aria-hidden="true"></div>
-                      </form>
+                      </form> */}
+                      <iframe
+                             id="myIframe"
+                             src="https://www.qlspace.com.au/contact-us/"
+                             scrolling="no" style={{ minHeight: '360px' }}
+                           ></iframe>
                     </div>
                   </div>
                 </div>
