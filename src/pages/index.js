@@ -27,6 +27,7 @@ const Home = () => {
   const [scroll, setScroll] = useState(0);
   const [scrollClass, setScrollClass] = useState('');
   const [isEnd, setIsEnd] = useState(false);
+  const [isTop, setIsTop] = useState(false);
 
   const handleVideoEnded = () => {
     const video = videoRef.current;
@@ -41,7 +42,7 @@ const Home = () => {
     setScroll(scrollTop);
     if (scrollTop < 1) {
       // setScrollClass('scroll_1');
-      fullPageState.moveTo(1);
+      setIsTop(true);
       document.querySelector('.progress').scrollTop = 1;
       console.log("1");
       const back_ghbdd = document.getElementById('back_ghbdd');
@@ -318,6 +319,11 @@ const Home = () => {
                     if(isEnd) {
                       fullpageApi.moveTo(4)
                       setIsEnd(false);
+                    };
+
+                    if(isTop) {
+                      fullpageApi.moveTo(1)
+                      setIsTop(false);
                     };
                     setFullPageState(fullpageApi);
                     return (
