@@ -95,7 +95,7 @@ const Home = () => {
       setScroll(scrollTop);
       if (scrollTop < 1) {
         // setScrollClass('scroll_1');
-        console.log(fullPageScroll);
+        console.log("Runnning Efect");
         //fullPageScroll.moveTo(1);
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
@@ -304,6 +304,7 @@ const Home = () => {
                   }}
                   {...fullpageOptions}
                   render={({ fullpage_Api }) => {
+                    console.log("Assigning");
                     setFullPageScroll(fullpage_Api);
                     return(
                     <>
