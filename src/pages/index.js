@@ -95,7 +95,7 @@ const Home = () => {
       setScroll(scrollTop);
       if (scrollTop < 1) {
         // setScrollClass('scroll_1');
-        fullPageScroll.moveSectionUp()
+        fullPageScroll.moveTo(1);
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -144,7 +144,7 @@ const Home = () => {
         }
       } else if (scrollTop > 2575) {
       
-        fullPageScroll.moveSectionDown(); // Use the Fullpage.js API instance to move down a section
+        fullPageScroll.moveTo(4); // Use the Fullpage.js API instance to move down a section
         
       }
      
