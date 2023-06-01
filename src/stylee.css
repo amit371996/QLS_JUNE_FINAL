@@ -3190,4 +3190,121 @@ header.sticky{background: #000 !important;}
 }
 .solution_secanm{overflow: hidden !important;}
 
- 
+.model_wrt 
+.model_inner {
+   max-width: 855px;
+}
+
+.model_inncnr {
+   padding: 65px 55px;
+   background: #000000;
+}
+
+.model_inncheadr h5 {
+   font-family: 'Roboto Condensed';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 55px;
+   line-height: 64px;
+   text-align: right;
+   text-transform: uppercase;
+   color: #00D4FF;
+   text-align: center;
+   display: block;
+   width: 100%;
+}
+
+
+.our_span p {
+   font-family: 'Roboto Condensed';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 30px;
+   line-height: 35px;
+   color: #FFFFFF;
+   text-align: center;
+   margin-bottom: 0;
+}
+.model_inncheadr button.btn-close {
+   background: #fff;
+   position: absolute;
+   right: 20px;
+   top: 20px;
+}
+.form-control.fomr {
+   border: 3px solid #00D4FF;
+   border-radius: 5px;
+   height: 50px;
+   background: transparent;
+   color: #fff;
+   padding-left: 40px;
+   box-sizing: border-box;
+   margin-bottom: 15px;
+   position: relative;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 22px;
+   line-height: 27px;
+   color: #FFFFFF;
+}
+
+.form-control.fomr::placeholder{
+font-family: 'Nova Square';
+font-style: normal;
+font-weight: 300;
+font-size: 22px;
+line-height: 27px;
+color: #FFFFFF;   
+}
+.main_ingh {
+   position: relative;
+}
+.hbjhgbg {
+   position: absolute;
+   top: 10px;
+   left: 15px;
+}
+button.btn.btn-primary.btn_desughn {
+   text-align: center;
+   width: auto;
+   background: #00D4FF;
+   border-radius: 5px;
+   padding: 12px 54px;
+   margin-top: 30px;
+   font-family: 'Nova Square';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 22px;
+   line-height: 27px;
+   color: #FFFFFF;
+}
+.modal-header.model_inncheadr {
+   display: block;
+   border: 0;
+   padding: 0px 0 40px 0px;
+   box-sizing: border-box;
+}
+.btrna {
+   text-align: center;
+}
+button.btn.btn-primary.btn_desughn:focus{
+   box-shadow: unset;
+}
+header li.nav-item.current-menu-item a {
+   color: #00D4FF !important;
+}
+.model_inncheadr button.btn-close {
+   background: #00D4FF;
+   color: #fff !important;
+   opacity: 1;
+   padding: 0;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   font-size: 20px;
+   border-radius: 100%;
+   text-align: center;
+}
+.form-control.fomr:focus{
+   box-shadow: unset;
+}
