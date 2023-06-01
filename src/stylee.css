@@ -3201,7 +3201,7 @@ header.sticky{background: #000 !important;}
 }
 
 .model_inncheadr h5 {
-   font-family: 'Roboto Condensed';
+   font-family: 'Roboto Condensed' !important;
    font-style: normal;
    font-weight: 500;
    font-size: 55px;
@@ -3216,7 +3216,7 @@ header.sticky{background: #000 !important;}
 
 
 .our_span p {
-   font-family: 'Roboto Condensed';
+   font-family: 'Roboto Condensed' !important;
    font-style: normal;
    font-weight: 500;
    font-size: 30px;
@@ -3246,11 +3246,11 @@ header.sticky{background: #000 !important;}
    font-size: 22px;
    line-height: 27px;
    color: #FFFFFF;
-   font-family: 'Nova Square';
+   font-family: 'Nova Square' !important;
 }
 
 .form-control.fomr::placeholder{
-font-family: 'Nova Square';
+font-family: 'Nova Square' !important;
 font-style: normal;
 font-weight: 300;
 font-size: 22px;
@@ -3272,7 +3272,7 @@ button.btn.btn-primary.btn_desughn {
    border-radius: 5px;
    padding: 12px 54px;
    margin-top: 30px;
-   font-family: 'Nova Square';
+   font-family: 'Nova Square' !important;
    font-style: normal;
    font-weight: 400;
    font-size: 22px;
@@ -3312,4 +3312,7 @@ header li.nav-item.current-menu-item a {
 
  .contactpop iframe {
     width: 100% !important;
+}
+.contactpop{
+    font-family: 'Nova Square' !important;
 }
