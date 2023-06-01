@@ -13,7 +13,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 const getSection = (data, start, end) => {
   const imageUrls = data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.partner;
 
-  console.log(imageUrls);
+  //console.log(imageUrls);
   return imageUrls.slice(start, end) || [];
 
 }
@@ -34,6 +34,7 @@ const Home = () => {
   };
   // header sticky after scroll
   const handleLeave = (origin, destination) => setCurrentSectionIndex(destination.index);
+
   const handleScroll = () => {
     const scrollDiv = document.querySelector('.list_manage');
     const scrollTop = scrollDiv.scrollTop;
