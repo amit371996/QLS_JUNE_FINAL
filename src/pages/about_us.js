@@ -349,7 +349,7 @@ const About = () => {
 									<button
 										id="scroll-to-top"
 										className="top_arrow_wrap"
-										onClick={() => handleScrollToTop(fullpageApi)}
+										onClick={() => handleScrollToTop()}
 									>
 										
 									</button>
