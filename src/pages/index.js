@@ -315,7 +315,7 @@ const Home = () => {
 
                   {...fullpageOptions}
                   render={({ fullpageApi }) => {
-                    if(isEnd) fullpageApi.moveTo(4);
+                    if(isEnd) fullpageApi.moveSectionDown();
                     setFullPageState(fullpageApi);
                     return (
                       <>
