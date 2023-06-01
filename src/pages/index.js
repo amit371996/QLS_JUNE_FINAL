@@ -23,6 +23,85 @@ const Home = () => {
   // remove fullpagejs after 991 width
   const [isFullpage, setIsFullpage] = useState(true);
   const [fullPageState, setFullPageState] = useState();
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [scroll, setScroll] = useState(0);
+  const [scrollClass, setScrollClass] = useState('');
+  const [fullPageScroll, setFullPageScroll] = useState()
+
+  const handleVideoEnded = () => {
+    const video = videoRef.current;
+    video.play();
+  };
+  // header sticky after scroll
+  const handleLeave = (origin, destination) => setCurrentSectionIndex(destination.index);
+  const handleScroll = () => {
+    const scrollDiv = document.querySelector('.list_manage');
+    const scrollTop = scrollDiv.scrollTop;
+    setScroll(scrollTop);
+    if (scrollTop < 1) {
+      // setScrollClass('scroll_1');
+      fullPageScroll.moveTo(1);
+      document.querySelector('.progress').scrollTop = 1;
+      console.log("1");
+      const back_ghbdd = document.getElementById('back_ghbdd');
+      if (back_ghbdd) {
+        back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group.png")';
+      }
+    } else if (scrollTop > 548 && scrollTop < 600) {
+      // setScrollClass('scroll_2');
+      document.querySelector('.progress').scrollTop = 542;
+      console.log("2");
+      const back_ghbdd = document.getElementById('back_ghbdd');
+      if (back_ghbdd) {
+        back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-1.png")';
+      }
+    } else if (scrollTop > 1180 && scrollTop < 1300) {
+      // setScrollClass('scroll_3');
+      document.querySelector('.progress').scrollTop = 1101;
+      console.log("3");
+      const back_ghbdd = document.getElementById('back_ghbdd');
+      if (back_ghbdd) {
+        back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-2.png")';
+      }
+    } else if (scrollTop > 1748 && scrollTop < 1800) {
+      // setScrollClass('scroll_4');
+      document.querySelector('.progress').scrollTop = 1660;
+      console.log("4");
+      const back_ghbdd = document.getElementById('back_ghbdd');
+      if (back_ghbdd) {
+        back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-3.png")';
+      }
+    } else if (scrollTop > 2120 && scrollTop < 2200) {
+      // setScrollClass('scroll_5');
+      document.querySelector('.progress').scrollTop = 2231;
+      console.log("5");
+      const back_ghbdd = document.getElementById('back_ghbdd');
+      if (back_ghbdd) {
+        back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-4.png")';
+      }
+    } else if (scrollTop > 2520 && scrollTop < 2560) {
+      // setScrollClass('scroll_6');
+      document.querySelector('.progress').scrollTop = 2772;
+      console.log("6");
+      const back_ghbdd = document.getElementById('back_ghbdd');
+      if (back_ghbdd) {
+        back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png")';
+      }
+    } else if (scrollTop > 2575) {
+
+      fullPageScroll.moveTo(4); // Use the Fullpage.js API instance to move down a section
+
+    }
+
+
+    const docHeight = scrollDiv.scrollHeight;
+    const winHeight = scrollDiv.clientHeight;
+    const lineHeight = (scrollTop / (docHeight - winHeight)) * 5;
+
+    const progressLine = document.querySelector('.progress .line');
+    progressLine.style.height = `${scrollTop}px`;
+  };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 992) {
@@ -59,16 +138,7 @@ const Home = () => {
         });
     }
   }, []);
-  const handleVideoEnded = () => {
-    const video = videoRef.current;
-    video.play();
-  };
-  // header sticky after scroll
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-  const handleLeave = (origin, destination) => {
-    setCurrentSectionIndex(destination.index);
-
-  };
+  
   useEffect(() => {
 
 
@@ -88,88 +158,16 @@ const Home = () => {
     };
   }, [currentSectionIndex]);
 
-  const [scroll, setScroll] = useState(0);
-  const [scrollClass, setScrollClass] = useState('');
-  const [fullPageScroll, setFullPageScroll] = useState()
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollDiv = document.querySelector('.list_manage');
-      const scrollTop = scrollDiv.scrollTop;
-      setScroll(scrollTop);
-      if (scrollTop < 1) {
-        // setScrollClass('scroll_1');
-        console.log("Runnning Efect");
-        fullPageScroll.moveTo(1);
-        document.querySelector('.progress').scrollTop = 1;
-        console.log("1");
-        const back_ghbdd = document.getElementById('back_ghbdd');
-        if (back_ghbdd) {
-          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group.png")';
-        }
-      } else if (scrollTop > 548 && scrollTop < 600) {
-        // setScrollClass('scroll_2');
-        document.querySelector('.progress').scrollTop = 542;
-        console.log("2");
-        const back_ghbdd = document.getElementById('back_ghbdd');
-        if (back_ghbdd) {
-          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-1.png")';
-        }
-      } else if (scrollTop > 1180 && scrollTop < 1300) {
-        // setScrollClass('scroll_3');
-        document.querySelector('.progress').scrollTop = 1101;
-        console.log("3");
-        const back_ghbdd = document.getElementById('back_ghbdd');
-        if (back_ghbdd) {
-          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-2.png")';
-        }
-      } else if (scrollTop > 1748 && scrollTop < 1800) {
-        // setScrollClass('scroll_4');
-        document.querySelector('.progress').scrollTop = 1660;
-        console.log("4");
-        const back_ghbdd = document.getElementById('back_ghbdd');
-        if (back_ghbdd) {
-          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-3.png")';
-        }
-      } else if (scrollTop > 2120 && scrollTop < 2200) {
-        // setScrollClass('scroll_5');
-        document.querySelector('.progress').scrollTop = 2231;
-        console.log("5");
-        const back_ghbdd = document.getElementById('back_ghbdd');
-        if (back_ghbdd) {
-          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-4.png")';
-        }
-      } else if (scrollTop > 2520 && scrollTop < 2560) {
-        // setScrollClass('scroll_6');
-        document.querySelector('.progress').scrollTop = 2772;
-        console.log("6");
-        const back_ghbdd = document.getElementById('back_ghbdd');
-        if (back_ghbdd) {
-          back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png")';
-        }
-      } else if (scrollTop > 2575) {
-
-        fullPageScroll.moveTo(4); // Use the Fullpage.js API instance to move down a section
-
-      }
-
-
-      const docHeight = scrollDiv.scrollHeight;
-      const winHeight = scrollDiv.clientHeight;
-      const lineHeight = (scrollTop / (docHeight - winHeight)) * 5;
-
-      const progressLine = document.querySelector('.progress .line');
-      progressLine.style.height = `${scrollTop}px`;
-    };
-
-
     const scrollDiv = document.querySelector('.list_manage');
-    scrollDiv.addEventListener('scroll', handleScroll);
+    scrollDiv.addEventListener('scroll', ()=>handleScroll());
     return () => {
-      scrollDiv.removeEventListener('scroll', handleScroll);
+      scrollDiv.removeEventListener('scroll', ()=>handleScroll());
     };
 
   }, []);
+
   const fullpageOptions = {
 
     // scrollOverflow: true,
@@ -189,8 +187,8 @@ const Home = () => {
   const handleScrollToTop = () => {
     fullPageState.moveTo(1);
   };
-  return (
 
+  return (
     <StaticQuery
       query={graphql`
 			query {
@@ -313,7 +311,7 @@ const Home = () => {
                   scrollingSpeed={1000} /* Options here */
                   onLeave={handleLeave}
                   afterLoad={handleAfterLoad}
-                 
+
                   {...fullpageOptions}
                   render={({ fullpageApi }) => {
                     console.log("Assigning");
