@@ -315,7 +315,10 @@ const Home = () => {
 
                   {...fullpageOptions}
                   render={({ fullpageApi }) => {
-                    if(isEnd) fullpageApi.moveSectionDown();
+                    if(isEnd) {
+                      fullpageApi.moveTo(4)
+                      setIsEnd(false);
+                    };
                     setFullPageState(fullpageApi);
                     return (
                       <>
