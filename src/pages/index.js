@@ -315,11 +315,11 @@ const Home = () => {
 
                   {...fullpageOptions}
                   render={({ fullpageApi }) => {
-                    console.log("Assigning");
                     setFullPageScroll(fullpageApi);
-                    setFullPageState(fullpageApi);
+                    if(!fullPageState) setFullPageState(fullpageApi);
                     return (
                       <>
+
                         <ReactFullpage.Wrapper>
                           <section className="section">
                             <div className="secation01 homebnr bhg">
