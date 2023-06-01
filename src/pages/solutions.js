@@ -109,6 +109,7 @@ const Solution = () => {
 								// fullpage options
 								scrollingSpeed={1000}
 								onLeave={handleLeave}
+								afterLoad={handleAfterLoad}
 								render={({ fullpageApi }) => {
 									setFullPageState(fullpageApi);
 									return (
