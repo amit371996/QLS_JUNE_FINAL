@@ -6,7 +6,7 @@ import "../responsive.css"
 import Layout from "../components/layout/layout"
 import { Link, StaticQuery, graphql } from 'gatsby';
 import Footer from '../components/footer/footer';
-import fullpage from 'fullpage.js';
+
 
 const getSection = (data, start, end) => {
   const imageUrls = data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.partner;
@@ -156,17 +156,8 @@ const Home = () => {
       const progressLine = document.querySelector('.progress .line');
       progressLine.style.height = `${scrollTop}px`;
     };
-    const initializeFullPageScroll = () => {
-      const fullPageInstance = new fullpage('#fullpage', {
-        // Fullpage.js options
-        // ...
-      });
-
-      setFullPageScroll(fullPageInstance);
-    };
-
-    initializeFullPageScroll();
-    window.addEventListener('scroll', handleScroll);
+  
+  
     const scrollDiv = document.querySelector('.list_manage');
     scrollDiv.addEventListener('scroll', handleScroll);
     return () => {
