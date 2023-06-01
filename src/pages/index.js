@@ -322,7 +322,7 @@ const Home = () => {
                     };
 
                     if(isTop) {
-                      fullpageApi.moveTo(1)
+                      fullpageApi.moveTo(2)
                       setIsTop(false);
                     };
                     setFullPageState(fullpageApi);
