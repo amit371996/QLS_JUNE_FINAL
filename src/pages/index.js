@@ -86,7 +86,8 @@ const Home = () => {
 
   const [scroll, setScroll] = useState(0);
   const [scrollClass, setScrollClass] = useState('');
-  const fullpageApiRef = useRef<FullpageApi>(null); 
+  const[fullPageScroll, setFullPageScroll]=useState()
+ 
   useEffect(() => {
     const handleScroll = () => {
       const scrollDiv = document.querySelector('.list_manage');
@@ -94,7 +95,7 @@ const Home = () => {
       setScroll(scrollTop);
       if (scrollTop < 1) {
         // setScrollClass('scroll_1');
-        fullpageApiRef.current.moveSectionUp()
+        fullPageScroll.moveSectionUp()
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -142,17 +143,11 @@ const Home = () => {
           back_ghbdd.style.backgroundImage = 'url("https://www.qlspace.com.au/wp-content/uploads/2023/04/Mask-group-5.png")';
         }
       } else if (scrollTop > 2575) {
+      
+        fullPageScroll.moveSectionDown(); // Use the Fullpage.js API instance to move down a section
         
-        if (fullpageApiRef.current) {
-          fullpageApiRef.current.moveSectionDown(); // Use the Fullpage.js API instance to move down a section
-        }
       }
-      else if (scrollTop > 0) {
-        
-        if (fullpageApiRef.current) {
-          fullpageApiRef.current.moveSectionUp(); // Use the Fullpage.js API instance to move down a section
-        }
-      }
+     
 
       const docHeight = scrollDiv.scrollHeight;
       const winHeight = scrollDiv.clientHeight;
@@ -176,14 +171,7 @@ const Home = () => {
     scrollOverflow: true,
     normalScrollElements: '.list_manage',
   };
-  const handleSlideChange = (destination) => {
-    console.log('Slide changed to:', destination);
-  
-    if (destination === 3) {
-     
-      fullpage_api.moveTo(2, 1);
-    }
-  };
+
   return (
 
     <StaticQuery
@@ -313,7 +301,9 @@ const Home = () => {
                     console.log(origin, destination, direction);
                   }}
                   {...fullpageOptions}
-                  render={({ fullpage_Api }) => (
+                  render={({ fullpage_Api }) => {
+                    setFullPageScroll(fullpage_Api)
+                    return(
                     <>
                       <ReactFullpage.Wrapper>
                         <section className="section">
@@ -685,7 +675,7 @@ const Home = () => {
                         <Footer />
                       </ReactFullpage.Wrapper>
                     </>
-                  )}
+                  )}}
                 />
               </Layout>
             </>
