@@ -26,6 +26,7 @@ const Home = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [scroll, setScroll] = useState(0);
   const [scrollClass, setScrollClass] = useState('');
+  const [isEnd, setIsEnd] = useState(false);
 
   const handleVideoEnded = () => {
     const video = videoRef.current;
@@ -89,7 +90,7 @@ const Home = () => {
       }
     } else if (scrollTop > 2575) {
 
-      fullPageState.moveTo(4); // Use the Fullpage.js API instance to move down a section
+      setIsEnd(true); // Use the Fullpage.js API instance to move down a section
 
     }
 
@@ -314,10 +315,10 @@ const Home = () => {
 
                   {...fullpageOptions}
                   render={({ fullpageApi }) => {
+                    if(isEnd) fullpageApi.moveTo(4);
                     setFullPageState(fullpageApi);
                     return (
                       <>
-
                         <ReactFullpage.Wrapper>
                           <section className="section">
                             <div className="secation01 homebnr bhg">
