@@ -140,7 +140,7 @@ export default function NavBar(props) {
           <div className="scrollbtn">
             <ScrollToTopButton />
           </div>
-          <div className="modal fade model_wrt show" tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
+          <div className="modal fade model_wrt contactpop show" tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
 
             <div className="modal-dialog modal-dialog-centered model_inner">
               <div className="modal-content model_inncnr">
