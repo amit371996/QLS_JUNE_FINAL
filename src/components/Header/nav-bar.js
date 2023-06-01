@@ -223,7 +223,7 @@ export default function NavBar(props) {
                       <iframe
                              id="myIframe"
                              src="https://www.qlspace.com.au/contact-us/"
-                             scrolling="no" style={{ minHeight: '360px' }}
+                             scrolling="no" style={{ minHeight: '600px' }}
                            ></iframe>
                     </div>
                   </div>
