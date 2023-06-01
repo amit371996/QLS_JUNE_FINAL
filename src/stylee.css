@@ -3308,3 +3308,6 @@ header li.nav-item.current-menu-item a {
 .form-control.fomr:focus{
    box-shadow: unset;
 }
+.modal-body.bodtr .fomr_raog iframe {
+    width: 100%;
+}
