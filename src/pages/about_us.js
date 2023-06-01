@@ -10,6 +10,7 @@ import ScrollToTopButton from "../components/scroll_top/scroll_top";
 
 const About = () => {
 	const [isFullpage, setIsFullpage] = useState(true);
+	const [fullPageState, setFullPageState] = useState();
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -80,8 +81,8 @@ const About = () => {
 		}
 	  };
 	
-	  const handleScrollToTop = (fullpageApi) => {
-		fullpageApi.moveTo(1);
+	  const handleScrollToTop = () => {
+		fullPageState.moveTo(1);
 	  };
 	
 	  
@@ -151,7 +152,9 @@ const About = () => {
 									normalScrollElements="#footer"
 									onLeave={handleLeave}
 									afterLoad={handleAfterLoad}
-									render={({ fullpageApi }) => (
+									render={({ fullpageApi }) => {
+										setFullPageState(fullpageApi);
+										return (
 										<>
 											<ReactFullpage.Wrapper>
 												<main>
@@ -340,7 +343,7 @@ const About = () => {
 										</>
 
 
-									)}
+									)}}
 								/>
 								<div className="btn">
 									<button
