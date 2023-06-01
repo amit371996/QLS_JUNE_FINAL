@@ -166,6 +166,7 @@ const Home = () => {
     };
 
     initializeFullPageScroll();
+    window.addEventListener('scroll', handleScroll);
     const scrollDiv = document.querySelector('.list_manage');
     scrollDiv.addEventListener('scroll', handleScroll);
     return () => {
