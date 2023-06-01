@@ -100,7 +100,7 @@ const Home = () => {
       if (scrollTop < 1) {
         // setScrollClass('scroll_1');
         console.log("Runnning Efect");
-        //fullPageScroll.moveTo(1);
+        fullPageScroll.moveTo(1);
         document.querySelector('.progress').scrollTop = 1;
         console.log("1");
         const back_ghbdd = document.getElementById('back_ghbdd');
@@ -149,7 +149,7 @@ const Home = () => {
         }
       } else if (scrollTop > 2575) {
 
-        //fullPageScroll.moveTo(4); // Use the Fullpage.js API instance to move down a section
+        fullPageScroll.moveTo(4); // Use the Fullpage.js API instance to move down a section
 
       }
 
@@ -315,10 +315,10 @@ const Home = () => {
                   afterLoad={handleAfterLoad}
                  
                   {...fullpageOptions}
-                  render={({ fullpage_Api }) => {
+                  render={({ fullpageApi }) => {
                     console.log("Assigning");
-                    setFullPageScroll(fullpage_Api);
-                    setFullPageState(fullpage_Api);
+                    setFullPageScroll(fullpageApi);
+                    setFullPageState(fullpageApi);
                     return (
                       <>
                         <ReactFullpage.Wrapper>
