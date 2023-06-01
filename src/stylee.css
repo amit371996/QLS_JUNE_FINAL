@@ -3313,6 +3313,6 @@ header li.nav-item.current-menu-item a {
  .contactpop iframe {
     width: 100% !important;
 }
-.contactpop{
+.contactpop button, input, optgroup, select, textarea{
     font-family: 'Nova Square' !important;
 }
