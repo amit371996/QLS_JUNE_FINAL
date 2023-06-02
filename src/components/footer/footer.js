@@ -51,7 +51,12 @@ export default function Footer() {
 										</div>
 										<div className="col-md-12">
 											<div className="our_news_leeter">
-												<form className="row g-3">
+												<iframe
+													id="myIframe"
+													src="https://www.qlspace.com.au/newsletter/"
+													// scrolling="no" style={{ minHeight: '470px !important' }}
+												></iframe>
+												{/* <form className="row g-3">
 													<div className="col-md-6">
 														<div className="hfnfa">
 															<input type="text" className="form-control" id="name" placeholder="Enter Name" />
@@ -73,7 +78,7 @@ export default function Footer() {
 													<div className="col-12 mt-5">
 														<button type="submit" className="btn btn-primary">Submit</button>
 													</div>
-												</form>
+												</form> */}
 											</div>
 										</div>
 									</div>
@@ -94,7 +99,7 @@ export default function Footer() {
 													<div className="list_s">
 														<ul>
 															<li><a href="https://www.facebook.com/qlspaces">
-															<img src={frame1} alt="" /></a></li>
+																<img src={frame1} alt="" /></a></li>
 															<li><a href='https://www.linkedin.com/company/qlspace/' ><img src={frame2} alt="" /></a></li>
 															<li><a href="https://twitter.com/qlspace_"><img src={frame3} alt="" /></a></li>
 															<li><a href="https://www.youtube.com/channel/UC6xhk9nI6VxQ0UJpLjDmKvA/videos"><img src={frame4} alt="" /></a></li>
@@ -240,7 +245,7 @@ export default function Footer() {
 										<div className="row">
 											<div className="col-md-6">
 												<div className="outg_o">
-												
+
 													<p>Copyright ©2023 SPACE. Powered By <a href="https://www.qltech.com.au/" target="_blank"> QL Tech </a></p>
 												</div>
 											</div>
@@ -262,9 +267,9 @@ export default function Footer() {
 								</div>
 							</footer>
 						</div>
-						
+
 					</section>
-					<ScrollToTopButton/>
+					<ScrollToTopButton />
 				</>
 			)
 
