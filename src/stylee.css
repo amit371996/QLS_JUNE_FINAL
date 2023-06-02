@@ -3339,3 +3339,8 @@ header li.nav-item.current-menu-item a {
     position: absolute !important;
 }
 .our_news_leeter iframe{width: 100%;}
+@media(max-width: 767px){
+   
+    .our_news_leeter iframe{min-height: 240px !important;}
+   
+}
