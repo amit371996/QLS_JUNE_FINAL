@@ -2709,9 +2709,9 @@ background: #00D4FF;
   }
   .hbjhgbg {
       position: absolute;
-      top: 50%;
+      top: 18px;
       left: 15px;
-      transform: translate(0px, -50%);
+      
   }
   input.form-control.fomr:focus::-webkit-input-placeholder { color:transparent; }
   input.form-control.fomr:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
@@ -3262,7 +3262,7 @@ color: #FFFFFF;
 }
 .hbjhgbg {
    position: absolute;
-   top: 10px;
+   top: 18px;
    left: 15px;
 }
 button.btn.btn-primary.btn_desughn {
@@ -3330,7 +3330,7 @@ header li.nav-item.current-menu-item a {
     bottom: -25px !important;
 }
 .hbjhgbg {
-    position: absolute;
+    position: absolute ;
     top: 18px;
     left: 15px;
 }
