@@ -3321,3 +3321,16 @@ header li.nav-item.current-menu-item a {
     height: 100% !important;
     min-height: 400px !important;
 }
+.wpcf7-not-valid-tip {
+    color: #dc3232;
+    font-size: 1em;
+    font-weight: normal;
+    display: block;
+    position: absolute;
+    bottom: -25px;
+}
+.hbjhgbg {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+}
