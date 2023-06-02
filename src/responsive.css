@@ -707,18 +707,7 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit.btn.btn-primary{
     display: block;
     width: auto; 
 }
-input.wpcf7-form-control.has-spinner.wpcf7-submit.btn.btn-primary:hover {
-    text-align: center;
-    margin-top: 0;
-    width: auto;
-    background: #00D4FF;
-    border-radius: 5px;
-    color: #ffff;
-    padding: 12px 0;
-    border-color: #00D4FF;
-    display: block;
-    width: 100%;
-}
+
 .inner_ghv img{
         height: auto;
     }
@@ -1146,18 +1135,7 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit.btn.btn-primary{
     display: block;
     width: auto !important; 
 }
-input.wpcf7-form-control.has-spinner.wpcf7-submit.btn.btn-primary:hover {
-    text-align: center;
-    margin-top: 0;
-   
-    background: #00D4FF;
-    border-radius: 5px;
-    color: #ffff;
-    padding: 12px 0;
-    border-color: #00D4FF;
-    display: block;
-    
-}
+
 
 .for_mobile{
     display: block;
