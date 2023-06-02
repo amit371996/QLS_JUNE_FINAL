@@ -705,7 +705,7 @@ left: 10px;
 input.wpcf7-form-control.has-spinner.wpcf7-submit.btn.btn-primary{
    padding: 12px 0; 
     display: block;
-    width: auto; 
+    width: auto !important; 
 }
 
 .inner_ghv img{

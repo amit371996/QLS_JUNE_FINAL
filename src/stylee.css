@@ -3316,3 +3316,7 @@ header li.nav-item.current-menu-item a {
 .contactpop button, input, optgroup, select, textarea{
     font-family: 'Nova Square' !important;
 }
+.modal.show .modal-dialog iframe#myIframe {
+    height: 100% !important;
+    min-height: 400px;
+}
