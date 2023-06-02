@@ -143,7 +143,7 @@ export default function NavBar(props) {
           <div className="modal fade model_wrt contactpop show" tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
 
             <div className="modal-dialog modal-dialog-centered model_inner">
-              <div className="modal-content model_inncnr">
+              <div className="modal-content model_inncnr" style={{padding:'65px 55px 20px 55px'}}>
                 <div className="modal-header model_inncheadr">
                   <h5 className="modal-title title_wrap" id="contact_usLabel">Get in touch</h5>
                   <div className="our_span"><p>Fill up the form our team will get back to you within 24 Hours</p></div>
@@ -223,7 +223,7 @@ export default function NavBar(props) {
                       <iframe
                              id="myIframe"
                              src="https://www.qlspace.com.au/contact-us/"
-                             scrolling="no" style={{minHeight:'500px !important'}}
+                             scrolling="no" style={{minHeight:'470px !important'}}
                            ></iframe>
                     </div>
                   </div>

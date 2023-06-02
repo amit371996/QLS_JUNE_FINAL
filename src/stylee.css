@@ -3319,7 +3319,7 @@ header li.nav-item.current-menu-item a {
 }
 .contactpop iframe {
     height: 100% !important;
-    min-height: 500px !important;
+    min-height: 470px !important;
 }
 .contactpop  iframe .wpcf7-not-valid-tip {
     color: #dc3232;
@@ -3333,4 +3333,8 @@ header li.nav-item.current-menu-item a {
     position: absolute ;
     top: 18px;
     left: 15px;
+}
+.wpcf7 form .wpcf7-response-output {
+    width: 90% !important;
+    position: absolute !important;
 }
