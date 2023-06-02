@@ -54,7 +54,7 @@ export default function Footer() {
 												<iframe
 													id="myIframe"
 													src="https://www.qlspace.com.au/newsletter/"
-													 scrolling="no" style={{ width:'100%',  }}
+													 scrolling="no" style={{ width:'100%', height:'auto'  }}
 												></iframe>
 												{/* <form className="row g-3">
 													<div className="col-md-6">
