@@ -178,7 +178,7 @@ export default function Blog() {
                                                             <div className="heading_nmb">
                                                                 <h4>
                                                                     <Link to={"/blog/" + blog.slug}>
-                                                                        {blog.title}  </Link>
+                                                                        {blog.title.split('').slice(0,7).join(' ')}  </Link>
                                                                 </h4>
 
 
