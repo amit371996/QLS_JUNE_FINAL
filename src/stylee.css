@@ -3344,3 +3344,8 @@ header li.nav-item.current-menu-item a {
     .our_news_leeter iframe{min-height: 240px !important;}
    
 }
+@media(max-width: 767px){
+   
+    .our_news_leeter iframe{min-height: 240px !important;}
+   
+}
