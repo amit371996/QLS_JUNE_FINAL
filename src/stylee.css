@@ -3339,7 +3339,10 @@ header li.nav-item.current-menu-item a {
     position: absolute !important;
 }
 .our_news_leeter iframe{width: 100%;}
-@media(max-width: 475px){
+@media(max-width: 575px){
     .our_news_leeter iframe{min-height: 285px !important;}
     .wpcf7 form .wpcf7-response-output{display: none !important;}
+    .contactpop iframe{min-height:570px;}
+    .wpcf7-form .col-6{width:100%;}
+
 }
