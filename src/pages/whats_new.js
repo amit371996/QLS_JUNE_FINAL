@@ -177,6 +177,7 @@ export default function Whatsnew() {
 																	<h4>
 																		<Link to={"/news/" + news.slug}>
 																			{news.title}  </Link>
+																			
 																	</h4>
 																	<div className="next_page">
 																		<Link to={"/news/" + news.slug} className="read-more"> Read more

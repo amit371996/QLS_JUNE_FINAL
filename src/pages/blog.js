@@ -158,13 +158,7 @@ export default function Blog() {
                                     <div className="container">
                                         <div className="row">
                                             {blogs.slice(startIndex, endIndex).map((blog) => {
-                                                const headingtitle = blog.title.split('');
-                                                let displayedText;
-                                                if (showFullText) {
-                                                    displayedText = text;
-                                                } else {
-                                                    displayedText = headingtitle.slice(0, 7).join(' ');
-                                                }
+                                                
 
                                                 return (
                                                     <div className="col-md-6" key={blog.id} >
@@ -187,7 +181,7 @@ export default function Blog() {
                                                                 <div className="heading_nmb">
                                                                     <h4>
                                                                         <Link to={"/blog/" + blog.slug}>
-                                                                        {headingtitle.length > 7 && !showFullText && '...'}  </Link>
+                                                                        {blog.title}  </Link>
                                                                     </h4>
 
 
