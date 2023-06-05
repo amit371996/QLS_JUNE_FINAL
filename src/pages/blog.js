@@ -163,7 +163,7 @@ export default function Blog() {
                                                 if (showFullText) {
                                                     displayedText = text;
                                                 } else {
-                                                    displayedText = words.slice(0, 7).join(' ');
+                                                    displayedText = headingtitle.slice(0, 7).join(' ');
                                                 }
 
                                                 return (
