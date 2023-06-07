@@ -74,7 +74,7 @@ export default function NavBar(props) {
                         data.wpMenu &&
                         data.wpMenu.menuItems &&
                         data.wpMenu.menuItems.nodes.map((prop, i) => {
-                          console.log(prop.label);
+                          
                           const itemToRender = prop.label === "Home" ?
                             (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
