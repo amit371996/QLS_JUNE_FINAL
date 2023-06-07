@@ -568,7 +568,7 @@ const Home = () => {
                                                   <div className="gtfrd">
                                                     <h3>
                                                       <Link to={"/blog/" + allddt.slug}>
-                                                        {allddt.title.split('').slice(0,50).join('')}...
+                                                        {allddt.title.split('').slice(0,30).join('')}...
                                                       </Link></h3>
 
                                                     <p>  {allddt.excerpt.split('').slice(0,50).join('')}... </p>
