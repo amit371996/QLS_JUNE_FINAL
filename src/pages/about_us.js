@@ -71,10 +71,17 @@ const About = () => {
 				});
 		}
 	}, []);
-	const handleVideoEnded = () => {
+	const handleVideoEnded = (origin, destination, direction) => {
 		const video = videoRef.current;
-		video.play();
+		if(origin.index === 2){
+			video.play();
+		}
+		else{
+			video.play();
+		}
+		
 	};
+	
 	const handleAfterLoad = (origin, destination, direction) => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		if (destination.index > 0) {
