@@ -89,6 +89,17 @@ export default function NavBar(props) {
                                         {prop.label}
                                       </Link>
                                     </li>
+                                  ): prop.label === "whats_new" ? (
+                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                      onClick={() => setActiveMenuItem(i)}>
+                                      <Link
+                                        to={"/news"}
+                                        className="nav-link"
+                                        activeClassName="active"
+                                      >
+                                        {prop.label}
+                                      </Link>
+                                    </li>
                                   ) : (
                                     <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
                                       onClick={() => setActiveMenuItem(i)}>
