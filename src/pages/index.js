@@ -593,9 +593,9 @@ const Home = () => {
                                                   <div className="gtfrd">
                                                     <h3>
                                                       <Link to={"/news/" + allddt.slug}>
-                                                        {allddt.title.slice(0, 50)}...
+                                                        {allddt.title.split('').slice(0,30).join('')}...
                                                       </Link></h3>
-                                                    <p>  {allddt.excerpt.slice(0, 50)}... </p>
+                                                    <p>  {allddt.excerpt.split('').slice(0,50).join('')}... </p>
                                                     <div className="our_tascrt">
                                                       <Link to="/whats_new">View All News</Link>
 
@@ -619,9 +619,9 @@ const Home = () => {
                                                 <div className="gtfrd">
                                                   <h3>
                                                     <Link to={"/event/" + allddt.slug}>
-                                                      {allddt.title.slice(0, 50)}...
+                                                      {allddt.title.split('').slice(0,30).join('')}...
                                                     </Link></h3>
-                                                  <p>{allddt.excerpt.slice(0, 50)}...</p>
+                                                  <p>{allddt.excerpt.split('').slice(0,50).join('')}...</p>
                                                   <div className="our_tascrt">
                                                     <Link to="/event">View All Events</Link>
 
@@ -645,11 +645,11 @@ const Home = () => {
                                               <div className="gtfrd">
                                                 <h3>
                                                   <Link to={"/partner/" + allddt.slug}>
-                                                    {allddt.title.slice(0, 50)}...
+                                                    {allddt.title.split('').slice(0,30).join('')}...
                                                   </Link>
                                                 </h3>
                                                 <p>
-                                                  {allddt.excerpt.slice(0, 50)}...</p>
+                                                  {allddt.excerpt.split('').slice(0,50).join('')}...</p>
                                                 <div className="our_tascrt">
                                                   <Link to="/partner">View All Partners</Link>
                                                 </div>
@@ -669,11 +669,11 @@ const Home = () => {
                                               <div className="gtfrd">
                                                 <h3>
                                                   <Link to={"/video/" + allddt.slug}>
-                                                    {allddt.title.slice(0, 50)}...
+                                                    {allddt.title.split('').slice(0,30).join('')}...
                                                   </Link>
                                                 </h3>
                                                 <p>
-                                                  {allddt.excerpt.slice(0, 50)}...</p>
+                                                  {allddt.excerpt.split('').slice(0,50).join('')}...</p>
                                                 <div className="our_tascrt">
                                                   <Link to="/videos">View All Videos</Link>
 
@@ -961,9 +961,9 @@ const Home = () => {
                                         <div className="gtfrd">
                                           <h3>
                                             <Link to={"/blog/" + allddt.slug}>
-                                              {allddt.title.slice(0, 50)}...
+                                              {allddt.title.split('').slice(0,30).join('')}...
                                             </Link></h3>
-                                          <p>  {allddt.excerpt.slice(0, 50)}... </p>
+                                          <p>  {allddt.excerpt.split('').slice(0,50).join('')}... </p>
                                           <div className="our_tascrt">
                                             <Link to="/blog">View All Posts</Link>
                                           </div>
@@ -983,9 +983,9 @@ const Home = () => {
                                         <div className="gtfrd">
                                           <h3>
                                             <Link to={"/news/" + allddt.slug}>
-                                              {allddt.title.slice(0, 30)}...
+                                              {allddt.title.split('').slice(0,30).join('')}...
                                             </Link></h3>
-                                          <p>  {allddt.excerpt.slice(0, 30)}... </p>
+                                          <p>  {allddt.excerpt.split('').slice(0,50).join('')}... </p>
                                           <div className="our_tascrt">
                                             <Link to="/whats_new">View All News</Link>
                                           </div>
@@ -1008,9 +1008,9 @@ const Home = () => {
                                       <div className="gtfrd">
                                         <h3>
                                           <Link to={"/event/" + allddt.slug}>
-                                            {allddt.title.slice(0, 30)}...
+                                            {allddt.title.split('').slice(0,30).join('')}...
                                           </Link></h3>
-                                        <p>{allddt.excerpt.slice(0, 30)}...</p>
+                                        <p>{allddt.excerpt.split('').slice(0,50).join('')}...</p>
                                         <div className="our_tascrt">
                                           <Link to="/event">View All Events</Link>
                                         </div>
@@ -1033,11 +1033,11 @@ const Home = () => {
                                     <div className="gtfrd">
                                       <h3>
                                         <Link to={"/partner/" + allddt.slug}>
-                                          {allddt.title.slice(0, 30)}...
+                                          {allddt.title.split('').slice(0,30).join('')}...
                                         </Link>
                                       </h3>
                                       <p>
-                                        {allddt.excerpt.slice(0, 30)}...</p>
+                                        {allddt.excerpt.split('').slice(0,50).join('')}...</p>
                                       <div className="our_tascrt">
                                         <Link to="/partner">View All Partners</Link>
                                       </div>
@@ -1056,11 +1056,11 @@ const Home = () => {
                                     <div className="gtfrd">
                                       <h3>
                                         <Link to={"/video/" + allddt.slug}>
-                                          {allddt.title.slice(0, 30)}...
+                                          {allddt.title.split('').slice(0,30).join('')}...
                                         </Link>
                                       </h3>
                                       <p>
-                                        {allddt.excerpt.slice(0, 30)}...</p>
+                                        {allddt.excerpt.split('').slice(0,50).join('')}...</p>
                                       <div className="our_tascrt">
                                         <Link to="/videos">View All Videos</Link>
                                       </div>
