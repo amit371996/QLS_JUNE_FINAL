@@ -59,17 +59,7 @@ const About = () => {
 	const videoRef = useRef(null);
 
 	useEffect(() => {
-		const video = videoRef.current;
-		const playPromise = video.play();
-		if (playPromise !== undefined) {
-			playPromise
-				.then(() => {
-					video.play();
-				})
-				.catch(error => {
-
-				});
-		}
+		handleVideoLoop();
 	}, []);
 	const handleVideoEnded = (origin, destination, direction) => {
 		const video = videoRef.current;
@@ -81,7 +71,19 @@ const About = () => {
 		}
 		
 	};
-	
+	const handleVideoLoop =(origin, destination, direction)=>{
+		const video = videoRef.current;
+		const playPromise = video.play();
+		if (playPromise !== undefined && origin.index === 2) {
+			playPromise
+				.then(() => {
+					video.play();
+				})
+				.catch(error => {
+
+				});
+		}
+	}
 	const handleAfterLoad = (origin, destination, direction) => {
 		const scrollToTopButton = document.getElementById('scroll-to-top');
 		if (destination.index > 0) {
