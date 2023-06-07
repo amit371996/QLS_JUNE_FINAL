@@ -116,7 +116,7 @@ export default function NavBar(props) {
                                         className="nav-link"
                                         activeClassName="active"
                                       >
-                                        {/* {prop.label} */}
+                                        {prop.label}
                                       </Link>
                                     </li>
                                   )}
