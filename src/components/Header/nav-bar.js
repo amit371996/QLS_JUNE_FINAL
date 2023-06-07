@@ -98,6 +98,7 @@ export default function NavBar(props) {
                                         activeClassName="active"
                                       >
                                         {prop.label}
+                                        {console.log(prop.label)}
                                       </Link>
                                     </li>
                                   ) : (
