@@ -74,58 +74,51 @@ export default function NavBar(props) {
                         data.wpMenu &&
                         data.wpMenu.menuItems &&
                         data.wpMenu.menuItems.nodes.map((prop, i) => {
-                          return (
-                            <>
-                              {(() => {
-                                switch (prop.label) {
-                                  case "Home":
-                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                      onClick={() => setActiveMenuItem(i)}>
-                                      <Link
-                                        to={"/"}
-                                        className="nav-link"
-                                        activeClassName="active"
-                                      >
-                                        {prop.label}
-                                      </Link>
-                                    </li>
-                                  case "whats_new":
-                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                      onClick={() => setActiveMenuItem(i)}>
-                                      <Link
-                                        to={"/news"}
-                                        className="nav-link"
-                                        activeClassName="active"
-                                      >
-                                        {prop.label}
-                                      </Link>
-                                    </li>
-                                  default:
-                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                      onClick={() => setActiveMenuItem(i)}>
-                                      <Link
-                                        to={
-                                          "/" +
-                                          prop.label
-                                            .replace(/\s+/g, "_")
-                                            .replace("'", "")
-                                            .toLowerCase()
-                                        }
-                                        className="nav-link"
-                                        activeClassName="active"
-                                      >
-                                        {prop.label}
-                                      </Link>
-                                    </li>
-                                }
-                              })()}
-                            </>
-                          );
-                        })}
+                          const itemToRender = prop.label === "Home" ?
+                            (
+                              <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                onClick={() => setActiveMenuItem(i)}>
+                                <Link
+                                  to={"/"}
+                                  className="nav-link"
+                                  activeClassName="active"
+                                >
+                                  {prop.label}
+                                </Link>
+                              </li>
+                            ) : prop.label === "whats_new" ? (
+                              <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                onClick={() => setActiveMenuItem(i)}>
+                                <Link
+                                  to={"/news"}
+                                  className="nav-link"
+                                  activeClassName="active"
+                                >
+                                  {prop.label}
+                                </Link>
+                              </li>
+                            ) : (
+                              <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                onClick={() => setActiveMenuItem(i)}>
+                                <Link
+                                  to={
+                                    "/" +
+                                    prop.label
+                                      .replace(/\s+/g, "_")
+                                      .replace("'", "")
+                                      .toLowerCase()
+                                  }
+                                  className="nav-link"
+                                  activeClassName="active"
+                                >
+                                  {prop.label}
+                                </Link>
+                              </li>
+                            )
 
-
-
-
+                          return itemToRender;
+                        })
+                      }
                       <div /*style={navev}*/></div>
                     </ul>
                     <div className="our_cong d-flex">
