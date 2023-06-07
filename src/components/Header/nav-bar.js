@@ -74,7 +74,7 @@ export default function NavBar(props) {
                         data.wpMenu &&
                         data.wpMenu.menuItems &&
                         data.wpMenu.menuItems.nodes.map((prop, i) => {
-                          alert(prop.label);
+                          console.log(prop.label);
                           const itemToRender = prop.label === "Home" ?
                             (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
@@ -87,7 +87,7 @@ export default function NavBar(props) {
                                   {prop.label}
                                 </Link>
                               </li>
-                            ) : prop.label === "whats_new" ? (
+                            ) : prop.label === "whats new" ? (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
                                 onClick={() => setActiveMenuItem(i)}>
                                 <Link
