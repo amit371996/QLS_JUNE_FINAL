@@ -360,7 +360,7 @@ const Home = () => {
                                               autoPlay
                                               muted
                                               onEnded={handleVideoEnded}
-
+                                              
                                               className="video"
                                             >
 
