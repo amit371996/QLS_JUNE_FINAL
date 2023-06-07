@@ -143,7 +143,7 @@ export default function Blog() {
                                                 <div className="list_tab_wg">
                                                     <ul>
                                                         <li><Link to='/event'>Events</Link></li>
-                                                        <li><Link to='/whats_new'>News</Link></li>
+                                                        <li><Link to='/news'>News</Link></li>
                                                         <li className="active_cl"><Link to='/blog'>Blogs</Link></li>
                                                         <li><Link to='/partner'>Partner News</Link></li>
                                                         <li><Link to='/videos'>Videos</Link></li>

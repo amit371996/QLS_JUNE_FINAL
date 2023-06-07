@@ -5,7 +5,7 @@ import PrivateRoute from "../components/privateRout/privateRoute"
 import Home from "."
 import About from "./about_us"
 import Solution from "./solutions"
-import Whatsnew from "./whats_new"
+import Whatsnew from "./news"
 import Partner from "./partner"
 import Blog from "./blog"
 
@@ -21,7 +21,7 @@ const App = () => (
       <PrivateRoute path="/" component={Home} />
       <PrivateRoute path="/about_us" component={About} />
       <PrivateRoute path="/solutions" component={Solution} />
-      <PrivateRoute path="/whats_new" component={Whatsnew} />
+      <PrivateRoute path="/news" component={Whatsnew} />
       <PrivateRoute path="/partner" component={Partner} />
       <PrivateRoute path="/blog" component={Blog} />
       <PrivateRoute path="/event" component={Event} />
