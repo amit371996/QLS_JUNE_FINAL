@@ -568,10 +568,10 @@ const Home = () => {
                                                   <div className="gtfrd">
                                                     <h3>
                                                       <Link to={"/blog/" + allddt.slug}>
-                                                        {allddt.title.slice(0, 50)}...
+                                                        {allddt.title.split('').slice(0,50).join('')}...
                                                       </Link></h3>
 
-                                                    <p>  {allddt.excerpt.slice(0, 50)}... </p>
+                                                    <p>  {allddt.excerpt.split('').slice(0,50).join('')}... </p>
                                                     <div className="our_tascrt">
                                                       <Link to="/blog">View All Posts</Link>
 
