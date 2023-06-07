@@ -33,8 +33,22 @@ const Home = () => {
     const video = videoRef.current;
     video.play();
   };
-  // header sticky after scroll
-  const handleLeave = (origin, destination) => setCurrentSectionIndex(destination.index);
+  // header sticky after scroll and video play
+  const videoRef = useRef(null);
+  const handleLeave = (origin, destination) => {
+		setCurrentSectionIndex(destination.index);
+		const video = videoRef.current;
+		const playPromise = video.play();
+		if (playPromise !== undefined && origin.index === 2) {
+			playPromise
+				.then(() => {
+					video.play();
+				})
+				.catch(error => {
+
+				});
+		}
+	};
 
   const handleScroll = () => {
     const scrollDiv = document.querySelector('.list_manage');
@@ -118,28 +132,10 @@ const Home = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  //video autoplay and infinite play
-  const videoRef = useRef(null);
+  
 
-  useEffect(() => {
-    const video = videoRef.current;
 
-    // Show loading animation.
-
-    // Play the video and handle the result using promises.
-    const playPromise = video.play();
-
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          video.play();
-        })
-        .catch(error => {
-          // Auto-play was prevented
-          // Show paused UI.
-        });
-    }
-  }, []);
+ 
   
   useEffect(() => {
 

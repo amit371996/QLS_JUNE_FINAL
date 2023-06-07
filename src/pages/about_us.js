@@ -37,6 +37,7 @@ const About = () => {
 	}
 
 	const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+	const videoRef = useRef(null);
 	const handleLeave = (origin, destination) => {
 		setCurrentSectionIndex(destination.index);
 		const video = videoRef.current;
@@ -67,7 +68,7 @@ const About = () => {
 			}
 		};
 	}, [currentSectionIndex]);
-	const videoRef = useRef(null);
+	
 
 	// useEffect(() => {
 	// 	const video = videoRef.current;
