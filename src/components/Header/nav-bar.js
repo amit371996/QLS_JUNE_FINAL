@@ -77,51 +77,58 @@ export default function NavBar(props) {
                           return (
                             <>
                               {
-                                <>
-                                  {prop.label === "Home" ? (
-                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                      onClick={() => setActiveMenuItem(i)}>
-                                      <Link
-                                        to={"/"}
-                                        className="nav-link"
-                                        activeClassName="active"
-                                      >
-                                        {prop.label}
-                                      </Link>
-                                    </li>
-                                  ) : prop.label === "whats_new" ? (
-                                    
-                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                      onClick={() => setActiveMenuItem(i)}>
-                                      <Link
-                                        to={"/news"}
-                                        className="nav-link"
-                                        activeClassName="active"
-                                      >
-                                        {prop.label}
-                                        
-                                      </Link>
-                                    </li>
-                                  ) : (
-                                    <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                      onClick={() => setActiveMenuItem(i)}>
-                                      <Link
-                                        to={
-                                          "/" +
-                                          prop.label
-                                            .replace(/\s+/g, "_")
-                                            .replace("'", "")
-                                            .toLowerCase()
-                                        }
-                                        className="nav-link"
-                                        activeClassName="active"
-                                      >
-                                        {prop.label}
-                                      </Link>
-                                    </li>
-                                  )}
-
-                                </>
+                              <>
+                              {(() => {
+                                switch (prop.label) {
+                                  case "Home":
+                                    return (
+                                      <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                        onClick={() => setActiveMenuItem(i)}>
+                                        <Link
+                                          to={"/"}
+                                          className="nav-link"
+                                          activeClassName="active"
+                                        >
+                                          {prop.label}
+                                        </Link>
+                                      </li>
+                                    );
+                                  case "whats_new":
+                                    return (
+                                      <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                        onClick={() => setActiveMenuItem(i)}>
+                                        <Link
+                                          to={"/news"}
+                                          className="nav-link"
+                                          activeClassName="active"
+                                        >
+                                          {prop.label}
+                                        </Link>
+                                      </li>
+                                    );
+                                  default:
+                                    return (
+                                      <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
+                                        onClick={() => setActiveMenuItem(i)}>
+                                        <Link
+                                          to={
+                                            "/" +
+                                            prop.label
+                                              .replace(/\s+/g, "_")
+                                              .replace("'", "")
+                                              .toLowerCase()
+                                          }
+                                          className="nav-link"
+                                          activeClassName="active"
+                                        >
+                                          {prop.label}
+                                        </Link>
+                                      </li>
+                                    );
+                                }
+                              })()}
+                            </>
+                            
                               }
                             </>
                           );
