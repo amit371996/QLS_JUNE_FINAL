@@ -78,7 +78,7 @@ export default function NavBar(props) {
                             <>
                               {
                                 <>
-                                  {prop.label == "Home" ? (
+                                  {prop.label === "Home" ? (
                                     <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
                                       onClick={() => setActiveMenuItem(i)}>
                                       <Link
@@ -89,7 +89,7 @@ export default function NavBar(props) {
                                         {prop.label}
                                       </Link>
                                     </li>
-                                  ): prop.label === "whats_new" ? (
+                                  ) : prop.label === "whatsne_new" ? (
                                     <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
                                       onClick={() => setActiveMenuItem(i)}>
                                       <Link
@@ -118,8 +118,8 @@ export default function NavBar(props) {
                                         {prop.label}
                                       </Link>
                                     </li>
-
                                   )}
+
                                 </>
                               }
                             </>
@@ -155,7 +155,7 @@ export default function NavBar(props) {
           <div className="modal fade model_wrt contactpop show" tabIndex="-1" role="dialog" style={{ display: showModal ? 'block' : 'none' }}>
 
             <div className="modal-dialog modal-dialog-centered model_inner">
-              <div className="modal-content model_inncnr" style={{padding:'65px 55px 20px 55px'}}>
+              <div className="modal-content model_inncnr" style={{ padding: '65px 55px 20px 55px' }}>
                 <div className="modal-header model_inncheadr">
                   <h5 className="modal-title title_wrap" id="contact_usLabel">Get in touch</h5>
                   <div className="our_span"><p>Fill up the form our team will get back to you within 24 Hours</p></div>
@@ -233,10 +233,10 @@ export default function NavBar(props) {
                         </div><div className="wpcf7-response-output" aria-hidden="true"></div>
                       </form> */}
                       <iframe
-                             id="myIframe"
-                             src="https://www.qlspace.com.au/contact-us/"
-                             scrolling="no"
-                           ></iframe>
+                        id="myIframe"
+                        src="https://www.qlspace.com.au/contact-us/"
+                        scrolling="no"
+                      ></iframe>
                     </div>
                   </div>
                 </div>
