@@ -131,8 +131,8 @@ export default function Footer() {
 																						</Link>
 																					</li>
 																				): prop.label === "What's New" ? (
-																					<li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-																					  onClick={() => setActiveMenuItem(i)}>
+																					<li className="nav-item"
+																					 >
 																					  <Link
 																						to={"/news"}
 																						className="nav-link"
